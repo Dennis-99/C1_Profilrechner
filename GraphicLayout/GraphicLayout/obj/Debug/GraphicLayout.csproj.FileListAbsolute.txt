@@ -1,0 +1,11 @@
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\bin\Debug\GraphicLayout.exe.config
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\bin\Debug\GraphicLayout.exe
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\bin\Debug\GraphicLayout.pdb
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\obj\Debug\GraphicLayout.csprojAssemblyReference.cache
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\obj\Debug\UserControl1.g.cs
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\obj\Debug\GraphicLayout_MarkupCompile.cache
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\obj\Debug\GraphicLayout_MarkupCompile.lref
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\obj\Debug\UserControl1.baml
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\obj\Debug\GraphicLayout.g.resources
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\obj\Debug\GraphicLayout.exe
+C:\Users\Lukas\source\repos\GraphicLayout\GraphicLayout\obj\Debug\GraphicLayout.pdb
