@@ -117,7 +117,27 @@ namespace TestGui
             DichteD = Convert.ToDouble(Dichte);
             Double HoeheH = HoeheD / 2;
             Double BreiteH = BreiteD / 2;
-            
+            if (BreiteD.Equals(0))
+            {
+                Window MBHG = new Window();
+                MBHG.Content = MessageBox.Show("Keine Breite eingetragen", "Fehler!", MessageBoxButton.OK);
+                MBHG.SizeToContent = SizeToContent.WidthAndHeight;
+                Fehlercode = 1;
+            }
+            if (LaengeD.Equals(0))
+            {
+                Window MBHG = new Window();
+                MBHG.Content = MessageBox.Show("Keine Länge eingetragen", "Fehler!", MessageBoxButton.OK);
+                MBHG.SizeToContent = SizeToContent.WidthAndHeight;
+                Fehlercode = 1;
+            }
+            if (HoeheD.Equals(0))
+            {
+                Window MBHG = new Window();
+                MBHG.Content = MessageBox.Show("Keine Höhe eingetragen", "Fehler!", MessageBoxButton.OK);
+                MBHG.SizeToContent = SizeToContent.WidthAndHeight;
+                Fehlercode = 1;
+            }
             if (WandstaerkeD > HoeheD) 
             {
                 if (tb_hoehe.Visibility.Equals(Visibility.Visible))
