@@ -115,6 +115,8 @@ namespace TestGui
             BreiteD = Convert.ToDouble(Breite);
             LaengeD = Convert.ToDouble(Laenge);
             DichteD = Convert.ToDouble(Dichte);
+            Double HoeheH = HoeheD / 2;
+            Double BreiteH = BreiteD / 2;
             
             if (WandstaerkeD > HoeheD) 
             {
@@ -127,7 +129,7 @@ namespace TestGui
                 }
                 
             }
-            if (WandstaerkeD > BreiteD)
+             else if (WandstaerkeD > BreiteD)
             {
                 if (tb_Breite.Visibility.Equals(Visibility.Visible))
                 {
@@ -166,10 +168,31 @@ namespace TestGui
                 
 
             }
+            else if (WandstaerkeD >= HoeheH)
+            {
+                Window MB1 = new Window();
+                MB1.Content = MessageBox.Show("Wandstärke muss kleiner als die halbe Höhe sein.", "Fehler!", MessageBoxButton.OK);
+                MB1.SizeToContent = SizeToContent.WidthAndHeight;
+                Fehlercode = 1;
+            }
+            else if (WandstaerkeD >= BreiteH)
+            {
+                Window MB1 = new Window();
+                MB1.Content = MessageBox.Show("Wandstärke muss kleiner als die halbe breite sein.", "Fehler!", MessageBoxButton.OK);
+                MB1.SizeToContent = SizeToContent.WidthAndHeight;
+                Fehlercode = 1;
+            }
 
             if (Fehlercode.Equals(1))
             {
-
+                ThisIsYoustATreeView.Visibility = Visibility.Visible;
+                lbl_Dichte.Visibility = Visibility.Hidden;
+                tb_Dichte.Visibility = Visibility.Hidden;
+                tb_hoehe.Text = "0";
+                tb_Breite.Text = "0";
+                tb_Dichte.Text = "0";
+                tb_Wandstaerke.Text = "0";
+                Fehlercode = 0;
             }
             else
             {
