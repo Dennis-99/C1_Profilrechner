@@ -588,6 +588,9 @@ namespace TestGui
             grid_Profilauswahl.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
             Grid_Endcart.Visibility = Visibility.Hidden;
+            ThisIsYoustATreeView.Visibility = Visibility.Visible;
+            lbl_Dichte.Visibility = Visibility.Hidden;
+            tb_Dichte.Visibility = Visibility.Hidden;
             tb_hoehe.Text = "0";
             tb_Breite.Text = "0";
             tb_Dichte.Text = "0";
@@ -610,6 +613,11 @@ namespace TestGui
         {
             grid_Profilauswahl.Visibility = Visibility.Hidden;
             Grid_Endcart.Visibility = Visibility.Visible;
+        }
+
+        private void tb_hoehe_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
+        {
+
         }
     }
 }
