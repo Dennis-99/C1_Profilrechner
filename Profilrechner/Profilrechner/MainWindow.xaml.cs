@@ -29,7 +29,7 @@ namespace TestGui
         String Durchmesser;
         String Stegbreite;
         String Flanschbreite;
-
+        int Fehlercode;
         Double HoeheD;
         Double BreiteD;
         Double LaengeD;
@@ -115,7 +115,7 @@ namespace TestGui
             BreiteD = Convert.ToDouble(Breite);
             LaengeD = Convert.ToDouble(Laenge);
             DichteD = Convert.ToDouble(Dichte);
-          
+            
             if (WandstaerkeD > HoeheD) 
             {
                 if (tb_hoehe.Visibility.Equals(Visibility.Visible))
@@ -123,6 +123,7 @@ namespace TestGui
                     Window MBHG = new Window();
                     MBHG.Content = MessageBox.Show("Wandstärke darf nicht größer als Höhe sein!", "Fehler!", MessageBoxButton.OK);
                     MBHG.SizeToContent = SizeToContent.WidthAndHeight;
+                    Fehlercode = 1;
                 }
                 
             }
@@ -133,6 +134,7 @@ namespace TestGui
                     Window MBHG = new Window();
                     MBHG.Content = MessageBox.Show("Wandstärke darf nicht größer als Breite sein!", "Fehler!", MessageBoxButton.OK);
                     MBHG.SizeToContent = SizeToContent.WidthAndHeight;
+                    Fehlercode = 1;
                 }
                 
             }
@@ -144,6 +146,7 @@ namespace TestGui
                     Window MB1 = new Window();
                     MB1.Content = MessageBox.Show("Wandstärke muss kleiner als Höhe sein.", "Fehler!", MessageBoxButton.OK);
                     MB1.SizeToContent = SizeToContent.WidthAndHeight;
+                    Fehlercode = 1;
                 }
                 
               
@@ -157,196 +160,201 @@ namespace TestGui
                     Window MB1 = new Window();
                     MB1.Content = MessageBox.Show("Wandstärke muss kleiner als breite sein.", "Fehler!", MessageBoxButton.OK);
                     MB1.SizeToContent = SizeToContent.WidthAndHeight;
+                    Fehlercode = 1;
                 }
                
                 
 
             }
 
-
-
-            if (Profilint.Equals(1))
-            {
-                Querschnitt = HoeheD * BreiteD;
-                Volumen = Querschnitt * LaengeD;
-                Gewicht = Volumen * DichteD;
-                Festigkeitx = (BreiteD * Math.Pow(HoeheD, 3)) / 12;
-                Festigkeity = (HoeheD * Math.Pow(BreiteD, 3)) / 12;
-
-                lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
-                lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
-                lbl_Masse.Content = "Masse: " + Math.Round(Gewicht,3);
-                lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
-                lbl_FTMY.Content = Math.Round(Festigkeity, 3);
-                lbl_FTM.Content = "FTM";
-                
-            }
-            else if (Profilint.Equals(2))
-            {
-                Querschnitt = (HoeheD * BreiteD) - ((HoeheD - (2 * WandstaerkeD)) * (BreiteD - (2 * WandstaerkeD)));
-                Volumen = Querschnitt * LaengeD;
-                Gewicht = Volumen * DichteD;
-                Festigkeitx = ((BreiteD * Math.Pow(HoeheD, 3)) - ((BreiteD - (2 * WandstaerkeD)) * Math.Pow((HoeheD - (2 * WandstaerkeD)), 3))) / 12;
-                Festigkeity = ((HoeheD * Math.Pow(BreiteD, 3)) - ((HoeheD - (2 * WandstaerkeD)) * Math.Pow((BreiteD - (2 * WandstaerkeD)), 3))) / 12;
-
-                lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
-                lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
-                lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
-                lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
-                lbl_FTMY.Content = Math.Round(Festigkeity, 3);
-                lbl_FTM.Content = "FTM";
-            }
-            else if (Profilint.Equals(3))
-            {
-                DurchmesserD = HoeheD;
-                Querschnitt = Math.Pow(DurchmesserD, 2) * Math.PI / 4;
-                Volumen = Querschnitt * LaengeD;
-                Gewicht = Volumen * DichteD;
-                Festigkeitx = (Math.PI * (Math.Pow(DurchmesserD, 4))) / 64;
-                Festigkeity = (Math.PI * (Math.Pow(DurchmesserD, 4))) / 64;
-
-                lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
-                lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
-                lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
-                lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
-                lbl_FTMY.Content = Math.Round(Festigkeity, 3);
-                lbl_FTM.Content = "FTM";
-               
-                
-            }
-            else if (Profilint.Equals(4))
-            {
-                DurchmesserD = HoeheD;
-                Querschnitt = ((Math.Pow(DurchmesserD, 2) * Math.PI) - (Math.Pow((DurchmesserD - (2 * WandstaerkeD)), 2) * Math.PI)) / 4;
-                Volumen = Querschnitt * LaengeD;
-                Gewicht = Volumen * DichteD;
-                Festigkeitx = (Math.PI * (Math.Pow(DurchmesserD, 4) - Math.Pow((DurchmesserD - (2 * WandstaerkeD)), 4))) / 64;
-                Festigkeity = (Math.PI * (Math.Pow(DurchmesserD, 4) - Math.Pow((DurchmesserD - (2 * WandstaerkeD)), 4))) / 64;
-
-                lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
-                lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
-                lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
-                lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
-                lbl_FTMY.Content = Math.Round(Festigkeity, 3);
-                lbl_FTM.Content = "FTM";
-
-            }
-
-
-            else if (Profilint.Equals(5))
-            {
-                StegbreiteD = WandstaerkeD;
-                Double Breiteb;
-                Double Hoeheh;
-                //Zwischenrechnung
-                Breiteb = BreiteD - StegbreiteD;
-                Hoeheh = HoeheD - 2 * FlanschbreiteD;
-
-                Querschnitt = (WandstaerkeD * BreiteD) + (WandstaerkeD * (HoeheD - WandstaerkeD));
-                Volumen = (WandstaerkeD * BreiteD * LaengeD) + ((HoeheD - WandstaerkeD) * WandstaerkeD * LaengeD);
-                Gewicht = Volumen * DichteD;
-                SchwerpunktyD = HoeheD / 2;
-                SchwerpunktxD = BreiteD / 2;
-                Festigkeitx = (BreiteD * Math.Pow(HoeheD, 3) / 12) - (Breiteb * Math.Pow(Hoeheh, 3) / 12);
-                Festigkeity = 2 * ((FlanschbreiteD * Math.Pow(BreiteD, 3) / 12)) + ((Hoeheh * Math.Pow(StegbreiteD, 3)) / 12);
-
-                lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
-                lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
-                lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
-                lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
-                lbl_FTMY.Content = Math.Round(Festigkeity, 3);
-                lbl_FTM.Content = "FTM";
-                lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3);
-                lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3);
-                lbl_SWP.Content = "Schwerpunkt";
-
-            }
-            else if (Profilint.Equals(6))
-            {
-                StegbreiteD = WandstaerkeD;
-                Querschnitt = (WandstaerkeD * BreiteD) + (WandstaerkeD * (HoeheD - WandstaerkeD));
-                Volumen = (WandstaerkeD * BreiteD * LaengeD) + ((HoeheD - WandstaerkeD) * WandstaerkeD * LaengeD);
-                Gewicht = Volumen * DichteD;
-                SchwerpunktyD = ((WandstaerkeD * (HoeheD - WandstaerkeD)) * ((HoeheD - WandstaerkeD) / 2) + ((WandstaerkeD * BreiteD) * (BreiteD - (WandstaerkeD / 2))))
-                                      / ((WandstaerkeD * (HoeheD - WandstaerkeD)) + (BreiteD * WandstaerkeD));
-                SchwerpunktxD = BreiteD / 2;
-                Festigkeitx = ((WandstaerkeD * Math.Pow((HoeheD - WandstaerkeD), 3)) / 12) + (WandstaerkeD * (HoeheD - WandstaerkeD)) * Math.Pow((SchwerpunktyD - ((HoeheD - WandstaerkeD) / 2)), 2)
-               //  +                     Ixx2                     +            A2            *                           l2²
-               + ((BreiteD * Math.Pow(WandstaerkeD, 3)) / 12) + (WandstaerkeD * BreiteD) * Math.Pow(((BreiteD - (WandstaerkeD / 2)) - SchwerpunktyD), 2);
-                //                               Iyy1                          +                     Iyy2
-                Festigkeity = (((HoeheD - WandstaerkeD) * Math.Pow(WandstaerkeD, 3)) / 12) + ((WandstaerkeD * Math.Pow(BreiteD, 3)) / 12);
-
-                lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
-                lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
-                lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
-                lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
-                lbl_FTMY.Content = Math.Round(Festigkeity, 3);
-                lbl_FTM.Content = "FTM";
-                lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3);
-                lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3);
-                lbl_SWP.Content = "Schwerpunkt";
-            }
-            else if (Profilint.Equals(7))
-            {
-                Querschnitt = (BreiteD * HoeheD) - ((BreiteD - StegbreiteD) * (HoeheD - (2 * FlanschbreiteD)));
-                Volumen = Querschnitt * LaengeD;
-                Gewicht = Volumen * DichteD;
-                SchwerpunktxD = ((BreiteD * HoeheD * (BreiteD / 2)) - ((BreiteD - StegbreiteD) * (HoeheD - (2 * FlanschbreiteD)) * ((BreiteD - StegbreiteD) / 2 + StegbreiteD)))
-                                 / ((BreiteD * HoeheD) - ((BreiteD - StegbreiteD) * (HoeheD - (2 * FlanschbreiteD))));
-                SchwerpunktyD = HoeheD / 2;
-                Festigkeitx = ((BreiteD * Math.Pow(HoeheD, 3)) / 12) - (((BreiteD - StegbreiteD) * Math.Pow((HoeheD - (2 * FlanschbreiteD)), 3)) / 12);
-                Festigkeity = ((HoeheD * Math.Pow(BreiteD, 3)) / 12 + ((BreiteD * HoeheD) * Math.Pow(((BreiteD / 2) - SchwerpunktxD), 2)))
-                               - (((HoeheD - (2 * FlanschbreiteD)) * Math.Pow((BreiteD - StegbreiteD), 3)) / 12
-                               + ((BreiteD - StegbreiteD) * (HoeheD - (2 * FlanschbreiteD))) * Math.Pow((((BreiteD - StegbreiteD) / 2 + StegbreiteD) - SchwerpunktxD), 2));
-                lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
-                lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
-                lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
-                lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
-                lbl_FTMY.Content = Math.Round(Festigkeity, 3);
-                lbl_FTM.Content = "FTM";
-                lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3);
-                lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3);
-                lbl_SWP.Content = "Schwerpunkt";
-            }
-            else if (Profilint.Equals(8))
+            if (Fehlercode.Equals(1))
             {
 
-                Querschnitt = BreiteD * WandstaerkeD + (HoeheD - WandstaerkeD) * WandstaerkeD;
-                Volumen = Querschnitt * LaengeD;
-                Gewicht = Volumen * DichteD;
-                SchwerpunktxD = (BreiteD * HoeheD * (BreiteD / 2) - (BreiteD - WandstaerkeD) * (HoeheD - WandstaerkeD) * ((BreiteD - WandstaerkeD) / 2 + WandstaerkeD)) / ((BreiteD * HoeheD) - ((BreiteD - WandstaerkeD) * (HoeheD - WandstaerkeD)));
-                SchwerpunktyD = (HoeheD * BreiteD * (HoeheD / 2) - (HoeheD - WandstaerkeD) * (BreiteD - WandstaerkeD) * ((HoeheD - WandstaerkeD) / 2 + WandstaerkeD)) / ((HoeheD * BreiteD) - ((HoeheD - WandstaerkeD) * (BreiteD - WandstaerkeD)));
-                Festigkeitx = ((WandstaerkeD * Math.Pow(HoeheD, 3) / 12) + (WandstaerkeD * HoeheD) * Math.Pow((HoeheD / 2 - SchwerpunktyD), 2)) + (((BreiteD - WandstaerkeD) * Math.Pow(WandstaerkeD, 3) / 12) + (((BreiteD - WandstaerkeD) * WandstaerkeD) * Math.Pow((SchwerpunktyD - (WandstaerkeD / 2)), 2)));                                       //Klappt
-                Festigkeity = ((HoeheD * Math.Pow(WandstaerkeD, 3) / 12) + (WandstaerkeD * HoeheD) * Math.Pow((SchwerpunktxD - (WandstaerkeD / 2)), 2)) + ((WandstaerkeD * Math.Pow((BreiteD - WandstaerkeD), 3) / 12) + (((BreiteD - WandstaerkeD) * WandstaerkeD) * Math.Pow(((BreiteD - WandstaerkeD) / 2 + WandstaerkeD) - SchwerpunktxD, 2)));      //Klappt
-
-                Festigkeitxy = -Math.Pow((BreiteD * HoeheD), 2) / 4 - (-(Math.Pow((BreiteD * HoeheD), 2) - Math.Pow((HoeheD * WandstaerkeD), 2) - Math.Pow((BreiteD * WandstaerkeD), 2) + Math.Pow(WandstaerkeD, 4)) / 4) + (((BreiteD * HoeheD) - (BreiteD - WandstaerkeD) * (HoeheD - WandstaerkeD)) * SchwerpunktxD * SchwerpunktyD);
-
-                //Achswinkel = (1 / 2) * Math.Atan((2 * Festigkeitxy) / (Festigkeitxx - Festigkeityy));
-                AchswinkelRad = (Math.Atan((2 * Festigkeitxy) / (Festigkeitx - Festigkeity))) / 2;
-                AchswinkelGrad = AchswinkelRad * 180 / Math.PI;
-                TanA = Math.Tan(AchswinkelGrad);
-
-                Festigkeitu = (Festigkeitx + Festigkeity) / 2 + (((Festigkeitx - Festigkeity) / 2) * Math.Cos(2 * AchswinkelRad)) + Festigkeitxy * Math.Sin(2 * AchswinkelRad);
-                Festigkeitv = (Festigkeitx + Festigkeity) / 2 - (((Festigkeitx - Festigkeity) / 2) * Math.Cos(2 * AchswinkelRad)) - Festigkeitxy * Math.Sin(2 * AchswinkelRad);
-
-                lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
-                lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
-                lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
-                lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
-                lbl_FTMY.Content = Math.Round(Festigkeity, 3);
-                lbl_FTM.Content = "FTM";
-                lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3);
-                lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3);
-                lbl_SWP.Content = "Schwerpunkt";
-                lbl_DeviationsMoment.Content = "Deviationmoment" + Math.Round(Festigkeitxy, 3);
-                lbl_Drehwinkel.Content = "Drehwinkel";
-                lbl_Grad.Content = Math.Round(AchswinkelGrad, 2);
-                lbl_Rad.Content = Math.Round(AchswinkelRad, 2);
-                lbl_TanA.Content = Math.Round(TanA, 3);
-                lbl_HTM.Content = "Hauptträgheitsmoment";
-                lbl_HTMU.Content = Math.Round(Festigkeitu, 3);
-                lbl_HTMV.Content = Math.Round(Festigkeitv, 3);
             }
+            else
+            {
+                if (Profilint.Equals(1))
+                {
+                    Querschnitt = HoeheD * BreiteD;
+                    Volumen = Querschnitt * LaengeD;
+                    Gewicht = Volumen * DichteD;
+                    Festigkeitx = (BreiteD * Math.Pow(HoeheD, 3)) / 12;
+                    Festigkeity = (HoeheD * Math.Pow(BreiteD, 3)) / 12;
+
+                    lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
+                    lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
+                    lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
+                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
+                    lbl_FTMY.Content = Math.Round(Festigkeity, 3);
+                    lbl_FTM.Content = "FTM";
+
+                }
+                else if (Profilint.Equals(2))
+                {
+                    Querschnitt = (HoeheD * BreiteD) - ((HoeheD - (2 * WandstaerkeD)) * (BreiteD - (2 * WandstaerkeD)));
+                    Volumen = Querschnitt * LaengeD;
+                    Gewicht = Volumen * DichteD;
+                    Festigkeitx = ((BreiteD * Math.Pow(HoeheD, 3)) - ((BreiteD - (2 * WandstaerkeD)) * Math.Pow((HoeheD - (2 * WandstaerkeD)), 3))) / 12;
+                    Festigkeity = ((HoeheD * Math.Pow(BreiteD, 3)) - ((HoeheD - (2 * WandstaerkeD)) * Math.Pow((BreiteD - (2 * WandstaerkeD)), 3))) / 12;
+
+                    lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
+                    lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
+                    lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
+                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
+                    lbl_FTMY.Content = Math.Round(Festigkeity, 3);
+                    lbl_FTM.Content = "FTM";
+                }
+                else if (Profilint.Equals(3))
+                {
+                    DurchmesserD = HoeheD;
+                    Querschnitt = Math.Pow(DurchmesserD, 2) * Math.PI / 4;
+                    Volumen = Querschnitt * LaengeD;
+                    Gewicht = Volumen * DichteD;
+                    Festigkeitx = (Math.PI * (Math.Pow(DurchmesserD, 4))) / 64;
+                    Festigkeity = (Math.PI * (Math.Pow(DurchmesserD, 4))) / 64;
+
+                    lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
+                    lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
+                    lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
+                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
+                    lbl_FTMY.Content = Math.Round(Festigkeity, 3);
+                    lbl_FTM.Content = "FTM";
+
+
+                }
+                else if (Profilint.Equals(4))
+                {
+                    DurchmesserD = HoeheD;
+                    Querschnitt = ((Math.Pow(DurchmesserD, 2) * Math.PI) - (Math.Pow((DurchmesserD - (2 * WandstaerkeD)), 2) * Math.PI)) / 4;
+                    Volumen = Querschnitt * LaengeD;
+                    Gewicht = Volumen * DichteD;
+                    Festigkeitx = (Math.PI * (Math.Pow(DurchmesserD, 4) - Math.Pow((DurchmesserD - (2 * WandstaerkeD)), 4))) / 64;
+                    Festigkeity = (Math.PI * (Math.Pow(DurchmesserD, 4) - Math.Pow((DurchmesserD - (2 * WandstaerkeD)), 4))) / 64;
+
+                    lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
+                    lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
+                    lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
+                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
+                    lbl_FTMY.Content = Math.Round(Festigkeity, 3);
+                    lbl_FTM.Content = "FTM";
+
+                }
+
+
+                else if (Profilint.Equals(5))
+                {
+                    StegbreiteD = WandstaerkeD;
+                    Double Breiteb;
+                    Double Hoeheh;
+                    //Zwischenrechnung
+                    Breiteb = BreiteD - StegbreiteD;
+                    Hoeheh = HoeheD - 2 * FlanschbreiteD;
+
+                    Querschnitt = (WandstaerkeD * BreiteD) + (WandstaerkeD * (HoeheD - WandstaerkeD));
+                    Volumen = (WandstaerkeD * BreiteD * LaengeD) + ((HoeheD - WandstaerkeD) * WandstaerkeD * LaengeD);
+                    Gewicht = Volumen * DichteD;
+                    SchwerpunktyD = HoeheD / 2;
+                    SchwerpunktxD = BreiteD / 2;
+                    Festigkeitx = (BreiteD * Math.Pow(HoeheD, 3) / 12) - (Breiteb * Math.Pow(Hoeheh, 3) / 12);
+                    Festigkeity = 2 * ((FlanschbreiteD * Math.Pow(BreiteD, 3) / 12)) + ((Hoeheh * Math.Pow(StegbreiteD, 3)) / 12);
+
+                    lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
+                    lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
+                    lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
+                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
+                    lbl_FTMY.Content = Math.Round(Festigkeity, 3);
+                    lbl_FTM.Content = "FTM";
+                    lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3);
+                    lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3);
+                    lbl_SWP.Content = "Schwerpunkt";
+
+                }
+                else if (Profilint.Equals(6))
+                {
+                    StegbreiteD = WandstaerkeD;
+                    Querschnitt = (WandstaerkeD * BreiteD) + (WandstaerkeD * (HoeheD - WandstaerkeD));
+                    Volumen = (WandstaerkeD * BreiteD * LaengeD) + ((HoeheD - WandstaerkeD) * WandstaerkeD * LaengeD);
+                    Gewicht = Volumen * DichteD;
+                    SchwerpunktyD = ((WandstaerkeD * (HoeheD - WandstaerkeD)) * ((HoeheD - WandstaerkeD) / 2) + ((WandstaerkeD * BreiteD) * (BreiteD - (WandstaerkeD / 2))))
+                                          / ((WandstaerkeD * (HoeheD - WandstaerkeD)) + (BreiteD * WandstaerkeD));
+                    SchwerpunktxD = BreiteD / 2;
+                    Festigkeitx = ((WandstaerkeD * Math.Pow((HoeheD - WandstaerkeD), 3)) / 12) + (WandstaerkeD * (HoeheD - WandstaerkeD)) * Math.Pow((SchwerpunktyD - ((HoeheD - WandstaerkeD) / 2)), 2)
+                   //  +                     Ixx2                     +            A2            *                           l2²
+                   + ((BreiteD * Math.Pow(WandstaerkeD, 3)) / 12) + (WandstaerkeD * BreiteD) * Math.Pow(((BreiteD - (WandstaerkeD / 2)) - SchwerpunktyD), 2);
+                    //                               Iyy1                          +                     Iyy2
+                    Festigkeity = (((HoeheD - WandstaerkeD) * Math.Pow(WandstaerkeD, 3)) / 12) + ((WandstaerkeD * Math.Pow(BreiteD, 3)) / 12);
+
+                    lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
+                    lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
+                    lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
+                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
+                    lbl_FTMY.Content = Math.Round(Festigkeity, 3);
+                    lbl_FTM.Content = "FTM";
+                    lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3);
+                    lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3);
+                    lbl_SWP.Content = "Schwerpunkt";
+                }
+                else if (Profilint.Equals(7))
+                {
+                    Querschnitt = (BreiteD * HoeheD) - ((BreiteD - StegbreiteD) * (HoeheD - (2 * FlanschbreiteD)));
+                    Volumen = Querschnitt * LaengeD;
+                    Gewicht = Volumen * DichteD;
+                    SchwerpunktxD = ((BreiteD * HoeheD * (BreiteD / 2)) - ((BreiteD - StegbreiteD) * (HoeheD - (2 * FlanschbreiteD)) * ((BreiteD - StegbreiteD) / 2 + StegbreiteD)))
+                                     / ((BreiteD * HoeheD) - ((BreiteD - StegbreiteD) * (HoeheD - (2 * FlanschbreiteD))));
+                    SchwerpunktyD = HoeheD / 2;
+                    Festigkeitx = ((BreiteD * Math.Pow(HoeheD, 3)) / 12) - (((BreiteD - StegbreiteD) * Math.Pow((HoeheD - (2 * FlanschbreiteD)), 3)) / 12);
+                    Festigkeity = ((HoeheD * Math.Pow(BreiteD, 3)) / 12 + ((BreiteD * HoeheD) * Math.Pow(((BreiteD / 2) - SchwerpunktxD), 2)))
+                                   - (((HoeheD - (2 * FlanschbreiteD)) * Math.Pow((BreiteD - StegbreiteD), 3)) / 12
+                                   + ((BreiteD - StegbreiteD) * (HoeheD - (2 * FlanschbreiteD))) * Math.Pow((((BreiteD - StegbreiteD) / 2 + StegbreiteD) - SchwerpunktxD), 2));
+                    lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
+                    lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
+                    lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
+                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
+                    lbl_FTMY.Content = Math.Round(Festigkeity, 3);
+                    lbl_FTM.Content = "FTM";
+                    lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3);
+                    lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3);
+                    lbl_SWP.Content = "Schwerpunkt";
+                }
+                else if (Profilint.Equals(8))
+                {
+
+                    Querschnitt = BreiteD * WandstaerkeD + (HoeheD - WandstaerkeD) * WandstaerkeD;
+                    Volumen = Querschnitt * LaengeD;
+                    Gewicht = Volumen * DichteD;
+                    SchwerpunktxD = (BreiteD * HoeheD * (BreiteD / 2) - (BreiteD - WandstaerkeD) * (HoeheD - WandstaerkeD) * ((BreiteD - WandstaerkeD) / 2 + WandstaerkeD)) / ((BreiteD * HoeheD) - ((BreiteD - WandstaerkeD) * (HoeheD - WandstaerkeD)));
+                    SchwerpunktyD = (HoeheD * BreiteD * (HoeheD / 2) - (HoeheD - WandstaerkeD) * (BreiteD - WandstaerkeD) * ((HoeheD - WandstaerkeD) / 2 + WandstaerkeD)) / ((HoeheD * BreiteD) - ((HoeheD - WandstaerkeD) * (BreiteD - WandstaerkeD)));
+                    Festigkeitx = ((WandstaerkeD * Math.Pow(HoeheD, 3) / 12) + (WandstaerkeD * HoeheD) * Math.Pow((HoeheD / 2 - SchwerpunktyD), 2)) + (((BreiteD - WandstaerkeD) * Math.Pow(WandstaerkeD, 3) / 12) + (((BreiteD - WandstaerkeD) * WandstaerkeD) * Math.Pow((SchwerpunktyD - (WandstaerkeD / 2)), 2)));                                       //Klappt
+                    Festigkeity = ((HoeheD * Math.Pow(WandstaerkeD, 3) / 12) + (WandstaerkeD * HoeheD) * Math.Pow((SchwerpunktxD - (WandstaerkeD / 2)), 2)) + ((WandstaerkeD * Math.Pow((BreiteD - WandstaerkeD), 3) / 12) + (((BreiteD - WandstaerkeD) * WandstaerkeD) * Math.Pow(((BreiteD - WandstaerkeD) / 2 + WandstaerkeD) - SchwerpunktxD, 2)));      //Klappt
+
+                    Festigkeitxy = -Math.Pow((BreiteD * HoeheD), 2) / 4 - (-(Math.Pow((BreiteD * HoeheD), 2) - Math.Pow((HoeheD * WandstaerkeD), 2) - Math.Pow((BreiteD * WandstaerkeD), 2) + Math.Pow(WandstaerkeD, 4)) / 4) + (((BreiteD * HoeheD) - (BreiteD - WandstaerkeD) * (HoeheD - WandstaerkeD)) * SchwerpunktxD * SchwerpunktyD);
+
+                    //Achswinkel = (1 / 2) * Math.Atan((2 * Festigkeitxy) / (Festigkeitxx - Festigkeityy));
+                    AchswinkelRad = (Math.Atan((2 * Festigkeitxy) / (Festigkeitx - Festigkeity))) / 2;
+                    AchswinkelGrad = AchswinkelRad * 180 / Math.PI;
+                    TanA = Math.Tan(AchswinkelGrad);
+
+                    Festigkeitu = (Festigkeitx + Festigkeity) / 2 + (((Festigkeitx - Festigkeity) / 2) * Math.Cos(2 * AchswinkelRad)) + Festigkeitxy * Math.Sin(2 * AchswinkelRad);
+                    Festigkeitv = (Festigkeitx + Festigkeity) / 2 - (((Festigkeitx - Festigkeity) / 2) * Math.Cos(2 * AchswinkelRad)) - Festigkeitxy * Math.Sin(2 * AchswinkelRad);
+
+                    lbl_Querschnitt.Content = "Querschnitt: " + Math.Round(Querschnitt, 3) + "mm";
+                    lbl_Voulumen.Content = "Volumen: " + Math.Round(Volumen, 3);
+                    lbl_Masse.Content = "Masse: " + Math.Round(Gewicht, 3);
+                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
+                    lbl_FTMY.Content = Math.Round(Festigkeity, 3);
+                    lbl_FTM.Content = "FTM";
+                    lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3);
+                    lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3);
+                    lbl_SWP.Content = "Schwerpunkt";
+                    lbl_DeviationsMoment.Content = "Deviationmoment" + Math.Round(Festigkeitxy, 3);
+                    lbl_Drehwinkel.Content = "Drehwinkel";
+                    lbl_Grad.Content = Math.Round(AchswinkelGrad, 2);
+                    lbl_Rad.Content = Math.Round(AchswinkelRad, 2);
+                    lbl_TanA.Content = Math.Round(TanA, 3);
+                    lbl_HTM.Content = "Hauptträgheitsmoment";
+                    lbl_HTMU.Content = Math.Round(Festigkeitu, 3);
+                    lbl_HTMV.Content = Math.Round(Festigkeitv, 3);
+                }
 
 
 
@@ -357,7 +365,9 @@ namespace TestGui
 
 
 
+            }
         }
+           
 
         private void tb_hoehe_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -615,9 +625,6 @@ namespace TestGui
             Grid_Endcart.Visibility = Visibility.Visible;
         }
 
-        private void tb_hoehe_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
-        {
-
-        }
+        
     }
 }
