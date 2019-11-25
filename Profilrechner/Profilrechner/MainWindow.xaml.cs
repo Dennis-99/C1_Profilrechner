@@ -91,10 +91,7 @@ namespace TestGui
             lbl_Dichte.Visibility = Visibility.Hidden;
         }
 
-        private void btn_Exit_Click(object sender, RoutedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
+       
 
         private void btn_SpracheE_Click(object sender, RoutedEventArgs e)
         {
@@ -313,7 +310,7 @@ namespace TestGui
             }
             else if (Profilint.Equals(8))
             {
-                StegbreiteD = WandstaerkeD;
+
                 Querschnitt = BreiteD * WandstaerkeD + (HoeheD - WandstaerkeD) * WandstaerkeD;
                 Volumen = Querschnitt * LaengeD;
                 Gewicht = Volumen * DichteD;
@@ -364,7 +361,7 @@ namespace TestGui
 
         private void tb_hoehe_TextChanged(object sender, TextChangedEventArgs e)
         {
-            HoeheD = Convert.ToDouble(tb_hoehe.Text);
+              HoeheD = Convert.ToDouble(tb_hoehe.Text);
 
         }
 
@@ -582,6 +579,37 @@ namespace TestGui
         private void tb_Wandstaerke_TextChanged(object sender, TextChangedEventArgs e)
         {
             WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
+        }
+
+       
+
+        private void btn_Wiederholen_Click(object sender, RoutedEventArgs e)
+        {
+            grid_Profilauswahl.Visibility = Visibility.Hidden;
+            grid_Profilauswahlimg.Visibility = Visibility.Visible;
+            Grid_Endcart.Visibility = Visibility.Hidden;
+            tb_hoehe.Text = "0";
+            tb_Breite.Text = "0";
+            tb_Dichte.Text = "0";
+            tb_Wandstaerke.Text = "0";
+        }
+
+        private void btn_Beenden_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+       
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void btn_Weiter_Click(object sender, RoutedEventArgs e)
+        {
+            grid_Profilauswahl.Visibility = Visibility.Hidden;
+            Grid_Endcart.Visibility = Visibility.Visible;
         }
     }
 }

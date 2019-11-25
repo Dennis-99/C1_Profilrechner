@@ -8,15 +8,15 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
 
-    <Grid x:Name="grid_Main">
+    <Grid x:Name="grid_Main" Margin="10,10,0,0">
 
 
-        <Grid x:Name="grid_Language1" Visibility="Visible">
+        <Grid x:Name="grid_Language1">
             <Label x:Name="lbl_ChooseLanguage" Content="Choose a Language:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" Height="58" Width="330"/>
             <Button x:Name="btn_SpracheD" Content="Deutsch" HorizontalAlignment="Left" Margin="70,200,0,0" VerticalAlignment="Top" Width="155" FontSize="36" Click="btn_SpracheD_Click" Height="52"/>
             <Button x:Name="btn_SpracheE" Content="English" Margin="322,200,0,0" VerticalAlignment="Top" FontSize="36" Click="btn_SpracheE_Click" Height="52" HorizontalAlignment="Left" Width="156"/>
             <Button x:Name="btn_SpracheF" Content="Français" HorizontalAlignment="Left" Margin="575,200,0,0" VerticalAlignment="Top" Width="155" Height="52" FontSize="36" Click="btn_SpracheF_Click"/>
-            <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="75" FontSize="20" Click="btn_Exit_Click" Height="31"/>
+            <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="75" FontSize="20"  Height="31" Click="btn_exit_Click" />
         </Grid>
 
         <Grid x:Name="grid_Profilauswahlimg" Visibility="Hidden">
@@ -29,11 +29,11 @@
             <Image x:Name="img_T_Profil" HorizontalAlignment="Left" Height="100" Margin="248,265,0,0" VerticalAlignment="Top" Width="100" Source="T-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_T_Profil_MouseLeftButtonDown"/>
             <Image x:Name="img_U_Profil" Height="100" Margin="0,265,248,0" VerticalAlignment="Top" Source="U-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_U_Profil_MouseLeftButtonDown" HorizontalAlignment="Right" Width="100"/>
             <Image x:Name="img_L_Profil" HorizontalAlignment="Right" Height="100" Margin="0,265,46,0" VerticalAlignment="Top" Width="100" Source="L-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_L_Profil_MouseLeftButtonDown"/>
-            <Button x:Name="btn_Exit2" Content="Exit" HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="75" FontSize="20" Click="btn_Exit_Click" Height="31"/>
+            <Button x:Name="btn_Exit2" Content="Exit" HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="75" FontSize="20" Click="btn_exit_Click" Height="31"/>
         </Grid>
 
-        <Grid x:Name="grid_Profilauswahl" Visibility="Hidden" Margin="-10,10,10,-10">
-            <Button x:Name="btn_exit2" Content="Exit" Margin="0,408,111,0" Click="btn_exit2_Click" HorizontalAlignment="Right" Width="75" Height="19" VerticalAlignment="Top"/>
+        <Grid x:Name="grid_Profilauswahl" Margin="-10,10,10,-10" Visibility="Hidden">
+            <Button x:Name="btn_weiter" Content="weiter" HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="75" FontSize="20"  Height="31" Click="btn_Weiter_Click"/>
             <TextBox x:Name="tb_Breite" HorizontalAlignment="Left" Height="23" Margin="10,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tb_Breite_TextChanged"/>
             <TextBox x:Name="tb_hoehe" HorizontalAlignment="Left" Height="23" Margin="10,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tb_hoehe_TextChanged" />
             <TextBox x:Name="tb_Laenge" HorizontalAlignment="Left" Height="23" Margin="10,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tb_Laenge_TextChanged"/>
@@ -80,8 +80,17 @@
             <Label x:Name="lbl_DichteTest" Content="" HorizontalAlignment="Left" Margin="186,295,0,0" VerticalAlignment="Top"/>
 
         </Grid>
+        <Grid x:Name="Grid_Endcart" HorizontalAlignment="Left" Height="440" VerticalAlignment="Top" Width="790" Visibility="Hidden">
+            <Button x:Name="btn_Wiederholen" Content="Wiederholen" HorizontalAlignment="Left" Margin="125,169,0,0" VerticalAlignment="Top" Width="181" Height="104" Click="btn_Wiederholen_Click" />
+            <Button x:Name="btn_Beenden" Content="beenden" HorizontalAlignment="Right" Margin="0,169,127,0" VerticalAlignment="Top" Width="181" Height="104" Click="btn_Beenden_Click"/>
+        </Grid>
+
+
+
+
 
 
 
     </Grid>
+
 </UserControl>
