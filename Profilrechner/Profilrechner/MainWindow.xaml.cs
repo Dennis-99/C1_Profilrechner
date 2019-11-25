@@ -414,18 +414,43 @@ namespace TestGui
 
         private void tb_hoehe_TextChanged(object sender, TextChangedEventArgs e)
         {
-              HoeheD = Convert.ToDouble(tb_hoehe.Text);
+              
+            if (tb_hoehe.Text.Equals(""))
+            {
+                
+            }
+            else
+            {
+                HoeheD = Convert.ToDouble(tb_hoehe.Text);
+            }
 
         }
 
         private void tb_Breite_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Breite = Convert.ToString(tb_Breite.Text);
+            if (tb_Breite.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                Breite = Convert.ToString(tb_Breite.Text);
+            }
+            
+           
         }
 
         private void tb_Laenge_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Laenge = Convert.ToString(tb_Laenge.Text);
+            if (tb_Laenge.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                Laenge = Convert.ToString(tb_Laenge.Text);
+            }
+            
         }
 
 
@@ -631,6 +656,14 @@ namespace TestGui
 
         private void tb_Wandstaerke_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (tb_Wandstaerke.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
+            }
             WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
         }
 
@@ -668,6 +701,17 @@ namespace TestGui
             Grid_Endcart.Visibility = Visibility.Visible;
         }
 
-        
+        private void tb_Dichte_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (tb_Dichte.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                DichteD = Convert.ToDouble(tb_Dichte.Text);
+            }
+            
+        }
     }
 }
