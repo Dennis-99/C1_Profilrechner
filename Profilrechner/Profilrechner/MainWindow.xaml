@@ -41,7 +41,7 @@
             <Label x:Name="lbl_Breite" Content="Breite" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
             <Label x:Name="lbl_Laenge" Content="Länge" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top"/>
             <Label x:Name="lbl_Wandstaerke" Content="Wandstärke" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="tb_Wandstaerke" HorizontalAlignment="Left" Height="23" Margin="10,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  />
+            <TextBox x:Name="tb_Wandstaerke" HorizontalAlignment="Left" Height="23" Margin="10,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tb_Wandstaerke_TextChanged"   />
             <Button x:Name="btn_Berechnen" Content="Berechnen" Margin="10,317,0,0" Click="btn_Berechnen_Click" HorizontalAlignment="Left" Width="75" Height="20" VerticalAlignment="Top"/>
 
             <TreeView x:Name="ThisIsYoustATreeView" HorizontalAlignment="Left" Height="215" Margin="135,56,0,0" VerticalAlignment="Top" Width="124">

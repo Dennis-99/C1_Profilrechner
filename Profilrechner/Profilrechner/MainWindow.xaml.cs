@@ -59,7 +59,7 @@ namespace TestGui
         String FTMS;
         String FTMSX;
         String FTMSY;
-       
+
         String FTMSXY;
         String FTMSU;
         String FTMSV;
@@ -110,14 +110,62 @@ namespace TestGui
         {
             Environment.Exit(0);
         }
+       
 
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
-            HoeheD = Convert.ToDouble(Hoehe);
+            
             BreiteD = Convert.ToDouble(Breite);
             LaengeD = Convert.ToDouble(Laenge);
             DichteD = Convert.ToDouble(Dichte);
-            WandstaerkeD = Convert.ToDouble(Wandstaerke);
+          
+            if (WandstaerkeD > HoeheD) 
+            {
+                if (tb_hoehe.Visibility.Equals(Visibility.Visible))
+                {
+                    Window MBHG = new Window();
+                    MBHG.Content = MessageBox.Show("Wandstärke darf nicht größer als Höhe sein!", "Fehler!", MessageBoxButton.OK);
+                    MBHG.SizeToContent = SizeToContent.WidthAndHeight;
+                }
+                
+            }
+            if (WandstaerkeD > BreiteD)
+            {
+                if (tb_Breite.Visibility.Equals(Visibility.Visible))
+                {
+                    Window MBHG = new Window();
+                    MBHG.Content = MessageBox.Show("Wandstärke darf nicht größer als Breite sein!", "Fehler!", MessageBoxButton.OK);
+                    MBHG.SizeToContent = SizeToContent.WidthAndHeight;
+                }
+                
+            }
+
+            else if (tb_Wandstaerke.Text.Equals(tb_hoehe.Text))
+            {
+                if (WandstaerkeD > 0)
+                {
+                    Window MB1 = new Window();
+                    MB1.Content = MessageBox.Show("Wandstärke muss kleiner als Höhe sein.", "Fehler!", MessageBoxButton.OK);
+                    MB1.SizeToContent = SizeToContent.WidthAndHeight;
+                }
+                
+              
+            }
+            else  if (tb_Wandstaerke.Text.Equals(tb_Breite.Text))
+            {
+
+                if (WandstaerkeD > 0)
+                {
+
+                    Window MB1 = new Window();
+                    MB1.Content = MessageBox.Show("Wandstärke muss kleiner als breite sein.", "Fehler!", MessageBoxButton.OK);
+                    MB1.SizeToContent = SizeToContent.WidthAndHeight;
+                }
+               
+                
+
+            }
+
 
 
             if (Profilint.Equals(1))
@@ -134,6 +182,7 @@ namespace TestGui
                 lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
                 lbl_FTMY.Content = Math.Round(Festigkeity, 3);
                 lbl_FTM.Content = "FTM";
+                
             }
             else if (Profilint.Equals(2))
             {
@@ -152,6 +201,7 @@ namespace TestGui
             }
             else if (Profilint.Equals(3))
             {
+                DurchmesserD = HoeheD;
                 Querschnitt = Math.Pow(DurchmesserD, 2) * Math.PI / 4;
                 Volumen = Querschnitt * LaengeD;
                 Gewicht = Volumen * DichteD;
@@ -164,9 +214,12 @@ namespace TestGui
                 lbl_FTMX.Content = Math.Round(Festigkeitx, 3);
                 lbl_FTMY.Content = Math.Round(Festigkeity, 3);
                 lbl_FTM.Content = "FTM";
+               
+                
             }
             else if (Profilint.Equals(4))
             {
+                DurchmesserD = HoeheD;
                 Querschnitt = ((Math.Pow(DurchmesserD, 2) * Math.PI) - (Math.Pow((DurchmesserD - (2 * WandstaerkeD)), 2) * Math.PI)) / 4;
                 Volumen = Querschnitt * LaengeD;
                 Gewicht = Volumen * DichteD;
@@ -185,6 +238,7 @@ namespace TestGui
 
             else if (Profilint.Equals(5))
             {
+                StegbreiteD = WandstaerkeD;
                 Double Breiteb;
                 Double Hoeheh;
                 //Zwischenrechnung
@@ -212,6 +266,7 @@ namespace TestGui
             }
             else if (Profilint.Equals(6))
             {
+                StegbreiteD = WandstaerkeD;
                 Querschnitt = (WandstaerkeD * BreiteD) + (WandstaerkeD * (HoeheD - WandstaerkeD));
                 Volumen = (WandstaerkeD * BreiteD * LaengeD) + ((HoeheD - WandstaerkeD) * WandstaerkeD * LaengeD);
                 Gewicht = Volumen * DichteD;
@@ -258,6 +313,7 @@ namespace TestGui
             }
             else if (Profilint.Equals(8))
             {
+                StegbreiteD = WandstaerkeD;
                 Querschnitt = BreiteD * WandstaerkeD + (HoeheD - WandstaerkeD) * WandstaerkeD;
                 Volumen = Querschnitt * LaengeD;
                 Gewicht = Volumen * DichteD;
@@ -271,7 +327,7 @@ namespace TestGui
                 //Achswinkel = (1 / 2) * Math.Atan((2 * Festigkeitxy) / (Festigkeitxx - Festigkeityy));
                 AchswinkelRad = (Math.Atan((2 * Festigkeitxy) / (Festigkeitx - Festigkeity))) / 2;
                 AchswinkelGrad = AchswinkelRad * 180 / Math.PI;
-                TanA = Math.Tan(AchswinkelGrad); 
+                TanA = Math.Tan(AchswinkelGrad);
 
                 Festigkeitu = (Festigkeitx + Festigkeity) / 2 + (((Festigkeitx - Festigkeity) / 2) * Math.Cos(2 * AchswinkelRad)) + Festigkeitxy * Math.Sin(2 * AchswinkelRad);
                 Festigkeitv = (Festigkeitx + Festigkeity) / 2 - (((Festigkeitx - Festigkeity) / 2) * Math.Cos(2 * AchswinkelRad)) - Festigkeitxy * Math.Sin(2 * AchswinkelRad);
@@ -308,7 +364,7 @@ namespace TestGui
 
         private void tb_hoehe_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Hoehe = Convert.ToString(tb_hoehe.Text);
+            HoeheD = Convert.ToDouble(tb_hoehe.Text);
 
         }
 
@@ -325,10 +381,7 @@ namespace TestGui
 
        
 
-        private void tb_Wandstaerke_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Wandstaerke = Convert.ToString(tb_Wandstaerke.Text);
-        }
+       
 
        //
        // Treeview zuweisung
@@ -424,6 +477,9 @@ namespace TestGui
             grid_Profilauswahl.Visibility = Visibility.Visible;
             lbl_Wandstaerke.Visibility = Visibility.Hidden;
             tb_Wandstaerke.Visibility = Visibility.Hidden;
+            lbl_Hoehe.Content = " D: Durchmesser";
+            lbl_Breite.Visibility = Visibility.Hidden;
+            tb_Breite.Visibility = Visibility.Hidden;
             Image KreisDetail = new Image();
             BitmapImage bi1 = new BitmapImage();
             bi1.BeginInit();
@@ -437,6 +493,9 @@ namespace TestGui
 
         private void img_Kreis_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            lbl_Hoehe.Content = " D: Durchmesser";
+            lbl_Breite.Visibility = Visibility.Hidden;
+            tb_Breite.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
             Image Kreis_HohlprofilDetail = new Image();
@@ -452,6 +511,9 @@ namespace TestGui
 
         private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            lbl_Hoehe.Content = " h: Höhe";
+            lbl_Breite.Content = "b: Breite";
+            lbl_Wandstaerke.Content = "s: Stegbreite";
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
             Image IProfilDetail = new Image();
@@ -468,6 +530,9 @@ namespace TestGui
 
         private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            lbl_Hoehe.Content = " h: Höhe";
+            lbl_Breite.Content = "b: Breite";
+            lbl_Wandstaerke.Content = "s: Stegbreite";
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
             Image TProfilDetail = new Image();
@@ -498,6 +563,9 @@ namespace TestGui
 
         private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            lbl_Hoehe.Content = " h: Höhe";
+            lbl_Breite.Content = "b: Breite";
+            lbl_Wandstaerke.Content = "s: Stegbreite";
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
             Image LProfilDetail = new Image();
@@ -511,6 +579,9 @@ namespace TestGui
             Profilint = 8;
         }
 
-      
+        private void tb_Wandstaerke_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
+        }
     }
 }

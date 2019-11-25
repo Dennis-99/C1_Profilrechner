@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Profilrechner.exe" size="1509376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Profilrechner.exe" size="1516544">
       <assemblyIdentity name="Profilrechner" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gcbT/rpihMrrbul7KWFCTQ4BPXCggHCH5glYoQj+hwY=</dsig:DigestValue>
+        <dsig:DigestValue>SxJ6BZ3JQrStjkj/xG6lhNvQpBtqYCGYzUwTdI7fUdo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
