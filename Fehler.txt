@@ -1,0 +1,36 @@
+Rechteck: Länge nicht 0 bei Wiederholung
+	  Berechnungen nicht 0 bei Wiederholung
+
+Rechteckrohr: 
+	      Einheiten fehlen
+	      nach Fehlermeldung h>s Textbox s 0 löschen --> Absturz
+	      Länge bei Wdh. nicht 0
+	      Ergebnisse bei Wdh. nicht 0
+
+Kreis:  Fehlermeldung falsch bzgl. Breite
+
+Kreisrohr: s. Kreis
+
+I-Profil: Flanschbreite t fehlt
+	  Stegbreite s löschen --> Absturz
+	  Fehlermeldung Stegbreite nicht Wandstärke; Stegbreite auf Breite bezogen/ Flanschbreite auf halbe Höhe
+
+T-Profil: Stegbreite s löschen --> Absturz
+	  Fehlermeldung "Stegbreite muss kleiner als Höhe und Breite sein"
+
+U-Profil: Stegbreite und Flanschbreite fehlt bzw muss ersetzt werden mit Wandstärke
+	  Wandstärke löschen --> Absturz
+	  Falsche Felhlermeldung; nicht bezogen auf Stegbreite und Flanschbreite; s<b, t<h/2
+
+L-Profil: Stegbreite löschen --> Absturz	  
+	  	  
+______________________________________________	  
+Treeview nicht ausblenden
+Bei Wdh. Textboxen fehlen 
+Dichte = 0 und dann ändern auf 1...9 etc. keine Änderung
+______________________________________________
+
+Layout: I-Profil Schwerpunkt überschneidet mit Zahlenwert
+	T-Profil t einfügen und s=t einfügen 
+	L-Profil Label überschneiden
+		  
