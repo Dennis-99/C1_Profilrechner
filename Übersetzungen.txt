@@ -1,6 +1,6 @@
 D            <Label x:Name="lbl_ProfilauswahlimgD" Content="Bitte wählen Sie ein Profil aus:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
 E            <Label x:Name="lbl_ProfilauswahlimgE" Content="Select a profile:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
-F            <Label x:Name="lbl_ProfilauswahlimgF" Content="Veuillez chosir un profil:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
+F            <Label x:Name="lbl_ProfilauswahlimgF" Content="Veuillez choisir un profil:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
 
 D            <Label x:Name="lbl_HoeheD" Content="Höhe" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top"/>
 D            <Label x:Name="lbl_BreiteD" Content="Breite" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
@@ -572,12 +572,12 @@ FehlerEingabe: "Bitte geben Sie nur positive Zahlen ein."
 
 FehlerWandBreite: "Bitte stellen Sie eine Wandstärke ein, die geirnger als die halbe Breite ist."
 "Enter a wall thickness, that is less than half the witdth."
-"Veuillez seulement entrer des épaisseurs des parois moins que demi de la largeur."
+"Veuillez seulement entrer des épaisseurs des parois moins que la moitié de la largeur."
 
 
 FehlerWandHöhe: "Bitte stellen Sie eine Wandstärke ein, die geirnger als die halbe Hoehe ist."
 "Enter a wall thickness, that is less than half the height."
-"Veuillez seulement entrer des épaisseurs des parois moins que demi de la hauteur."
+"Veuillez seulement entrer des épaisseurs des parois moins que la moitié de la hauteur."
 
 FehlerWandDurchmesser: "Bitte stellen Sie eine Wandstärke ein, die geirnger als der Radius ist."
 "Enter a wall thickness, that is less than the radius."
@@ -585,11 +585,11 @@ FehlerWandDurchmesser: "Bitte stellen Sie eine Wandstärke ein, die geirnger als 
 
 FehlerSteg: "Bitte stellen Sie eine Stegbreite ein, die geirnger als die Breite ist."
 "Enter a web width, that is less than the witdth."
-"Veuillez seulement entrer des largeurs des bandes moins quela largeur."
+"Veuillez seulement entrer des largeurs des bandes moins que la largeur."
 
 FehlerFlanschIUZ: "Bitte stellen Sie eine Flanschbreite ein, die geirnger als die halbe Hoehe ist."
 "Enter a flange width, that is less than half the height."
-"Veuillez seulement entrer des largeurs de brides moins que demi de la hauteur."
+"Veuillez seulement entrer des largeurs de brides moins que la moitié de la hauteur."
 
 
 FehlerFlanschTL: "Bitte stellen Sie eine Flanschbreite ein, die geirnger als die Hoehe ist."
@@ -599,4 +599,4 @@ FehlerFlanschTL: "Bitte stellen Sie eine Flanschbreite ein, die geirnger als die
 Programmfehler:
 FehlerProgramm: "Unserem Programm scheint ein Fehler unterlaufen zu sein, es wird sich nun beenden."
 "Our program seems to have run into some ishues, it will shut down now" 
-"Notre programme a eu un erreur et va arrêter maintenant"
+"Notre programme a eu une erreur et va arrêter maintenant"
