@@ -677,6 +677,14 @@ namespace TestGui
             ThisIsYoustATreeView.Visibility = Visibility.Visible;
             lbl_Dichte.Visibility = Visibility.Hidden;
             tb_Dichte.Visibility = Visibility.Hidden;
+            lbl_Hoehe.Visibility = Visibility.Visible;
+            tb_hoehe.Visibility = Visibility.Visible;
+            lbl_Breite.Visibility = Visibility.Visible;
+            tb_Breite.Visibility = Visibility.Visible;
+            lbl_Laenge.Visibility = Visibility.Visible;
+            tb_Laenge.Visibility = Visibility.Visible;
+            lbl_Wandstaerke.Visibility = Visibility.Visible;
+            tb_Wandstaerke.Visibility = Visibility.Visible;
             tb_hoehe.Text = "0";
             tb_Breite.Text = "0";
             tb_Dichte.Text = "0";
