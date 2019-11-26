@@ -22,7 +22,7 @@
         <Grid x:Name="grid_Profilauswahlimg" Visibility="Hidden">
             <Label x:Name="lbl_Profilauswahlimg" Content="Bitte wählen Sie ein Profil aus:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
             <Image x:Name="img_I_Profil" HorizontalAlignment="Left" Height="100" Margin="46,265,0,0" VerticalAlignment="Top" Width="100" Source="I-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_I_Profil_MouseLeftButtonDown"/>
-            <Image x:Name="img_Kreis" HorizontalAlignment="Right" Height="100" Margin="0,104,248,0" VerticalAlignment="Top" Width="100" Source="Kreis.jpg" Stretch="Fill" MouseLeftButtonDown="img_Kreis_MouseLeftButtonDown"/>
+            <Image x:Name="img_Kreis" HorizontalAlignment="Right" Height="100" Margin="0,104,248,0" VerticalAlignment="Top" Width="100" Source="Kreis.jpg" Stretch="Fill" MouseLeftButtonDown="img_Kreis_MouseLeftButtonDown" ToolTip="Kreis"/>
             <Image x:Name="img_Kreis_Hohlprofil" HorizontalAlignment="Right" Height="100" Margin="0,104,46,0" VerticalAlignment="Top" Width="100" Source="Kreis-Hohlprofil.jpg" Stretch="Fill" MouseLeftButtonDown="img_Kreis_Hohlprofil_MouseLeftButtonDown"/>
             <Image x:Name="img_Rechteck" HorizontalAlignment="Left" Height="100" Margin="46,104,0,0" VerticalAlignment="Top" Width="100" Source="Rechteck.jpg" ToolTip="Rechteck" Stretch="Fill" MouseLeftButtonDown="img_Rechteck_MouseLeftButtonDown"/>
             <Image x:Name="img_Rechteck_Hohlprofil" HorizontalAlignment="Left" Height="100" Margin="248,104,0,0" VerticalAlignment="Top" Width="100" Source="Rechteck-Hohlprofil.jpg" Stretch="Fill" MouseLeftButtonDown="img_Rechteck_Hohlprofil_MouseLeftButtonDown"/>

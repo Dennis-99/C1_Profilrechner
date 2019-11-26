@@ -681,6 +681,7 @@ namespace TestGui
             tb_Breite.Text = "0";
             tb_Dichte.Text = "0";
             tb_Wandstaerke.Text = "0";
+            tb_Laenge.Text = "0";
         }
 
         private void btn_Beenden_Click(object sender, RoutedEventArgs e)
