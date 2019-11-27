@@ -92,7 +92,7 @@ namespace Profilrechner
         String FehlerFlanschTLHoehe;
 
         //lbls zuweisung
-        String HoeheH;
+        String HoeheS;
         String HoeheDurch;
         String WandstaerkeS;
         String WandIULS;
@@ -108,7 +108,7 @@ namespace Profilrechner
 
         private void btn_SpracheD_Click(object sender, RoutedEventArgs e)
         {
-            HoeheH = "h: Höhe in mm";                   //
+            HoeheS = "h: Höhe in mm";                   //
             HoeheDurch = "D: Durchmesser in mm";        //
             WandstaerkeS = "s: Wandstärke in mm";       //
             WandIULS = "s: Stegbreite in mm";           //
@@ -195,7 +195,7 @@ namespace Profilrechner
 
         private void btn_SpracheE_Click(object sender, RoutedEventArgs e)
         {
-            HoeheH = "h: Height in mm";                   //
+            HoeheS = "h: Height in mm";                   //
             HoeheDurch = "D: Diameter in mm";        //
             WandstaerkeS = "s: Wall thickness in mm";       //
             WandIULS = "s: Web width in mm";           //
@@ -281,7 +281,7 @@ namespace Profilrechner
 
         private void btn_SpracheF_Click(object sender, RoutedEventArgs e)
         {
-            HoeheH = "h: Hauteur en mm";                   //
+            HoeheS = "h: Hauteur en mm";                   //
             HoeheDurch = "D: Diamètre en mm";        //
             WandstaerkeS = "s: Épaisseur de paroi en mm";       //
             WandIULS = "s: Largeur de bande en mm";           //
@@ -855,7 +855,7 @@ namespace Profilrechner
             grid_Profilauswahl.Visibility = Visibility.Visible;
             lbl_Wandstaerke.Visibility = Visibility.Hidden;
             tb_Wandstaerke.Visibility = Visibility.Hidden;
-            lbl_Hoehe.Content = " D: Durchmesser";
+            lbl_Hoehe.Content = HoeheDurch;
             lbl_Breite.Visibility = Visibility.Hidden;
             tb_Breite.Visibility = Visibility.Hidden;
             Image KreisDetail = new Image();
@@ -871,7 +871,7 @@ namespace Profilrechner
 
         private void img_Kreis_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            lbl_Hoehe.Content = " D: Durchmesser";
+            lbl_Hoehe.Content = HoeheDurch;
             lbl_Breite.Visibility = Visibility.Hidden;
             tb_Breite.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
@@ -889,9 +889,9 @@ namespace Profilrechner
 
         private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            lbl_Hoehe.Content = " h: Höhe";
-            lbl_Breite.Content = "b: Breite";
-            lbl_Wandstaerke.Content = "s: Stegbreite";
+            lbl_Hoehe.Content = HoeheS;
+           
+            
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
             Image IProfilDetail = new Image();
@@ -908,9 +908,8 @@ namespace Profilrechner
 
         private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            lbl_Hoehe.Content = " h: Höhe";
-            lbl_Breite.Content = "b: Breite";
-            lbl_Wandstaerke.Content = "s: Stegbreite";
+            lbl_Hoehe.Content = HoeheS;
+            
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
             Image TProfilDetail = new Image();
@@ -941,9 +940,7 @@ namespace Profilrechner
 
         private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            lbl_Hoehe.Content = " h: Höhe";
-            lbl_Breite.Content = "b: Breite";
-            lbl_Wandstaerke.Content = "s: Stegbreite";
+            lbl_Hoehe.Content = HoeheS;
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
             Image LProfilDetail = new Image();
