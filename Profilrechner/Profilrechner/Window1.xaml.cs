@@ -829,7 +829,7 @@ namespace Profilrechner
         {
             tb_Dichte.Visibility = Visibility.Visible;
             
-            ThisIsYoustATreeView.Visibility = Visibility.Hidden;
+            
         }
 
         private void Tvi_S235_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -1060,8 +1060,7 @@ namespace Profilrechner
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
             Grid_Endcart.Visibility = Visibility.Hidden;
             ThisIsYoustATreeView.Visibility = Visibility.Visible;
-            lbl_Dichte.Visibility = Visibility.Hidden;
-            tb_Dichte.Visibility = Visibility.Hidden;
+            
             lbl_Hoehe.Visibility = Visibility.Visible;
             tb_hoehe.Visibility = Visibility.Visible;
             lbl_Breite.Visibility = Visibility.Visible;
@@ -1075,6 +1074,24 @@ namespace Profilrechner
             tb_Dichte.Text = "";
             tb_Wandstaerke.Text = "";
             tb_Laenge.Text = "";
+            lbl_Drehwinkel.Visibility = Visibility.Hidden;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            lbl_FTM.Visibility = Visibility.Hidden;
+            lbl_FTMX.Visibility = Visibility.Hidden;
+            lbl_FTMY.Visibility = Visibility.Hidden;
+            lbl_Grad.Visibility = Visibility.Hidden;
+            lbl_HTM.Visibility = Visibility.Hidden;
+            lbl_HTMU.Visibility = Visibility.Hidden;
+            lbl_HTMV.Visibility = Visibility.Hidden;
+            lbl_Masse.Visibility = Visibility.Hidden;
+            lbl_Querschnitt.Visibility = Visibility.Hidden;
+            lbl_Rad.Visibility = Visibility.Hidden;
+            lbl_SWP.Visibility = Visibility.Hidden;
+            lbl_SWPX.Visibility = Visibility.Hidden;
+            lbl_SWPY.Visibility = Visibility.Hidden;
+            lbl_TanA.Visibility = Visibility.Hidden;
+            lbl_Voulumen.Visibility = Visibility.Hidden;
+            
         }
 
         private void btn_Beenden_Click(object sender, RoutedEventArgs e)
