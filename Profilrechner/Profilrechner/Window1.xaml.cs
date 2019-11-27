@@ -769,42 +769,49 @@ namespace Profilrechner
         {
             Dichte = Convert.ToString(7.85);
             lbl_DichteTest.Content = Dichte;
+            tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
             lbl_DichteTest.Content = Dichte;
+            tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_42CrMo4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
             lbl_DichteTest.Content = Dichte;
+            tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_E295_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
             lbl_DichteTest.Content = Dichte;
+            tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_E355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
             lbl_DichteTest.Content = Dichte;
+            tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_C45_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
             lbl_DichteTest.Content = Dichte;
+            tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_AlMg4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(2.66);
             lbl_DichteTest.Content = Dichte;
+            tb_Dichte.Text = "2,66";
         }
         //
         // Grid Auswahl Image zuweisung
@@ -1006,7 +1013,7 @@ namespace Profilrechner
             Grid_Endcart.Visibility = Visibility.Visible;
         }
 
-        private void tb_Dichte_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void tb_Dichte_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (tb_Dichte.Text.Equals(""))
             {
@@ -1016,8 +1023,8 @@ namespace Profilrechner
             {
                 DichteD = Convert.ToDouble(tb_Dichte.Text);
             }
-
         }
+    
         private void tb_Flanschbreite_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (tb_Flanschbreite.Text.Equals(""))
