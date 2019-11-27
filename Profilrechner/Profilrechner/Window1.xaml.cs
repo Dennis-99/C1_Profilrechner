@@ -168,8 +168,7 @@ namespace Profilrechner
 
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
-            tb_Dichte.Visibility = Visibility.Hidden;
-            lbl_Dichte.Visibility = Visibility.Hidden;
+            
 
             //Ergebnis-lbls unsichtbar machen
             lbl_Querschnitt.Visibility = Visibility.Hidden;
@@ -256,8 +255,7 @@ namespace Profilrechner
 
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
-            tb_Dichte.Visibility = Visibility.Hidden;
-            lbl_Dichte.Visibility = Visibility.Hidden;
+           
 
             //Ergebnis-lbls unsichtbar machen
             lbl_Querschnitt.Visibility = Visibility.Hidden;
@@ -342,8 +340,7 @@ namespace Profilrechner
 
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
-            tb_Dichte.Visibility = Visibility.Hidden;
-            lbl_Dichte.Visibility = Visibility.Hidden;
+           
 
             //Ergebnis-lbls unsichtbar machen
             lbl_Querschnitt.Visibility = Visibility.Hidden;
@@ -975,8 +972,7 @@ namespace Profilrechner
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
             Grid_Endcart.Visibility = Visibility.Hidden;
             ThisIsYoustATreeView.Visibility = Visibility.Visible;
-            lbl_Dichte.Visibility = Visibility.Hidden;
-            tb_Dichte.Visibility = Visibility.Hidden;
+           
             lbl_Hoehe.Visibility = Visibility.Visible;
             tb_hoehe.Visibility = Visibility.Visible;
             lbl_Breite.Visibility = Visibility.Visible;
