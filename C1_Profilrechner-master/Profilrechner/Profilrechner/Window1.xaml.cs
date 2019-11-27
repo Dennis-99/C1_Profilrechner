@@ -246,7 +246,7 @@ namespace Profilrechner
             lbl_SWP.Content = "Center of mass:";
             lbl_FTM.Content = "Geometrical moment of inertia";
             lbl_Drehwinkel.Content = "Angle of rotation:";
-            lbl_HTM.Content = "Pricipal moment of inertia:";
+            lbl_HTM.Content = "Principal moment of inertia:";
 
             tvi_Werkstoffe.Header = "Materials:";
             tvi_ManuelleEingabe.Header = "Manuall input";
@@ -325,7 +325,7 @@ namespace Profilrechner
 
             lbl_Profilauswahlimg.Content = "Veuillez choisir un profil:";      //
             lbl_Breite.Content = "b: Largeur en mm";                                 //
-            lbl_Laenge.Content = "Longueur en mm";                                      //
+            lbl_Laenge.Content = "Longueur en m";                                      //
             lbl_Flanschbreite.Content = "t: Largeur de bride in mm";
             lbl_Dichte.Content = "Densité en g/cm³";                                 //
             lbl_SWP.Content = "Centre de masse:";
@@ -374,11 +374,10 @@ namespace Profilrechner
 
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
-            lbl_TanA.Content = "tan(α):";
+            //lbl_TanA.Content = "tan(α):";
             BreiteD = Convert.ToDouble(Breite);
             Laenge1 = Convert.ToDouble(Laenge);
             LaengeD = Laenge1 * 1000;
-            //DichteD = Convert.ToDouble(Dichte);
             Double HoeheH = HoeheD / 2;
             Double BreiteH = BreiteD / 2;
             if (HoeheD.Equals(0))
@@ -836,7 +835,7 @@ namespace Profilrechner
 
         private void Tvi_S235_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            Dichte = Convert.ToString(7.85);
+            DichteD = Convert.ToDouble(7.85);
            
             tb_Dichte.Text = "7,85";
         }
@@ -1085,6 +1084,7 @@ namespace Profilrechner
             tb_Dichte.Text = "";
             tb_Wandstaerke.Text = "";
             tb_Laenge.Text = "";
+            tb_Flanschbreite.Text = "";
             lbl_Drehwinkel.Visibility = Visibility.Hidden;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             lbl_FTM.Visibility = Visibility.Hidden;
