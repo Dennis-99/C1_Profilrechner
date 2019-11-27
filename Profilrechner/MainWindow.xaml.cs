@@ -364,7 +364,9 @@ namespace TestGui
             LaengeD = Convert.ToDouble(Laenge);
             DichteD = Convert.ToDouble(Dichte);
             Double HoeheH = HoeheD / 2;
+            Double HoeheG = HoeheD;
             Double BreiteH = BreiteD / 2;
+            Double BreiteG = BreiteD;
             if (HoeheD.Equals(0))
             {
                 if (Profilint.Equals(3) || Profilint.Equals(4))
@@ -437,7 +439,7 @@ namespace TestGui
 
             if (WandstaerkeD >= HoeheH)
             {
-                if (Profilint.Equals(1))
+                if (Profilint.Equals(2))
                 {
                     Window MB1 = new Window();
                     MB1.Content = MessageBox.Show(FehlerWandHoehe, FehlerS, MessageBoxButton.OK);
@@ -451,8 +453,16 @@ namespace TestGui
                     MB1.SizeToContent = SizeToContent.WidthAndHeight;
                     Fehlercode = 1;
                 }
+                else if (Profilint.Equals(5) || Profilint.Equals(7))
+                {
+                    Window MB1 = new Window();
+                    MB1.Content = MessageBox.Show(FehlerFlanschIUHoehe, FehlerS, MessageBoxButton.OK);
+                    MB1.SizeToContent = SizeToContent.WidthAndHeight;
+                    Fehlercode = 1;
+                }
+
             }
-            else if (WandstaerkeD >= HoeheD)
+            else if (WandstaerkeD > HoeheD || WandstaerkeD.Equals(HoeheD))
             {
                 if (Profilint.Equals(6) || Profilint.Equals(8))
                 {
@@ -472,7 +482,7 @@ namespace TestGui
                     Fehlercode = 1;
                 }
             }
-            else if (WandstaerkeD >= BreiteD)
+            else if (WandstaerkeD > BreiteD || WandstaerkeD.Equals(BreiteD))
             {
                 if (Profilint.Equals(5) || Profilint.Equals(6) || Profilint.Equals(7) || Profilint.Equals(8))
                 {
