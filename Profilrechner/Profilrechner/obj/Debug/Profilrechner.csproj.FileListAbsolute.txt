@@ -108,3 +108,4 @@ C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilre
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner.application
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner.exe
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner.pdb
+C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\MainWindow.baml

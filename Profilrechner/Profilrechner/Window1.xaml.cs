@@ -531,7 +531,13 @@ namespace Profilrechner
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
                     lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
                     lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
-                    
+                    lbl_Querschnitt.Visibility = Visibility.Visible;
+                    lbl_Voulumen.Visibility = Visibility.Visible;
+                    lbl_Masse.Visibility = Visibility.Visible;
+                    lbl_FTM.Visibility = Visibility.Visible;
+                    lbl_FTMX.Visibility = Visibility.Visible;
+                    lbl_FTMY.Visibility = Visibility.Visible;
+
 
 
                 }
@@ -548,7 +554,13 @@ namespace Profilrechner
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
                     lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
                     lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
-                    
+                    lbl_Querschnitt.Visibility = Visibility.Visible;
+                    lbl_Voulumen.Visibility = Visibility.Visible;
+                    lbl_Masse.Visibility = Visibility.Visible;
+                    lbl_FTM.Visibility = Visibility.Visible;
+                    lbl_FTMX.Visibility = Visibility.Visible;
+                    lbl_FTMY.Visibility = Visibility.Visible;
+
                 }
                 else if (Profilint.Equals(3))
                 {
@@ -564,7 +576,13 @@ namespace Profilrechner
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
                     lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
                     lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
-                   
+                    lbl_Querschnitt.Visibility = Visibility.Visible;
+                    lbl_Voulumen.Visibility = Visibility.Visible;
+                    lbl_Masse.Visibility = Visibility.Visible;
+                    lbl_FTM.Visibility = Visibility.Visible;
+                    lbl_FTMX.Visibility = Visibility.Visible;
+                    lbl_FTMY.Visibility = Visibility.Visible;
+
 
 
                 }
@@ -582,7 +600,13 @@ namespace Profilrechner
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
                     lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
                     lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
-                    
+                    lbl_Querschnitt.Visibility = Visibility.Visible;
+                    lbl_Voulumen.Visibility = Visibility.Visible;
+                    lbl_Masse.Visibility = Visibility.Visible;
+                    lbl_FTM.Visibility = Visibility.Visible;
+                    lbl_FTMX.Visibility = Visibility.Visible;
+                    lbl_FTMY.Visibility = Visibility.Visible;
+
 
                 }
 
@@ -612,7 +636,16 @@ namespace Profilrechner
                     
                     lbl_SWPX.Content = "x: " + Math.Round(SchwerpunktxD, 3) / 10 + "cm";
                     lbl_SWPY.Content = "y: " + Math.Round(SchwerpunktyD, 3) / 10 + "cm";
-                    
+                    lbl_Querschnitt.Visibility = Visibility.Visible;
+                    lbl_Voulumen.Visibility = Visibility.Visible;
+                    lbl_Masse.Visibility = Visibility.Visible;
+                    lbl_FTM.Visibility = Visibility.Visible;
+                    lbl_FTMX.Visibility = Visibility.Visible;
+                    lbl_FTMY.Visibility = Visibility.Visible;
+                    lbl_SWP.Visibility = Visibility.Visible;
+                    lbl_SWPX.Visibility = Visibility.Visible;
+                    lbl_SWPY.Visibility = Visibility.Visible;
+
 
                 }
                 else if (Profilint.Equals(6))
@@ -638,7 +671,16 @@ namespace Profilrechner
                     
                     lbl_SWPX.Content = "x: " + Math.Round(SchwerpunktxD, 3) / 10 + "cm";
                     lbl_SWPY.Content = "y: " + Math.Round(SchwerpunktyD, 3) / 10 + "cm";
-                   
+                    lbl_Querschnitt.Visibility = Visibility.Visible;
+                    lbl_Voulumen.Visibility = Visibility.Visible;
+                    lbl_Masse.Visibility = Visibility.Visible;
+                    lbl_FTM.Visibility = Visibility.Visible;
+                    lbl_FTMX.Visibility = Visibility.Visible;
+                    lbl_FTMY.Visibility = Visibility.Visible;
+                    lbl_SWP.Visibility = Visibility.Visible;
+                    lbl_SWPX.Visibility = Visibility.Visible;
+                    lbl_SWPY.Visibility = Visibility.Visible;
+
                 }
                 else if (Profilint.Equals(7))
                 {
@@ -660,7 +702,16 @@ namespace Profilrechner
                     
                     lbl_SWPX.Content = "x: " + Math.Round(SchwerpunktxD, 3) / 10 + "cm";
                     lbl_SWPY.Content = "y: " + Math.Round(SchwerpunktyD, 3) / 10 + "cm";
-                    
+                    lbl_Querschnitt.Visibility = Visibility.Visible;
+                    lbl_Voulumen.Visibility = Visibility.Visible;
+                    lbl_Masse.Visibility = Visibility.Visible;
+                    lbl_FTM.Visibility = Visibility.Visible;
+                    lbl_FTMX.Visibility = Visibility.Visible;
+                    lbl_FTMY.Visibility = Visibility.Visible;
+                    lbl_SWP.Visibility = Visibility.Visible;
+                    lbl_SWPX.Visibility = Visibility.Visible;
+                    lbl_SWPY.Visibility = Visibility.Visible;
+
                 }
                 else if (Profilint.Equals(8))
                 {
@@ -700,6 +751,24 @@ namespace Profilrechner
                     
                     lbl_HTMU.Content = "u: " + Math.Round(Festigkeitu, 3) / 10000 + "cm⁴";
                     lbl_HTMV.Content = "y: " + Math.Round(Festigkeitv, 3) / 10000 + "cm⁴";
+                    //Ergebniss-lbls Sichtbar machen
+                    lbl_Querschnitt.Visibility = Visibility.Visible;
+                    lbl_Voulumen.Visibility = Visibility.Visible;
+                    lbl_Masse.Visibility = Visibility.Visible;
+                    lbl_FTM.Visibility = Visibility.Visible;
+                    lbl_FTMX.Visibility = Visibility.Visible;
+                    lbl_FTMY.Visibility = Visibility.Visible;
+                    lbl_SWP.Visibility = Visibility.Visible;
+                    lbl_SWPX.Visibility = Visibility.Visible;
+                    lbl_SWPY.Visibility = Visibility.Visible;
+                    lbl_DeviationsMoment.Visibility = Visibility.Visible;
+                    lbl_Drehwinkel.Visibility = Visibility.Visible;
+                    lbl_Grad.Visibility = Visibility.Visible;
+                    lbl_Rad.Visibility = Visibility.Visible;
+                    lbl_TanA.Visibility = Visibility.Visible;
+                    lbl_HTM.Visibility = Visibility.Visible;
+                    lbl_HTMU.Visibility = Visibility.Visible;
+                    lbl_HTMV.Visibility = Visibility.Visible;
                 }
 
             }
@@ -759,56 +828,56 @@ namespace Profilrechner
         private void Tvi_ManuelleEingabe_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             tb_Dichte.Visibility = Visibility.Visible;
-            lbl_Dichte.Visibility = Visibility.Visible;
+            
             ThisIsYoustATreeView.Visibility = Visibility.Hidden;
         }
 
         private void Tvi_S235_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
-            lbl_DichteTest.Content = Dichte;
+           
             tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
-            lbl_DichteTest.Content = Dichte;
+            
             tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_42CrMo4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
-            lbl_DichteTest.Content = Dichte;
+            
             tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_E295_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
-            lbl_DichteTest.Content = Dichte;
+            
             tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_E355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
-            lbl_DichteTest.Content = Dichte;
+            
             tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_C45_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(7.85);
-            lbl_DichteTest.Content = Dichte;
+            
             tb_Dichte.Text = "7,85";
         }
 
         private void Tvi_AlMg4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Dichte = Convert.ToString(2.66);
-            lbl_DichteTest.Content = Dichte;
+            
             tb_Dichte.Text = "2,66";
         }
         //
@@ -991,7 +1060,8 @@ namespace Profilrechner
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
             Grid_Endcart.Visibility = Visibility.Hidden;
             ThisIsYoustATreeView.Visibility = Visibility.Visible;
-           
+            lbl_Dichte.Visibility = Visibility.Hidden;
+            tb_Dichte.Visibility = Visibility.Hidden;
             lbl_Hoehe.Visibility = Visibility.Visible;
             tb_hoehe.Visibility = Visibility.Visible;
             lbl_Breite.Visibility = Visibility.Visible;
@@ -1000,11 +1070,11 @@ namespace Profilrechner
             tb_Laenge.Visibility = Visibility.Visible;
             lbl_Wandstaerke.Visibility = Visibility.Visible;
             tb_Wandstaerke.Visibility = Visibility.Visible;
-            tb_hoehe.Text = "0";
-            tb_Breite.Text = "0";
-            tb_Dichte.Text = "0";
-            tb_Wandstaerke.Text = "0";
-            tb_Laenge.Text = "0";
+            tb_hoehe.Text = "";
+            tb_Breite.Text = "";
+            tb_Dichte.Text = "";
+            tb_Wandstaerke.Text = "";
+            tb_Laenge.Text = "";
         }
 
         private void btn_Beenden_Click(object sender, RoutedEventArgs e)
