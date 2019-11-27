@@ -960,7 +960,7 @@ namespace Profilrechner
             {
                 WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
             }
-            WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
+            
         }
 
 
