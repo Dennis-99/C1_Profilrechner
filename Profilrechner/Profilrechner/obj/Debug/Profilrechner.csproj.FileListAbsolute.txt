@@ -95,7 +95,6 @@ C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilre
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\bin\Debug\Profilrechner.exe
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\bin\Debug\Profilrechner.pdb
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner.csprojAssemblyReference.cache
-C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\MainWindow.g.cs
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Window1.g.cs
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\App.g.cs
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.cache
