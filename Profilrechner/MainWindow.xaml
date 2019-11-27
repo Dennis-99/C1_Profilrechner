@@ -11,7 +11,7 @@
     <Grid x:Name="grid_Main" Margin="0,0,0,0">
 
 
-        <Grid x:Name="grid_Language1" Visibility="Visible">
+        <Grid x:Name="grid_Language1" Visibility="Hidden">
             <Label x:Name="lbl_ChooseLanguage" Content="Choose a Language:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" Height="58" Width="330"/>
             <Button x:Name="btn_SpracheD" Content="Deutsch" HorizontalAlignment="Left" Margin="70,200,0,0" VerticalAlignment="Top" Width="155" FontSize="36" Click="btn_SpracheD_Click" Height="52"/>
             <Button x:Name="btn_SpracheE" Content="English" Margin="322,200,0,0" VerticalAlignment="Top" FontSize="36" Click="btn_SpracheE_Click" Height="52" HorizontalAlignment="Left" Width="156"/>
@@ -19,7 +19,7 @@
             <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="75" FontSize="20"  Height="31" Click="btn_exit_Click" />
         </Grid>
 
-        <Grid x:Name="grid_Profilauswahlimg" Visibility="Hidden">
+        <Grid x:Name="grid_Profilauswahlimg" Visibility="Visible">
             <Label x:Name="lbl_Profilauswahlimg" Content="Bitte wählen Sie ein Profil aus:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
             <Image x:Name="img_I_Profil" HorizontalAlignment="Left" Height="100" Margin="46,265,0,0" VerticalAlignment="Top" Width="100" Source="I-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_I_Profil_MouseLeftButtonDown"/>
             <Image x:Name="img_Kreis" HorizontalAlignment="Right" Height="100" Margin="0,104,248,0" VerticalAlignment="Top" Width="100" Source="Kreis.jpg" Stretch="Fill" MouseLeftButtonDown="img_Kreis_MouseLeftButtonDown" ToolTip="Kreis"/>

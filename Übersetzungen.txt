@@ -587,7 +587,7 @@ FehlerSteg: "Bitte stellen Sie eine Stegbreite ein, die geirnger als die Breite 
 "Enter a web width, that is less than the witdth."
 "Veuillez seulement entrer des largeurs des bandes moins que la largeur."
 
-FehlerFlanschIUZ: "Bitte stellen Sie eine Flanschbreite ein, die geirnger als die halbe Hoehe ist."
+FehlerFlanschIU: "Bitte stellen Sie eine Flanschbreite ein, die geirnger als die halbe Hoehe ist."
 "Enter a flange width, that is less than half the height."
 "Veuillez seulement entrer des largeurs de brides moins que la moitié de la hauteur."
 
