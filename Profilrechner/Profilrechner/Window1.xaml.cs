@@ -116,7 +116,7 @@ namespace Profilrechner
 
             QuerschnittS = "Querschnitt: ";             //
             VolumenS = "Volumen: ";                     //
-            MasseS = "Masse:";                          //
+            MasseS = "Masse: ";                          //
             FTMXY = "Deviationsmoment: ";               //
 
             FehlerS = "Fehler!";                                    //
@@ -149,13 +149,13 @@ namespace Profilrechner
             lbl_Profilauswahlimg.Content = "Bitte wählen Sie ein Profil aus.";      //
             lbl_Breite.Content = "b: Breite in mm";                                 //
             lbl_Laenge.Content = "Länge in m";                                      //
-            //lbl_Flanschbreite.Content = "t: Flanschbreite in mm";
+            lbl_Flanschbreite.Content = "t: Flanschbreite in mm";
             lbl_Dichte.Content = "Dichte in g/cm³";                                 //
             lbl_SWP.Content = "Schwerpunkt:";
             lbl_FTM.Content = "Flächenträgheitsmoment:";
             lbl_Drehwinkel.Content = "Drehwinkel:";
-            //lbl_DrehwinkelGradIndex.Content = "Grad";
-            //lbl_DrehwinkelRadIndex.Content = "Radiant";
+            lbl_Grad.Content = "Grad";
+            lbl_Rad.Content = "Radiant";
             lbl_HTM.Content = "Hauptträgheitsmomente:";
 
             tvi_Werkstoffe.Header = "Werkstoffe:";
@@ -202,7 +202,7 @@ namespace Profilrechner
 
             QuerschnittS = "Cross-section area: ";             //
             VolumenS = "Volume: ";                     //
-            MasseS = "Mass:";                          //
+            MasseS = "Mass: ";                          //
             FTMXY = "Moment of deviation: ";               //
 
             FehlerS = "Error!";                                    //
@@ -287,7 +287,7 @@ namespace Profilrechner
 
             QuerschnittS = "Section transversale: ";             //
             VolumenS = "Volume: ";                     //
-            MasseS = "Masse:";                          //
+            MasseS = "Masse: ";                          //
             FTMXY = "Moment d'inerte: ";               //
 
             FehlerS = "Erreur!";                                    //
@@ -371,7 +371,7 @@ namespace Profilrechner
 
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
-
+            lbl_TanA.Content = "tan(α):";
             BreiteD = Convert.ToDouble(Breite);
             Laenge1 = Convert.ToDouble(Laenge);
             LaengeD = Laenge1 * 1000;
@@ -537,6 +537,7 @@ namespace Profilrechner
                     lbl_FTM.Visibility = Visibility.Visible;
                     lbl_FTMX.Visibility = Visibility.Visible;
                     lbl_FTMY.Visibility = Visibility.Visible;
+                    
 
 
 
@@ -743,7 +744,7 @@ namespace Profilrechner
                     lbl_SWPX.Content = "x: " + Math.Round(SchwerpunktxD, 3) / 10 + "cm";
                     lbl_SWPY.Content = "y: " + Math.Round(SchwerpunktyD, 3) / 10 + "cm";
                     
-                    lbl_DeviationsMoment.Content = "Deviationmoment" + Math.Round(Festigkeitxy, 3) / 10000 + "cm⁴";
+                    lbl_DeviationsMoment.Content = FTMXY + Math.Round(Festigkeitxy, 3) / 10000 + "cm⁴";
                    
                     lbl_Grad.Content = Math.Round(AchswinkelGrad, 2) + "°";
                     lbl_Rad.Content = Math.Round(AchswinkelRad, 3);
