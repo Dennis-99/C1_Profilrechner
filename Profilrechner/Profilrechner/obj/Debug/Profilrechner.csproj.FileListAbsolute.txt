@@ -99,7 +99,6 @@ C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilre
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\App.g.cs
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.cache
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.lref
-C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\MainWindow.baml
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Window1.baml
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner.g.resources
 C:\Users\Colin\OneDrive\Dokumente\GitHub\C1_Profilrechner\Profilrechner\Profilrechner\obj\Debug\Profilrechner.Properties.Resources.resources
