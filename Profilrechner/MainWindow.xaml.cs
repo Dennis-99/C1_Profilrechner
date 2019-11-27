@@ -384,10 +384,13 @@ namespace TestGui
             }
             if (BreiteD.Equals(0))
             {
-                Window MBHG = new Window();
-                MBHG.Content = MessageBox.Show(FehlerBreite0, FehlerS, MessageBoxButton.OK);
-                MBHG.SizeToContent = SizeToContent.WidthAndHeight;
-                Fehlercode = 1;
+                if (Profilint.Equals(1) || Profilint.Equals(2) || Profilint.Equals(5) || Profilint.Equals(6) || Profilint.Equals(7) || Profilint.Equals(8))
+                {
+                    Window MBHG = new Window();
+                    MBHG.Content = MessageBox.Show(FehlerBreite0, FehlerS, MessageBoxButton.OK);
+                    MBHG.SizeToContent = SizeToContent.WidthAndHeight;
+                    Fehlercode = 1;
+                }
             }
             if (LaengeD.Equals(0))
             {
@@ -432,7 +435,7 @@ namespace TestGui
                 }
             }
 
-            if (WandstaerkeD >= (HoeheH / 2))
+            if (WandstaerkeD >= HoeheH)
             {
                 if (Profilint.Equals(1))
                 {
@@ -449,7 +452,7 @@ namespace TestGui
                     Fehlercode = 1;
                 }
             }
-            else if (WandstaerkeD >= HoeheH)
+            else if (WandstaerkeD >= HoeheD)
             {
                 if (Profilint.Equals(6) || Profilint.Equals(8))
                 {
@@ -459,7 +462,7 @@ namespace TestGui
                     Fehlercode = 1;
                 }
             }
-            else if (WandstaerkeD >= (BreiteH / 2))
+            else if (WandstaerkeD >= BreiteH)
             {
                 if (Profilint.Equals(2))
                 {
@@ -469,7 +472,7 @@ namespace TestGui
                     Fehlercode = 1;
                 }
             }
-            else if (WandstaerkeD >= BreiteH)
+            else if (WandstaerkeD >= BreiteD)
             {
                 if (Profilint.Equals(5) || Profilint.Equals(6) || Profilint.Equals(7) || Profilint.Equals(8))
                 {
