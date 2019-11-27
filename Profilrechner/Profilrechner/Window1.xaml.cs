@@ -529,9 +529,10 @@ namespace Profilrechner
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round(Querschnitt, 3) / 100 + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round(Volumen, 3) / 1000 + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
-                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
-                    lbl_FTMY.Content = Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
-                   
+                    lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
+                    lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
+                    
+
 
                 }
                 else if (Profilint.Equals(2))
@@ -545,8 +546,8 @@ namespace Profilrechner
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round(Querschnitt, 3) / 100 + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round(Volumen, 3) / 1000 + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
-                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
-                    lbl_FTMY.Content = Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
+                    lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
+                    lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
                     
                 }
                 else if (Profilint.Equals(3))
@@ -561,8 +562,8 @@ namespace Profilrechner
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round(Querschnitt, 3) / 100 + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round(Volumen, 3) / 1000 + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
-                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
-                    lbl_FTMY.Content = Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
+                    lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
+                    lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
                    
 
 
@@ -579,8 +580,8 @@ namespace Profilrechner
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round(Querschnitt, 3) / 100 + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round(Volumen, 3) / 1000 + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
-                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
-                    lbl_FTMY.Content = Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
+                    lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
+                    lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
                     
 
                 }
@@ -606,11 +607,11 @@ namespace Profilrechner
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round(Querschnitt, 3) / 100 + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round(Volumen, 3) / 1000 + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
-                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
-                    lbl_FTMY.Content = Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
+                    lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
+                    lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
                     
-                    lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3) / 10 + "cm";
-                    lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3) / 10 + "cm";
+                    lbl_SWPX.Content = "x: " + Math.Round(SchwerpunktxD, 3) / 10 + "cm";
+                    lbl_SWPY.Content = "y: " + Math.Round(SchwerpunktyD, 3) / 10 + "cm";
                     
 
                 }
@@ -632,11 +633,11 @@ namespace Profilrechner
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round(Querschnitt, 3) / 100 + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round(Volumen, 3) / 1000 + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
-                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
-                    lbl_FTMY.Content = Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
+                    lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
+                    lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
                     
-                    lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3) / 10 + "cm";
-                    lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3) / 10 + "cm";
+                    lbl_SWPX.Content = "x: " + Math.Round(SchwerpunktxD, 3) / 10 + "cm";
+                    lbl_SWPY.Content = "y: " + Math.Round(SchwerpunktyD, 3) / 10 + "cm";
                    
                 }
                 else if (Profilint.Equals(7))
@@ -654,11 +655,11 @@ namespace Profilrechner
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round(Querschnitt, 3) / 100 + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round(Volumen, 3) / 1000 + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
-                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
-                    lbl_FTMY.Content = Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
+                    lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
+                    lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
                     
-                    lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3) / 10 + "cm";
-                    lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3) / 10 + "cm";
+                    lbl_SWPX.Content = "x: " + Math.Round(SchwerpunktxD, 3) / 10 + "cm";
+                    lbl_SWPY.Content = "y: " + Math.Round(SchwerpunktyD, 3) / 10 + "cm";
                     
                 }
                 else if (Profilint.Equals(8))
@@ -685,11 +686,11 @@ namespace Profilrechner
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round(Querschnitt, 3) / 100 + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round(Volumen, 3) / 1000 + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht, 3) / 1000000 + "kg";
-                    lbl_FTMX.Content = Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
-                    lbl_FTMY.Content = Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
+                    lbl_FTMX.Content = "x: " + Math.Round(Festigkeitx, 3) / 10000 + "cm⁴";
+                    lbl_FTMY.Content = "y: " + Math.Round(Festigkeity, 3) / 10000 + "cm⁴";
                     
-                    lbl_SWPX.Content = Math.Round(SchwerpunktxD, 3) / 10 + "cm";
-                    lbl_SWPY.Content = Math.Round(SchwerpunktyD, 3) / 10 + "cm";
+                    lbl_SWPX.Content = "x: " + Math.Round(SchwerpunktxD, 3) / 10 + "cm";
+                    lbl_SWPY.Content = "y: " + Math.Round(SchwerpunktyD, 3) / 10 + "cm";
                     
                     lbl_DeviationsMoment.Content = "Deviationmoment" + Math.Round(Festigkeitxy, 3) / 10000 + "cm⁴";
                    
@@ -697,8 +698,8 @@ namespace Profilrechner
                     lbl_Rad.Content = Math.Round(AchswinkelRad, 3);
                     lbl_TanA.Content = Math.Round(TanA, 3);
                     
-                    lbl_HTMU.Content = Math.Round(Festigkeitu, 3) / 10000 + "cm⁴";
-                    lbl_HTMV.Content = Math.Round(Festigkeitv, 3) / 10000 + "cm⁴";
+                    lbl_HTMU.Content = "u: " + Math.Round(Festigkeitu, 3) / 10000 + "cm⁴";
+                    lbl_HTMV.Content = "y: " + Math.Round(Festigkeitv, 3) / 10000 + "cm⁴";
                 }
 
             }
