@@ -829,6 +829,8 @@ namespace Profilrechner
             RechteckDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 1;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
 
         }
 
@@ -845,6 +847,8 @@ namespace Profilrechner
             RechteckHohlDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 2;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
         }
 
         private void img_Kreis_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -865,6 +869,8 @@ namespace Profilrechner
             KreisDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 3;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
         }
 
         private void img_Kreis_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -883,12 +889,15 @@ namespace Profilrechner
             Kreis_HohlprofilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 4;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+
         }
 
         private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             lbl_Hoehe.Content = HoeheS;
-           
+            lbl_Wandstaerke.Content = WandIULS;
             
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
@@ -907,6 +916,7 @@ namespace Profilrechner
         private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             lbl_Hoehe.Content = HoeheS;
+            lbl_Wandstaerke.Content = WandTS;
             
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
@@ -919,12 +929,16 @@ namespace Profilrechner
             TProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 6;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+
         }
 
         private void img_U_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
+            lbl_Wandstaerke.Content = WandIULS;
             Image UProfilDetail = new Image();
             BitmapImage bi1 = new BitmapImage();
             bi1.BeginInit();
@@ -934,6 +948,7 @@ namespace Profilrechner
             UProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 7;
+
         }
 
         private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -950,6 +965,9 @@ namespace Profilrechner
             LProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 8;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+            lbl_Wandstaerke.Content = WandIULS;
         }
 
         private void tb_Wandstaerke_TextChanged(object sender, TextChangedEventArgs e)
