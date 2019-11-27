@@ -56,19 +56,8 @@ namespace TestGui
         String QuerschnittS;
         String VolumenS;
         String MasseS;
-        String SchwerpunktxS;
-        String SchwerpunktyS;
-        String FTMS;
 
         String FTMXY;
-        String HTMS;
-        String DrehwinkelS;
-        String DrehungAchsenRad;
-        String DrehungAchsenGrad;
-        String TanAS;
-        String DrehungUX;
-        String DrehungVY;
-        String Drehsinn;
 
         String FehlerS;
         String FehlerHoehe0;
@@ -85,11 +74,9 @@ namespace TestGui
         //lbls zuweisung
         String HoeheH;
         String HoeheDurch;
-        String BreiteB;
         String WandstaerkeS;
         String WandIULS;
         String WandTS;
-        String FlanschbreiteT;
 
 
 
@@ -105,11 +92,9 @@ namespace TestGui
         {
             HoeheH = "h: Höhe in mm";
             HoeheDurch = "D: Durchmesser in mm";
-            BreiteB = "b: Breite in mm";
             WandstaerkeS = "s: Wandstärke in mm";
             WandIULS = "s: Stegbreite in mm";
             WandTS = "s = t: Stegbreite";
-            FlanschbreiteT = "t: Flanschbreite in mm";
 
             QuerschnittS = "Querschnitt: ";
             VolumenS = "Volumen: ";
@@ -132,12 +117,15 @@ namespace TestGui
 
             //Xaml Datei
             lbl_Profilauswahlimg.Content = "Bitte wählen Sie ein Profil aus.";
+            lbl_Breite.Content = "b: Breite in mm";
             lbl_Laenge.Content = "Länge in m";
             //lbl_Flanschbreite.Content = "t: Flanschbreite";
             lbl_Dichte.Content = "Dichte in g/cm³";
             lbl_SWP.Content = "Schwerpunkt:";
             lbl_FTM.Content = "Flächenträgheitsmomente:";
             lbl_Drehwinkel.Content = "Drehwinkel:";
+            //lbl_DrehwinkelGradIndex.Content = "Grad";
+            //lbl_DrehwinkelRadIndex.Content = "Radiant";
             lbl_HTM.Content = "Hauptträgheitsmomente:";
 
             tvi_Werkstoffe.Header = "Werkstoffe:";
@@ -610,7 +598,7 @@ namespace TestGui
         private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             lbl_Hoehe.Content = HoeheH;
-            lbl_Breite.Content = BreiteB;
+            lbl_Breite.Visibility = Visibility.Visible;
             lbl_Wandstaerke.Content = WandIULS;
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
@@ -629,7 +617,7 @@ namespace TestGui
         private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             lbl_Hoehe.Content = HoeheH;
-            lbl_Breite.Content = BreiteB;
+            lbl_Breite.Visibility = Visibility.Visible;
             lbl_Wandstaerke.Content = WandTS;
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
@@ -647,7 +635,7 @@ namespace TestGui
         private void img_U_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             lbl_Hoehe.Content = HoeheH;
-            lbl_Breite.Content = BreiteB;
+            lbl_Breite.Visibility = Visibility.Visible;
             lbl_Wandstaerke.Content = WandIULS;
             // Hier lbl_Flanschbreite.Content = FlanschbreiteT; einfügen
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
@@ -666,7 +654,7 @@ namespace TestGui
         private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             lbl_Hoehe.Content = HoeheH;
-            lbl_Breite.Content = BreiteB;
+            lbl_Breite.Visibility = Visibility.Visible;
             lbl_Wandstaerke.Content = WandIULS;
             grid_Profilauswahlimg.Visibility = Visibility.Hidden;
             grid_Profilauswahl.Visibility = Visibility.Visible;
@@ -691,7 +679,6 @@ namespace TestGui
             {
                 WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
             }
-            WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
         }
 
        
