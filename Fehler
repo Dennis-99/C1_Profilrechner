@@ -1,0 +1,34 @@
+
+	  
+
+Rechteckrohr: 
+	      Einheiten fehlen
+	      nach Fehlermeldung h>s Textbox s 0 löschen --> Absturz
+	      Länge bei Wdh. nicht 0
+	      
+
+Kreis:  Fehlermeldung falsch bzgl. Breite
+
+Kreisrohr: s. Kreis
+
+I-Profil: Flanschbreite t fehlt
+	  
+	  Fehlermeldung Stegbreite nicht Wandstärke; Stegbreite auf Breite bezogen/ Flanschbreite auf halbe Höhe
+
+T-Profil: Stegbreite s löschen --> Absturz
+	  Fehlermeldung "Stegbreite muss kleiner als Höhe und Breite sein"
+
+U-Profil: Stegbreite und Flanschbreite fehlt bzw muss ersetzt werden mit Wandstärke
+	  Wandstärke löschen --> Absturz
+	  Falsche Felhlermeldung; nicht bezogen auf Stegbreite und Flanschbreite; s<b, t<h/2
+
+	  
+	  	  
+______________________________________________	  
+
+______________________________________________
+
+Layout: I-Profil Schwerpunkt überschneidet mit Zahlenwert
+	T-Profil t einfügen und s=t einfügen 
+	L-Profil Label überschneiden
+		  
