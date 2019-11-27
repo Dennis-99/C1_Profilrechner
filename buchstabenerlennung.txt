@@ -1,0 +1,32 @@
+ private void tb_hoehe_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+             
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            StringBuilder Zugelassen = new StringBuilder();
+            if (tb_hoehe.Text.Equals(""))
+            {
+
+            }
+           
+           
+            else
+            {
+                test = tb_hoehe.Text;
+                foreach (char ch in test)
+                    if (!Zeichen.Contains(ch.ToString()))
+                    {
+                        tb_hoehe.Text = "";
+                        
+
+                    }
+                    else
+                    {
+                        HoeheD = Convert.ToDouble(tb_hoehe.Text);
+                    }
+                
+                      
+                
+            }
