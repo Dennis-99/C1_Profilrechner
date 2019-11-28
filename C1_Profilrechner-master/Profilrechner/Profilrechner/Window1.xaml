@@ -56,7 +56,6 @@
                 <TreeViewItem x:Name="tvi_E355" Header="E355" Height="22" Width="100" MouseLeftButtonUp="Tvi_E355_MouseLeftButtonUp" HorizontalAlignment="Left"/>
                 <TreeViewItem x:Name="tvi_C45" Header="C45" Height="22" Width="100" MouseLeftButtonUp="Tvi_C45_MouseLeftButtonUp" HorizontalAlignment="Left"/>
                 <TreeViewItem x:Name="tvi_AlMg4" Header="AlMg4" Height="22" Width="100" MouseLeftButtonUp="Tvi_AlMg4_MouseLeftButtonUp" HorizontalAlignment="Left"/>
-                <TreeViewItem x:Name="tvi_ManuelleEingabe" Header="Manuelle Eingabe " Height="22" Width="118" MouseLeftButtonUp="Tvi_ManuelleEingabe_MouseLeftButtonUp" HorizontalAlignment="Left" />
             </TreeView>
 
             <Image x:Name="img_DetailAnsicht" HorizontalAlignment="Left" Height="340" Margin="451,0,0,0" VerticalAlignment="Top" Width="340"  Stretch="Fill"/>

@@ -161,7 +161,6 @@ namespace Profilrechner
             lbl_HTM.Content = "Hauptträgheitsmomente:";
 
             tvi_Werkstoffe.Header = "Werkstoffe:";
-            tvi_ManuelleEingabe.Header = "Manuelle Eingabe";
 
             btn_weiter.Content = "Weiter";
             btn_Berechnen.Content = "Berechnen";
@@ -191,8 +190,7 @@ namespace Profilrechner
             lbl_HTMU.Visibility = Visibility.Hidden;
             lbl_HTMV.Visibility = Visibility.Hidden;
         }
-
-
+        
 
         private void btn_SpracheE_Click(object sender, RoutedEventArgs e)
         {
@@ -249,7 +247,6 @@ namespace Profilrechner
             lbl_HTM.Content = "Principal moment of inertia:";
 
             tvi_Werkstoffe.Header = "Materials:";
-            tvi_ManuelleEingabe.Header = "Manuall input";
 
             btn_weiter.Content = "Continue";
             btn_Berechnen.Content = "Calculate";
@@ -334,7 +331,6 @@ namespace Profilrechner
             lbl_HTM.Content = "Moment d'inerte principal:";
 
             tvi_Werkstoffe.Header = "Matériaux:";
-            tvi_ManuelleEingabe.Header = "Saisie manuelle";
 
             btn_weiter.Content = "Continuer";
             btn_Berechnen.Content = "Calculer";
@@ -374,10 +370,7 @@ namespace Profilrechner
 
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
-            //lbl_TanA.Content = "tan(α):";
-            BreiteD = Convert.ToDouble(Breite);
-            Laenge1 = Convert.ToDouble(Laenge);
-            LaengeD = Laenge1 * 1000;
+            Laenge1 = LaengeD * 1000;
             Double HoeheH = HoeheD / 2;
             Double BreiteH = BreiteD / 2;
             if (HoeheD.Equals(0))
@@ -778,42 +771,78 @@ namespace Profilrechner
 
         private void tb_hoehe_TextChanged(object sender, TextChangedEventArgs e)
         {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_hoehe.Text.Equals(""))
+                {
 
-            if (tb_hoehe.Text.Equals(""))
-            {
-
-            }
-            else
-            {
-                HoeheD = Convert.ToDouble(tb_hoehe.Text);
-            }
+                }
+                else
+                {
+                    test = tb_hoehe.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            HoeheD = Convert.ToDouble(tb_hoehe.Text);
+                        }
+                        else
+                        {
+                            tb_hoehe.Text = "";
+                        }
+                }
 
         }
 
         private void tb_Breite_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (tb_Breite.Text.Equals(""))
-            {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Breite.Text.Equals(""))
+                {
 
-            }
-            else
-            {
-                Breite = Convert.ToString(tb_Breite.Text);
-            }
-
-
+                }
+                else
+                {
+                    test = tb_Breite.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            BreiteD = Convert.ToDouble(tb_Breite.Text);
+                        }
+                        else
+                        {
+                            tb_Breite.Text = "";
+                        }
+                }
         }
 
         private void tb_Laenge_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (tb_Laenge.Text.Equals(""))
-            {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Laenge.Text.Equals(""))
+                {
 
-            }
-            else
-            {
-                Laenge = Convert.ToString(tb_Laenge.Text);
-            }
+                }
+                else
+                {
+                    test = tb_Laenge.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            LaengeD = Convert.ToDouble(tb_Laenge.Text);
+                        }
+                        else
+                        {
+                            tb_Laenge.Text = "";
+                        }
+                }
 
         }
 
@@ -825,13 +854,6 @@ namespace Profilrechner
         //
         // Treeview zuweisung
         //
-
-        private void Tvi_ManuelleEingabe_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            tb_Dichte.Visibility = Visibility.Visible;
-            
-            
-        }
 
         private void Tvi_S235_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -1051,15 +1073,28 @@ namespace Profilrechner
 
         private void tb_Wandstaerke_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (tb_Wandstaerke.Text.Equals(""))
-            {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Wandstaerke.Text.Equals(""))
+                {
 
-            }
-            else
-            {
-                WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
-            }
-            
+                }
+                else
+                {
+                    test = tb_Wandstaerke.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
+                        }
+                        else
+                        {
+                            tb_Wandstaerke.Text = "";
+                        }
+                }
+
         }
 
 
@@ -1126,26 +1161,52 @@ namespace Profilrechner
 
         private void tb_Dichte_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (tb_Dichte.Text.Equals(""))
-            {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Dichte.Text.Equals(""))
+                {
 
-            }
-            else
-            {
-                DichteD = Convert.ToDouble(tb_Dichte.Text);
-            }
+                }
+                else
+                {
+                    test = tb_Dichte.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            DichteD = Convert.ToDouble(tb_Dichte.Text);
+                        }
+                        else
+                        {
+                            tb_Dichte.Text = "";
+                        }
+                }
         }
     
         private void tb_Flanschbreite_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (tb_Flanschbreite.Text.Equals(""))
-            {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Flanschbreite.Text.Equals(""))
+                {
 
-            }
-            else
-            {
-                FlanschbreiteD = Convert.ToDouble(tb_Flanschbreite.Text);
-            }
+                }
+                else
+                {
+                    test = tb_Flanschbreite.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            FlanschbreiteD = Convert.ToDouble(tb_Flanschbreite.Text);
+                        }
+                        else
+                        {
+                            tb_Flanschbreite.Text = "";
+                        }
+                }
         }
     }
 }
