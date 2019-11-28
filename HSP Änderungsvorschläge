@@ -3,64 +3,16 @@ Preis - Materialkosten
 Sprache später ändern (Über Treeveiw)
 
 Grafik overlay:
-Tv Wieder sichtbar machen, wenn man am ende wiederhohlt --- fixed
-Dichte unter Tv löschen, wenn man manuell eingibt --- hilfestellung für Colin
-wenn Wandstärke > Höhe / Breite erscheint Fehlermeldung, es wird aber immernoch gerechnet --- fixed
-wenn man ein Tvi auswählt, kann man keine Manuelle Eingabe mehr machen
--> auch nicht wenn man wiederhohlt
-man kann ohne vollständige Auswahl / Eingabe rechnen (Tv / Dichte, Wandstärke, Länge) --- wenn 1 Wert = 0 ist zur restlichen Eingabe auffordern (Auch Fehlercode?)
-nach Fehlermeldung kann man nichtmehr rechnen --- jedes mal bei rechnen.click Fehlercode auf 0 setzen
-Fehler bei Höhe / Breite /2
-Wandstärke muss auch größer 0 sein, damit nicht nur nullen rauskommen
--> und immer >= nicht nur >
 btn_weiter.Content = "Weiter" / "Abbrechen"?
-Kann man zoomen, indem man immer den Abstanf von allen Rändern angibt und nicht abstand zu 2, höhe, Breite? evtl. Abstände als Fkt von Heicht / Width des ges. grids angeben, genauso eins als Fht vom Anderen?
-lbl Zeile 61, ist das Kunst oder kann das weg?
-lbl - & tb Flansch müssen zugefügt werden
+Kann man zoomen, indem man immer den Abstanf von allen Rändern angibt und nicht abstand zu 2, höhe, Breite? evtl. Abstände als Fkt von Heicht / Width des ges. grids angeben, genauso eins als Fht vom Anderen? --- vllt nächster Sprint
+txt Kantenverundungen, Schregen
+x/y über FTM, SWP. u/v über HTA --- vllt nächster Sprint
+Grad, Rad, Tan(a) über Winkel --- vllt nächster Sprint
+btns, ect an Sprachen anpassen, sodass nivhts abgeschnitten wird (z.B. engl - btn_weiter, tvi_manuelleEingebe)
+Fehlermeldungen
+Zahl dann Buchstabe -> Absturz
 
 Main:
-FehlerDurchmesserWand Aufruf bei Wand = D/2, nicht bei Durchmesser;
-					  Text: "Die Wandst. muss kleiner sein als der Radius
-Gilt genauso bei: RechteckHöhe; -Breite; IFlansch; UFlansch
-Und eigentlich Aufruf FehlerWand bei Wand > xxx, nicht bei Wand = xxx
 
 Berechnungen:
 Ausgebe in cm , kg
-
-FehlerEingabe: "Bitte geben Sie nur positive Zahlen ein."
-"Only enter positive numbers."
-"Veuillez seulement entrer des nombres positivs."
-
-
-FehlerBreite: "Bitte stellen Sie eine Wandstärke ein, die geirnger als die halbe Breite ist."
-"Enter a wall thickness, that is less than half the witdth."
-"Veuillez seulement entrer des épaisseurs des parois moins que demi de la largeur."
-
-
-FehlerHöhe: "Bitte stellen Sie eine Wandstärke ein, die geirnger als die halbe Hoehe ist."
-"Enter a wall thickness, that is less than half the height."
-"Veuillez seulement entrer des épaisseurs des parois moins que demi de la hauteur."
-
-FehlerDurchmesser: "Bitte stellen Sie eine Wandstärke ein, die geirnger als der Radius ist."
-"Enter a wall thickness, that is less than the radius."
-"Veuillez seulement entrer des épaisseurs des parois moins que le radius."
-
-FehlerSteg: "Bitte stellen Sie eine Stegbreite ein, die geirnger als die Breite ist."
-"Enter a web width, that is less than the witdth."
-"Veuillez seulement entrer des largeurs des bandes moins quela largeur."
-
-FehlerFlanschIUZ: "Bitte stellen Sie eine Flanschbreite ein, die geirnger als die halbe Hoehe ist."
-"Enter a flange width, that is less than half the height."
-"Veuillez seulement entrer des largeurs de brides moins que demi de la hauteur."
-
-
-FehlerFlanschTL: "Bitte stellen Sie eine Flanschbreite ein, die geirnger als die Hoehe ist."
-"Enter a flange width, that is less than the height."
-"Veuillez seulement entrer des largeurs des brides moins que la hauteur"
-
-Bei L Profil mit Wandstärke Arbeiten und FehlerSteg/Flansch anzeigen
-
-Programmfehler:
-FehlerProgramm: "Unserem Programm scheint ein Fehler unterlaufen zu sein, es wird sich nun beenden."
-"Our program seems to have run into some ishues, it will shut down now" 
-"Notre programme a eu un erreur et va arrêter maintenant"
