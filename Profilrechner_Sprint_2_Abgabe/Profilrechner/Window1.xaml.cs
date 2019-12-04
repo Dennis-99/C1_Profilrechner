@@ -373,7 +373,7 @@ namespace Profilrechner
 
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
-            Laenge1 = LaengeD * 1000;
+            LaengeD = Laenge1 * 1000;
             Double HoeheH = HoeheD / 2;
             Double BreiteH = BreiteD / 2;
             if (HoeheD.Equals(0))
@@ -839,7 +839,7 @@ namespace Profilrechner
                     foreach (char ch in test)
                         if (Zeichen.Contains(ch.ToString()))
                         {
-                            LaengeD = Convert.ToDouble(tb_Laenge.Text);
+                            Laenge1 = Convert.ToDouble(tb_Laenge.Text);
                         }
                         else
                         {
