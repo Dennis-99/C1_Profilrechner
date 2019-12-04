@@ -150,7 +150,8 @@ namespace Profilrechner
             img_U_Profil.ToolTip = "U-Profil";
             img_L_Profil.ToolTip = "L-Profil";
 
-            lbl_Profilauswahlimg.Content = "Bitte wählen Sie ein Profil aus.";      //
+            lbl_Profilauswahlimg.Content = "Bitte wählen Sie ein Profil aus:";      //
+            lbl_Idealisierung.Content = "Bitte beachten Sie, dass die Darstellung der Profile idealisiert ist";
             lbl_Breite.Content = "b: Breite in mm";                                 //
             lbl_Laenge.Content = "Länge in m";                                      //
             lbl_Flanschbreite.Content = "t: Flanschbreite in mm";
@@ -161,7 +162,6 @@ namespace Profilrechner
             lbl_HTM.Content = "Hauptträgheitsmomente:";
 
             tvi_Werkstoffe.Header = "Werkstoffe:";
-            tvi_ManuelleEingabe.Header = "Manuelle Eingabe";
 
             btn_weiter.Content = "Weiter";
             btn_Berechnen.Content = "Berechnen";
@@ -191,8 +191,7 @@ namespace Profilrechner
             lbl_HTMU.Visibility = Visibility.Hidden;
             lbl_HTMV.Visibility = Visibility.Hidden;
         }
-
-
+        
 
         private void btn_SpracheE_Click(object sender, RoutedEventArgs e)
         {
@@ -239,6 +238,7 @@ namespace Profilrechner
             img_L_Profil.ToolTip = "L-Section";
 
             lbl_Profilauswahlimg.Content = "Select a profile:";      //
+            lbl_Idealisierung.Content = "Please note that the representation of the profiles is idealized";
             lbl_Breite.Content = "b: Width in mm";                                 //
             lbl_Laenge.Content = "Length in m";                                      //
             lbl_Flanschbreite.Content = "t: Flange width in mm";
@@ -249,7 +249,6 @@ namespace Profilrechner
             lbl_HTM.Content = "Principal moment of inertia:";
 
             tvi_Werkstoffe.Header = "Materials:";
-            tvi_ManuelleEingabe.Header = "Manuall input";
 
             btn_weiter.Content = "Continue";
             btn_Berechnen.Content = "Calculate";
@@ -324,6 +323,7 @@ namespace Profilrechner
             img_L_Profil.ToolTip = "L-Profil";
 
             lbl_Profilauswahlimg.Content = "Veuillez choisir un profil:";      //
+            lbl_Idealisierung.Content = "Veuillez noter que la représentation des profils est idéalisée";
             lbl_Breite.Content = "b: Largeur en mm";                                 //
             lbl_Laenge.Content = "Longueur en m";                                      //
             lbl_Flanschbreite.Content = "t: Largeur de bride in mm";
@@ -334,7 +334,6 @@ namespace Profilrechner
             lbl_HTM.Content = "Moment d'inerte principal:";
 
             tvi_Werkstoffe.Header = "Matériaux:";
-            tvi_ManuelleEingabe.Header = "Saisie manuelle";
 
             btn_weiter.Content = "Continuer";
             btn_Berechnen.Content = "Calculer";
@@ -374,8 +373,6 @@ namespace Profilrechner
 
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
-            BreiteD = Convert.ToDouble(Breite);
-            Laenge1 = Convert.ToDouble(Laenge);
             LaengeD = Laenge1 * 1000;
             Double HoeheH = HoeheD / 2;
             Double BreiteH = BreiteD / 2;
@@ -789,7 +786,7 @@ namespace Profilrechner
                 {
                     test = tb_hoehe.Text;
                     foreach (char ch in test)
-                        if (!Zeichen.Contains(ch.ToString()))
+                        if (Zeichen.Contains(ch.ToString()))
                         {
                             HoeheD = Convert.ToDouble(tb_hoehe.Text);
                         }
@@ -815,7 +812,7 @@ namespace Profilrechner
                 {
                     test = tb_Breite.Text;
                     foreach (char ch in test)
-                        if (!Zeichen.Contains(ch.ToString()))
+                        if (Zeichen.Contains(ch.ToString()))
                         {
                             BreiteD = Convert.ToDouble(tb_Breite.Text);
                         }
@@ -840,9 +837,9 @@ namespace Profilrechner
                 {
                     test = tb_Laenge.Text;
                     foreach (char ch in test)
-                        if (!Zeichen.Contains(ch.ToString()))
+                        if (Zeichen.Contains(ch.ToString()))
                         {
-                            LaengeD = Convert.ToDouble(tb_Laenge.Text);
+                            Laenge1 = Convert.ToDouble(tb_Laenge.Text);
                         }
                         else
                         {
@@ -860,13 +857,6 @@ namespace Profilrechner
         //
         // Treeview zuweisung
         //
-
-        private void Tvi_ManuelleEingabe_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            tb_Dichte.Visibility = Visibility.Visible;
-            
-            
-        }
 
         private void Tvi_S235_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -1098,7 +1088,7 @@ namespace Profilrechner
                 {
                     test = tb_Wandstaerke.Text;
                     foreach (char ch in test)
-                        if (!Zeichen.Contains(ch.ToString()))
+                        if (Zeichen.Contains(ch.ToString()))
                         {
                             WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
                         }
@@ -1186,7 +1176,7 @@ namespace Profilrechner
                 {
                     test = tb_Dichte.Text;
                     foreach (char ch in test)
-                        if (!Zeichen.Contains(ch.ToString()))
+                        if (Zeichen.Contains(ch.ToString()))
                         {
                             DichteD = Convert.ToDouble(tb_Dichte.Text);
                         }
@@ -1211,7 +1201,7 @@ namespace Profilrechner
                 {
                     test = tb_Flanschbreite.Text;
                     foreach (char ch in test)
-                        if (!Zeichen.Contains(ch.ToString()))
+                        if (Zeichen.Contains(ch.ToString()))
                         {
                             FlanschbreiteD = Convert.ToDouble(tb_Flanschbreite.Text);
                         }
