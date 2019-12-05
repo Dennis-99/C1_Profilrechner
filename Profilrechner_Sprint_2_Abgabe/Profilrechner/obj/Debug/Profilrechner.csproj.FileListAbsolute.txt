@@ -166,3 +166,10 @@ D:\Studium\HSP\Gidhub_Downloads\C1_Profilrechner-master\C1_Profilrechner-master\
 D:\Studium\HSP\Gidhub_Downloads\C1_Profilrechner-master\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.application
 D:\Studium\HSP\Gidhub_Downloads\C1_Profilrechner-master\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe
 D:\Studium\HSP\Gidhub_Downloads\C1_Profilrechner-master\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.pdb
+C:\Users\lukas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csprojAssemblyReference.cache
+C:\Users\lukas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.g.cs
+C:\Users\lukas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\App.g.cs
+C:\Users\lukas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.cache
+C:\Users\lukas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.lref
+C:\Users\lukas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe
+C:\Users\lukas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.pdb

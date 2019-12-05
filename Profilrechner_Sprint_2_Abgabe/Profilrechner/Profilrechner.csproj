@@ -64,7 +64,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="RechteckVoll.cs" />
+    <Compile Include="CatiaControll.cs" />
+    <Compile Include="CatiaConnection.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
