@@ -50,6 +50,8 @@ namespace Profilrechner
         Double ey; //Maximaler Abstand (Randphasenabstand) von y-y Achse
         Double Wbx; //Biegewiederstandsmoment um die x-x Achse
         Double Wby; //Biegewiederstandsmoment um die y-y Achse
+        Double Ip; //Flächenträgheitsmoment gegen Torsion
+        Double Wp; //Torsionswiederstandsmoment
 
         public Double FensterH = 500;
         public Double FensterB = 850;
@@ -97,6 +99,380 @@ namespace Profilrechner
             //Hier Breite und weite
         }
 
+
+        #region tbs
+
+        private void tb_hoehe_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_hoehe.Text.Equals(""))
+                {
+
+                }
+                else
+                {
+                    test = tb_hoehe.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            HoeheD = Convert.ToDouble(tb_hoehe.Text);
+                        }
+                        else
+                        {
+                            tb_hoehe.Text = "";
+                        }
+                }
+
+        }
+
+        private void tb_Breite_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Breite.Text.Equals(""))
+                {
+
+                }
+                else
+                {
+                    test = tb_Breite.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            BreiteD = Convert.ToDouble(tb_Breite.Text);
+                        }
+                        else
+                        {
+                            tb_Breite.Text = "";
+                        }
+                }
+        }
+
+        private void tb_Laenge_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Laenge.Text.Equals(""))
+                {
+
+                }
+                else
+                {
+                    test = tb_Laenge.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            Laenge1 = Convert.ToDouble(tb_Laenge.Text);
+                        }
+                        else
+                        {
+                            tb_Laenge.Text = "";
+                        }
+                }
+
+        }
+
+        private void tb_Wandstaerke_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Wandstaerke.Text.Equals(""))
+                {
+
+                }
+                else
+                {
+                    test = tb_Wandstaerke.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
+                        }
+                        else
+                        {
+                            tb_Wandstaerke.Text = "";
+                        }
+                }
+
+        }
+
+        private void tb_Dichte_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Dichte.Text.Equals(""))
+                {
+
+                }
+                else
+                {
+                    test = tb_Dichte.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            DichteD = Convert.ToDouble(tb_Dichte.Text);
+                        }
+                        else
+                        {
+                            tb_Dichte.Text = "";
+                        }
+                }
+        }
+    
+        private void tb_Flanschbreite_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string test;
+            String Zeichen;
+            Zeichen = "0123456789.,";
+            //StringBuilder Zugelassen = new StringBuilder();
+                if (tb_Flanschbreite.Text.Equals(""))
+                {
+
+                }
+                else
+                {
+                    test = tb_Flanschbreite.Text;
+                    foreach (char ch in test)
+                        if (Zeichen.Contains(ch.ToString()))
+                        {
+                            FlanschbreiteD = Convert.ToDouble(tb_Flanschbreite.Text);
+                        }
+                        else
+                        {
+                            tb_Flanschbreite.Text = "";
+                        }
+                }
+        }
+
+        #endregion
+
+        #region tv
+
+        //
+        // Treeview zuweisung
+        //
+
+        private void Tvi_S235_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DichteD = Convert.ToDouble(7.85);
+           
+            tb_Dichte.Text = "7,85";
+        }
+        private void Tvi_355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DichteD = Convert.ToDouble(7.85);
+            
+            tb_Dichte.Text = "7,85";
+        }
+        private void Tvi_42CrMo4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DichteD = Convert.ToDouble(7.85);
+            
+            tb_Dichte.Text = "7,85";
+        }
+        private void Tvi_E295_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DichteD = Convert.ToDouble(7.85);
+            
+            tb_Dichte.Text = "7,85";
+        }
+        private void Tvi_E355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DichteD = Convert.ToDouble(7.85);
+            
+            tb_Dichte.Text = "7,85";
+        }
+        private void Tvi_C45_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DichteD = Convert.ToDouble(7.85);
+            
+            tb_Dichte.Text = "7,85";
+        }
+        private void Tvi_AlMg4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DichteD = Convert.ToDouble(2.66);
+            
+            tb_Dichte.Text = "2,66";
+        }
+
+        #endregion
+
+        #region img_Auswahl
+
+        //
+        // Grid Auswahl Image zuweisung
+        //
+        private void img_Rechteck_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
+            grid_Profilauswahl.Visibility = Visibility.Visible;
+            lbl_Hoehe.Content = HoeheS;
+            lbl_Wandstaerke.Visibility = Visibility.Hidden;
+            tb_Wandstaerke.Visibility = Visibility.Hidden;
+            Image RechteckDetail = new Image();
+            BitmapImage bi1 = new BitmapImage();
+            bi1.BeginInit();
+            bi1.UriSource = new Uri("RechteckDetail.jpg", UriKind.Relative);
+            bi1.EndInit();
+            RechteckDetail.Stretch = Stretch.Fill;
+            RechteckDetail.Source = bi1;
+            img_DetailAnsicht.Source = bi1;
+            Profilint = 1;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+
+        }
+        private void img_Rechteck_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
+            grid_Profilauswahl.Visibility = Visibility.Visible;
+            lbl_Hoehe.Content = HoeheS;
+            lbl_Wandstaerke.Content = WandstaerkeS;
+            Image RechteckHohlDetail = new Image();
+            BitmapImage bi1 = new BitmapImage();
+            bi1.BeginInit();
+            bi1.UriSource = new Uri("Rechteck-HohlprofilDetail.jpg", UriKind.Relative);
+            bi1.EndInit();
+            RechteckHohlDetail.Stretch = Stretch.Fill;
+            RechteckHohlDetail.Source = bi1;
+            img_DetailAnsicht.Source = bi1;
+            Profilint = 2;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+        }
+        private void img_Kreis_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
+            grid_Profilauswahl.Visibility = Visibility.Visible;
+            lbl_Wandstaerke.Visibility = Visibility.Hidden;
+            tb_Wandstaerke.Visibility = Visibility.Hidden;
+            lbl_Hoehe.Content = HoeheDurch;
+            lbl_Breite.Visibility = Visibility.Hidden;
+            tb_Breite.Visibility = Visibility.Hidden;
+            Image KreisDetail = new Image();
+            BitmapImage bi1 = new BitmapImage();
+            bi1.BeginInit();
+            bi1.UriSource = new Uri("KreisDetail.jpg", UriKind.Relative);
+            bi1.EndInit();
+            KreisDetail.Stretch = Stretch.Fill;
+            KreisDetail.Source = bi1;
+            img_DetailAnsicht.Source = bi1;
+            Profilint = 3;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+        }
+        private void img_Kreis_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lbl_Hoehe.Content = HoeheDurch;
+            lbl_Breite.Visibility = Visibility.Hidden;
+            tb_Breite.Visibility = Visibility.Hidden;
+            lbl_Wandstaerke.Content = WandstaerkeS;
+            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
+            grid_Profilauswahl.Visibility = Visibility.Visible;
+            Image Kreis_HohlprofilDetail = new Image();
+            BitmapImage bi1 = new BitmapImage();
+            bi1.BeginInit();
+            bi1.UriSource = new Uri("Kreis-HohlprofilDetail.jpg", UriKind.Relative);
+            bi1.EndInit();
+            Kreis_HohlprofilDetail.Stretch = Stretch.Fill;
+            Kreis_HohlprofilDetail.Source = bi1;
+            img_DetailAnsicht.Source = bi1;
+            Profilint = 4;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+
+        }
+        private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lbl_Hoehe.Content = HoeheS;
+            lbl_Wandstaerke.Content = WandIULS;
+            lbl_Flanschbreite.Visibility = Visibility.Visible;
+            tb_Flanschbreite.Visibility = Visibility.Visible;
+            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
+            grid_Profilauswahl.Visibility = Visibility.Visible;
+            Image IProfilDetail = new Image();
+            BitmapImage bi1 = new BitmapImage();
+            bi1.BeginInit();
+            bi1.UriSource = new Uri("I-ProfilDetail.jpg", UriKind.Relative);
+            bi1.EndInit();
+            IProfilDetail.Stretch = Stretch.Fill;
+            IProfilDetail.Source = bi1;
+            img_DetailAnsicht.Source = bi1;
+            Profilint = 5;
+
+        }
+        private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lbl_Hoehe.Content = HoeheS;
+            lbl_Wandstaerke.Content = WandTS;
+            
+            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
+            grid_Profilauswahl.Visibility = Visibility.Visible;
+            Image TProfilDetail = new Image();
+            BitmapImage bi1 = new BitmapImage();
+            bi1.BeginInit();
+            bi1.UriSource = new Uri("T-ProfilDetail.jpg", UriKind.Relative);
+            bi1.EndInit();
+            TProfilDetail.Stretch = Stretch.Fill;
+            TProfilDetail.Source = bi1;
+            img_DetailAnsicht.Source = bi1;
+            Profilint = 6;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+
+        }
+        private void img_U_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
+            grid_Profilauswahl.Visibility = Visibility.Visible;
+            lbl_Hoehe.Content = HoeheS;
+            lbl_Flanschbreite.Visibility = Visibility.Visible;
+            tb_Flanschbreite.Visibility = Visibility.Visible;
+            lbl_Wandstaerke.Content = WandIULS;
+            Image UProfilDetail = new Image();
+            BitmapImage bi1 = new BitmapImage();
+            bi1.BeginInit();
+            bi1.UriSource = new Uri("U-ProfilDetail.jpg", UriKind.Relative);
+            bi1.EndInit();
+            UProfilDetail.Stretch = Stretch.Fill;
+            UProfilDetail.Source = bi1;
+            img_DetailAnsicht.Source = bi1;
+            Profilint = 7;
+
+        }
+        private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lbl_Hoehe.Content = HoeheS;
+            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
+            grid_Profilauswahl.Visibility = Visibility.Visible;
+            Image LProfilDetail = new Image();
+            BitmapImage bi1 = new BitmapImage();
+            bi1.BeginInit();
+            bi1.UriSource = new Uri("L-ProfilDetail.jpg", UriKind.Relative);
+            bi1.EndInit();
+            LProfilDetail.Stretch = Stretch.Fill;
+            LProfilDetail.Source = bi1;
+            img_DetailAnsicht.Source = bi1;
+            Profilint = 8;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            tb_Flanschbreite.Visibility = Visibility.Hidden;
+            lbl_Wandstaerke.Content = WandIULS;
+        }
+
+        #endregion
+
+        #region btns
         private void btn_SpracheD_Click(object sender, RoutedEventArgs e)
         {
             HoeheS = "h: Höhe in mm";                   //
@@ -559,7 +935,7 @@ namespace Profilrechner
                     //Wbx, Wby - Biegewiederstandamomente
                     Wbx = Festigkeitx / ex;
                     Wby = Festigkeity / ey;
-
+                   
                     lbl_Querschnitt.Content = QuerschnittS + Math.Round((Querschnitt / 100), 3) + "cm²";
                     lbl_Voulumen.Content = VolumenS + Math.Round((Volumen / 1000), 3) + "cm³";
                     lbl_Masse.Content = MasseS + Math.Round(Gewicht / 1000000, 3) + "kg";
@@ -851,322 +1227,6 @@ namespace Profilrechner
         }
 
 
-        private void tb_hoehe_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string test;
-            String Zeichen;
-            Zeichen = "0123456789.,";
-            //StringBuilder Zugelassen = new StringBuilder();
-                if (tb_hoehe.Text.Equals(""))
-                {
-
-                }
-                else
-                {
-                    test = tb_hoehe.Text;
-                    foreach (char ch in test)
-                        if (Zeichen.Contains(ch.ToString()))
-                        {
-                            HoeheD = Convert.ToDouble(tb_hoehe.Text);
-                        }
-                        else
-                        {
-                            tb_hoehe.Text = "";
-                        }
-                }
-
-        }
-
-        private void tb_Breite_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string test;
-            String Zeichen;
-            Zeichen = "0123456789.,";
-            //StringBuilder Zugelassen = new StringBuilder();
-                if (tb_Breite.Text.Equals(""))
-                {
-
-                }
-                else
-                {
-                    test = tb_Breite.Text;
-                    foreach (char ch in test)
-                        if (Zeichen.Contains(ch.ToString()))
-                        {
-                            BreiteD = Convert.ToDouble(tb_Breite.Text);
-                        }
-                        else
-                        {
-                            tb_Breite.Text = "";
-                        }
-                }
-        }
-
-        private void tb_Laenge_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string test;
-            String Zeichen;
-            Zeichen = "0123456789.,";
-            //StringBuilder Zugelassen = new StringBuilder();
-                if (tb_Laenge.Text.Equals(""))
-                {
-
-                }
-                else
-                {
-                    test = tb_Laenge.Text;
-                    foreach (char ch in test)
-                        if (Zeichen.Contains(ch.ToString()))
-                        {
-                            Laenge1 = Convert.ToDouble(tb_Laenge.Text);
-                        }
-                        else
-                        {
-                            tb_Laenge.Text = "";
-                        }
-                }
-
-        }
-
-
-
-
-
-
-        //
-        // Treeview zuweisung
-        //
-
-        private void Tvi_S235_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            DichteD = Convert.ToDouble(7.85);
-           
-            tb_Dichte.Text = "7,85";
-        }
-        private void Tvi_355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            DichteD = Convert.ToDouble(7.85);
-            
-            tb_Dichte.Text = "7,85";
-        }
-        private void Tvi_42CrMo4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            DichteD = Convert.ToDouble(7.85);
-            
-            tb_Dichte.Text = "7,85";
-        }
-        private void Tvi_E295_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            DichteD = Convert.ToDouble(7.85);
-            
-            tb_Dichte.Text = "7,85";
-        }
-        private void Tvi_E355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            DichteD = Convert.ToDouble(7.85);
-            
-            tb_Dichte.Text = "7,85";
-        }
-        private void Tvi_C45_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            DichteD = Convert.ToDouble(7.85);
-            
-            tb_Dichte.Text = "7,85";
-        }
-        private void Tvi_AlMg4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            DichteD = Convert.ToDouble(2.66);
-            
-            tb_Dichte.Text = "2,66";
-        }
-
-        //
-        // Grid Auswahl Image zuweisung
-        //
-        private void img_Rechteck_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
-            grid_Profilauswahl.Visibility = Visibility.Visible;
-            lbl_Hoehe.Content = HoeheS;
-            lbl_Wandstaerke.Visibility = Visibility.Hidden;
-            tb_Wandstaerke.Visibility = Visibility.Hidden;
-            Image RechteckDetail = new Image();
-            BitmapImage bi1 = new BitmapImage();
-            bi1.BeginInit();
-            bi1.UriSource = new Uri("RechteckDetail.jpg", UriKind.Relative);
-            bi1.EndInit();
-            RechteckDetail.Stretch = Stretch.Fill;
-            RechteckDetail.Source = bi1;
-            img_DetailAnsicht.Source = bi1;
-            Profilint = 1;
-            lbl_Flanschbreite.Visibility = Visibility.Hidden;
-            tb_Flanschbreite.Visibility = Visibility.Hidden;
-
-        }
-        private void img_Rechteck_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
-            grid_Profilauswahl.Visibility = Visibility.Visible;
-            lbl_Hoehe.Content = HoeheS;
-            lbl_Wandstaerke.Content = WandstaerkeS;
-            Image RechteckHohlDetail = new Image();
-            BitmapImage bi1 = new BitmapImage();
-            bi1.BeginInit();
-            bi1.UriSource = new Uri("Rechteck-HohlprofilDetail.jpg", UriKind.Relative);
-            bi1.EndInit();
-            RechteckHohlDetail.Stretch = Stretch.Fill;
-            RechteckHohlDetail.Source = bi1;
-            img_DetailAnsicht.Source = bi1;
-            Profilint = 2;
-            lbl_Flanschbreite.Visibility = Visibility.Hidden;
-            tb_Flanschbreite.Visibility = Visibility.Hidden;
-        }
-        private void img_Kreis_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
-            grid_Profilauswahl.Visibility = Visibility.Visible;
-            lbl_Wandstaerke.Visibility = Visibility.Hidden;
-            tb_Wandstaerke.Visibility = Visibility.Hidden;
-            lbl_Hoehe.Content = HoeheDurch;
-            lbl_Breite.Visibility = Visibility.Hidden;
-            tb_Breite.Visibility = Visibility.Hidden;
-            Image KreisDetail = new Image();
-            BitmapImage bi1 = new BitmapImage();
-            bi1.BeginInit();
-            bi1.UriSource = new Uri("KreisDetail.jpg", UriKind.Relative);
-            bi1.EndInit();
-            KreisDetail.Stretch = Stretch.Fill;
-            KreisDetail.Source = bi1;
-            img_DetailAnsicht.Source = bi1;
-            Profilint = 3;
-            lbl_Flanschbreite.Visibility = Visibility.Hidden;
-            tb_Flanschbreite.Visibility = Visibility.Hidden;
-        }
-        private void img_Kreis_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            lbl_Hoehe.Content = HoeheDurch;
-            lbl_Breite.Visibility = Visibility.Hidden;
-            tb_Breite.Visibility = Visibility.Hidden;
-            lbl_Wandstaerke.Content = WandstaerkeS;
-            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
-            grid_Profilauswahl.Visibility = Visibility.Visible;
-            Image Kreis_HohlprofilDetail = new Image();
-            BitmapImage bi1 = new BitmapImage();
-            bi1.BeginInit();
-            bi1.UriSource = new Uri("Kreis-HohlprofilDetail.jpg", UriKind.Relative);
-            bi1.EndInit();
-            Kreis_HohlprofilDetail.Stretch = Stretch.Fill;
-            Kreis_HohlprofilDetail.Source = bi1;
-            img_DetailAnsicht.Source = bi1;
-            Profilint = 4;
-            lbl_Flanschbreite.Visibility = Visibility.Hidden;
-            tb_Flanschbreite.Visibility = Visibility.Hidden;
-
-        }
-        private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            lbl_Hoehe.Content = HoeheS;
-            lbl_Wandstaerke.Content = WandIULS;
-            lbl_Flanschbreite.Visibility = Visibility.Visible;
-            tb_Flanschbreite.Visibility = Visibility.Visible;
-            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
-            grid_Profilauswahl.Visibility = Visibility.Visible;
-            Image IProfilDetail = new Image();
-            BitmapImage bi1 = new BitmapImage();
-            bi1.BeginInit();
-            bi1.UriSource = new Uri("I-ProfilDetail.jpg", UriKind.Relative);
-            bi1.EndInit();
-            IProfilDetail.Stretch = Stretch.Fill;
-            IProfilDetail.Source = bi1;
-            img_DetailAnsicht.Source = bi1;
-            Profilint = 5;
-
-        }
-        private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            lbl_Hoehe.Content = HoeheS;
-            lbl_Wandstaerke.Content = WandTS;
-            
-            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
-            grid_Profilauswahl.Visibility = Visibility.Visible;
-            Image TProfilDetail = new Image();
-            BitmapImage bi1 = new BitmapImage();
-            bi1.BeginInit();
-            bi1.UriSource = new Uri("T-ProfilDetail.jpg", UriKind.Relative);
-            bi1.EndInit();
-            TProfilDetail.Stretch = Stretch.Fill;
-            TProfilDetail.Source = bi1;
-            img_DetailAnsicht.Source = bi1;
-            Profilint = 6;
-            lbl_Flanschbreite.Visibility = Visibility.Hidden;
-            tb_Flanschbreite.Visibility = Visibility.Hidden;
-
-        }
-        private void img_U_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
-            grid_Profilauswahl.Visibility = Visibility.Visible;
-            lbl_Hoehe.Content = HoeheS;
-            lbl_Flanschbreite.Visibility = Visibility.Visible;
-            tb_Flanschbreite.Visibility = Visibility.Visible;
-            lbl_Wandstaerke.Content = WandIULS;
-            Image UProfilDetail = new Image();
-            BitmapImage bi1 = new BitmapImage();
-            bi1.BeginInit();
-            bi1.UriSource = new Uri("U-ProfilDetail.jpg", UriKind.Relative);
-            bi1.EndInit();
-            UProfilDetail.Stretch = Stretch.Fill;
-            UProfilDetail.Source = bi1;
-            img_DetailAnsicht.Source = bi1;
-            Profilint = 7;
-
-        }
-        private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            lbl_Hoehe.Content = HoeheS;
-            grid_Profilauswahlimg.Visibility = Visibility.Hidden;
-            grid_Profilauswahl.Visibility = Visibility.Visible;
-            Image LProfilDetail = new Image();
-            BitmapImage bi1 = new BitmapImage();
-            bi1.BeginInit();
-            bi1.UriSource = new Uri("L-ProfilDetail.jpg", UriKind.Relative);
-            bi1.EndInit();
-            LProfilDetail.Stretch = Stretch.Fill;
-            LProfilDetail.Source = bi1;
-            img_DetailAnsicht.Source = bi1;
-            Profilint = 8;
-            lbl_Flanschbreite.Visibility = Visibility.Hidden;
-            tb_Flanschbreite.Visibility = Visibility.Hidden;
-            lbl_Wandstaerke.Content = WandIULS;
-        }
-   
-        private void tb_Wandstaerke_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string test;
-            String Zeichen;
-            Zeichen = "0123456789.,";
-            //StringBuilder Zugelassen = new StringBuilder();
-                if (tb_Wandstaerke.Text.Equals(""))
-                {
-
-                }
-                else
-                {
-                    test = tb_Wandstaerke.Text;
-                    foreach (char ch in test)
-                        if (Zeichen.Contains(ch.ToString()))
-                        {
-                            WandstaerkeD = Convert.ToDouble(tb_Wandstaerke.Text);
-                        }
-                        else
-                        {
-                            tb_Wandstaerke.Text = "";
-                        }
-                }
-
-        }
-
-
         private void btn_Wiederholen_Click(object sender, RoutedEventArgs e)
         {
             grid_Profilauswahl.Visibility = Visibility.Hidden;
@@ -1188,6 +1248,7 @@ namespace Profilrechner
             tb_Wandstaerke.Text = "";
             tb_Laenge.Text = "";
             tb_Flanschbreite.Text = "";
+            HoeheD = 0;
             lbl_Drehwinkel.Visibility = Visibility.Hidden;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             lbl_FTM.Visibility = Visibility.Hidden;
@@ -1226,55 +1287,6 @@ namespace Profilrechner
             Grid_Endcart.Visibility = Visibility.Visible;
         }
 
-        private void tb_Dichte_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string test;
-            String Zeichen;
-            Zeichen = "0123456789.,";
-            //StringBuilder Zugelassen = new StringBuilder();
-                if (tb_Dichte.Text.Equals(""))
-                {
-
-                }
-                else
-                {
-                    test = tb_Dichte.Text;
-                    foreach (char ch in test)
-                        if (Zeichen.Contains(ch.ToString()))
-                        {
-                            DichteD = Convert.ToDouble(tb_Dichte.Text);
-                        }
-                        else
-                        {
-                            tb_Dichte.Text = "";
-                        }
-                }
-        }
-    
-        private void tb_Flanschbreite_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string test;
-            String Zeichen;
-            Zeichen = "0123456789.,";
-            //StringBuilder Zugelassen = new StringBuilder();
-                if (tb_Flanschbreite.Text.Equals(""))
-                {
-
-                }
-                else
-                {
-                    test = tb_Flanschbreite.Text;
-                    foreach (char ch in test)
-                        if (Zeichen.Contains(ch.ToString()))
-                        {
-                            FlanschbreiteD = Convert.ToDouble(tb_Flanschbreite.Text);
-                        }
-                        else
-                        {
-                            tb_Flanschbreite.Text = "";
-                        }
-                }
-        }
 
         private void Lbl_CatiaTest_Click(object sender, RoutedEventArgs e)
         {
@@ -1286,5 +1298,7 @@ namespace Profilrechner
         {
             new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint);
         }
+
+        #endregion
     }
 }
