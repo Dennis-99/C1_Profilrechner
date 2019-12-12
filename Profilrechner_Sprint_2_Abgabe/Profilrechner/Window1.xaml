@@ -79,6 +79,7 @@
             <Label x:Name="lbl_HTMV" Content="" HorizontalAlignment="Left" Margin="280,380,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.529,2.577"/>
             <Label x:Name="lbl_HTMU" Content="" HorizontalAlignment="Left" Margin="410,380,0,0" VerticalAlignment="Top"/>
             <Button x:Name="btn_CatiaStart" Content="CatiaStart" HorizontalAlignment="Left" Margin="610,387,0,0" VerticalAlignment="Top" Width="75" Click="Btn_CatiaStart_Click"/>
+            <Button x:Name="btn_zurueck" Content="Zurück" HorizontalAlignment="Left" Margin="503,398,0,0" VerticalAlignment="Top" Width="75" Click="Button_zurueckProfilauswahl_Click"/>
 
 
         </Grid>

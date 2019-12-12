@@ -145,6 +145,7 @@ namespace Profilrechner
             btn_Berechnen.Content = "Berechnen";
             btn_Wiederholen.Content = "Wiederholen";
             btn_Beenden.Content = "Beenden";
+            btn_zurueck.Content = "Zurück";
 
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
@@ -232,6 +233,7 @@ namespace Profilrechner
             btn_Berechnen.Content = "Calculate";
             btn_Wiederholen.Content = "Repeat";
             btn_Beenden.Content = "Exit";
+            btn_zurueck.Content = "Return";
 
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
@@ -317,6 +319,7 @@ namespace Profilrechner
             btn_Berechnen.Content = "Calculer";
             btn_Wiederholen.Content = "Répéter";
             btn_Beenden.Content = "Terminer";
+            btn_zurueck.Content = "Retourer";
 
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
@@ -484,10 +487,12 @@ namespace Profilrechner
             if (Fehlercode.Equals(1))
             {
                 ThisIsYoustATreeView.Visibility = Visibility.Visible;
-                tb_hoehe.Text = "0";
-                tb_Breite.Text = "0";
-                tb_Dichte.Text = "0";
-                tb_Wandstaerke.Text = "0";
+                tb_hoehe.Text = "";
+                tb_Breite.Text = "";
+                tb_Dichte.Text = "";
+                tb_Wandstaerke.Text = "";
+                tb_Flanschbreite.Text = "";
+                tb_Laenge.Text = "";
                 Fehlercode = 0;
             }
             else
@@ -1120,6 +1125,13 @@ namespace Profilrechner
             lbl_Voulumen.Visibility = Visibility.Hidden;
             lbl_DeviationsMoment.Visibility = Visibility.Hidden;
 
+            HoeheD = 0;
+            BreiteD = 0;
+            DichteD = 0;
+            WandstaerkeD = 0;
+            LaengeD = 0;
+            FlanschbreiteD = 0;
+
         }
 
         private void btn_Beenden_Click(object sender, RoutedEventArgs e)
@@ -1198,7 +1210,58 @@ namespace Profilrechner
 
         private void Btn_CatiaStart_Click(object sender, RoutedEventArgs e)
         {
-            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, Profilint);
+            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint);
+        }
+
+        private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
+        {
+            grid_Profilauswahl.Visibility = Visibility.Hidden;
+            grid_Profilauswahlimg.Visibility = Visibility.Visible;
+
+
+
+            lbl_Hoehe.Visibility = Visibility.Visible;
+            tb_hoehe.Visibility = Visibility.Visible;
+            lbl_Breite.Visibility = Visibility.Visible;
+            tb_Breite.Visibility = Visibility.Visible;
+            lbl_Laenge.Visibility = Visibility.Visible;
+            tb_Laenge.Visibility = Visibility.Visible;
+            lbl_Wandstaerke.Visibility = Visibility.Visible;
+            tb_Wandstaerke.Visibility = Visibility.Visible;
+            tb_hoehe.Text = "";
+            tb_Breite.Text = "";
+            tb_Dichte.Text = "";
+            tb_Wandstaerke.Text = "";
+            tb_Laenge.Text = "";
+            tb_Flanschbreite.Text = "";
+            lbl_Drehwinkel.Visibility = Visibility.Hidden;
+            lbl_Flanschbreite.Visibility = Visibility.Hidden;
+            lbl_FTM.Visibility = Visibility.Hidden;
+            lbl_FTMX.Visibility = Visibility.Hidden;
+            lbl_FTMY.Visibility = Visibility.Hidden;
+            lbl_Grad.Visibility = Visibility.Hidden;
+            lbl_HTM.Visibility = Visibility.Hidden;
+            lbl_HTMU.Visibility = Visibility.Hidden;
+            lbl_HTMV.Visibility = Visibility.Hidden;
+            lbl_Masse.Visibility = Visibility.Hidden;
+            lbl_Querschnitt.Visibility = Visibility.Hidden;
+            lbl_Rad.Visibility = Visibility.Hidden;
+            lbl_SWP.Visibility = Visibility.Hidden;
+            lbl_SWPX.Visibility = Visibility.Hidden;
+            lbl_SWPY.Visibility = Visibility.Hidden;
+            lbl_TanA.Visibility = Visibility.Hidden;
+            lbl_Voulumen.Visibility = Visibility.Hidden;
+            lbl_DeviationsMoment.Visibility = Visibility.Hidden;
+
+            HoeheD = 0;
+            BreiteD = 0;
+            DichteD = 0;
+            WandstaerkeD = 0;
+            LaengeD = 0;
+            FlanschbreiteD = 0;
+
+            
+
         }
     }
 }

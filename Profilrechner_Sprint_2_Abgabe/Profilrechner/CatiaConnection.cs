@@ -13,9 +13,6 @@ namespace Profilrechner
         MECMOD.PartDocument hsp_catiaPart;
         MECMOD.Sketch hsp_catiaProfil;
 
-       
-       
-
         public bool CATIALaeuft()
         {
             try
@@ -78,14 +75,13 @@ namespace Profilrechner
 
         public void ErzeugeProfilRechteck(Double Breite, Double Hoehe , Double Laenge)
         {
-           
 
             // Werte aus Variblen verarbeiten
             Double HalbeBreite = Breite / 2;
             Double HalbeHöhe = Hoehe / 2;
 
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("Rechteck");
+            hsp_catiaProfil.set_Name("Rechteckprofil");
 
             // Rechteck in Skizze einzeichnen
             // Skizze oeffnen
@@ -118,6 +114,7 @@ namespace Profilrechner
 
             // Skizzierer verlassen
             hsp_catiaProfil.CloseEdition();
+
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
         }
@@ -133,6 +130,12 @@ namespace Profilrechner
 
             // Block umbenennen
             catPad1.set_Name("Balken");
+
+            // Part aktualisieren
+            hsp_catiaPart.Part.Update();
+
+            //Reframe
+            hsp_catiaApp.ActiveWindow.ActiveViewer.Reframe();
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
@@ -194,45 +197,30 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
+
+            //Reframe
+            hsp_catiaApp.ActiveWindow.ActiveViewer.Reframe();
+
+            // Part aktualisieren
+            hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeTProfil(Double Hoehe, Double Breite, Double Wandstaerke, Double Laenge)
+        public void ErzeugeKreisprofil(Double Durchmesser)
         {
-            // Werte aus Variablen verarbeiten
-            Double Breite2 = Breite - Wandstaerke;
-            Double Hoehe2 = Hoehe - Wandstaerke;
+            // Werte aus Variblen verarbeiten
+            Double Radius = Durchmesser / 2;
 
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("T-Profil");
+            hsp_catiaProfil.set_Name("Kreisprofil");
 
-            // T-Profil in Skizze einzeichnen
+            // Kreisprofil in Skizze einzeichnen
             // Skizze oeffnen
             Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
 
-            // T-Profil erzeugen
+            // Kreisprofil erzeugen
 
             // erst die Punkte
-            Point2D catPoint2D1 = catFactory2D1.CreatePoint(-Breite2, Hoehe2);
-            Point2D catPoint2D2 = catFactory2D1.CreatePoint(Breite2, Hoehe2);
-            Point2D catPoint2D3 = catFactory2D1.CreatePoint(Breite2, -Hoehe2);
-            Point2D catPoint2D4 = catFactory2D1.CreatePoint(-Breite2, -Hoehe2);
-
-            // dann die Linien
-            Line2D catLine2D1 = catFactory2D1.CreateLine(-Breite2, Hoehe2, Breite2, Hoehe2);
-            catLine2D1.StartPoint = catPoint2D1;
-            catLine2D1.EndPoint = catPoint2D2;
-
-            Line2D catLine2D2 = catFactory2D1.CreateLine(Breite2, Hoehe2, Breite2, -Hoehe2);
-            catLine2D2.StartPoint = catPoint2D2;
-            catLine2D2.EndPoint = catPoint2D3;
-
-            Line2D catLine2D3 = catFactory2D1.CreateLine(Breite2, -Hoehe2, -Breite2, -Hoehe2);
-            catLine2D3.StartPoint = catPoint2D3;
-            catLine2D3.EndPoint = catPoint2D4;
-
-            Line2D catLine2D4 = catFactory2D1.CreateLine(-Breite2, -Hoehe2, -Breite2, Hoehe2);
-            catLine2D4.StartPoint = catPoint2D4;
-            catLine2D4.EndPoint = catPoint2D1;
+            catFactory2D1.CreateClosedCircle(0.000000, 0.000000, Radius);
 
             // Skizzierer verlassen
             hsp_catiaProfil.CloseEdition();
@@ -240,6 +228,50 @@ namespace Profilrechner
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
         }
+
+        public void ErzeugeKreisHohlprofil(Double Durchmesser, Double Wandstaerke, Double Laenge)
+        {
+            // Werte aus Variablen verarbeiten
+            Double Radius = Durchmesser / 2;
+
+            // Skizze umbenennen
+            hsp_catiaProfil.set_Name("Kreis-Hohlprofil");
+
+            // Kreis-Hohlprofil in Skizze einzeichnen
+            // Skizze oeffnen
+            Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
+
+            // Kreis-Hohlprofil erzeugen
+
+            // erst die Punkte
+            catFactory2D1.CreateClosedCircle(0.000000, 0.000000, Radius - Wandstaerke);
+
+            // Skizzierer verlassen
+            hsp_catiaProfil.CloseEdition();
+
+            // Part aktualisieren
+            hsp_catiaPart.Part.Update();
+
+            // Hauptkoerper in Bearbeitung definieren
+            hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
+
+            // Block(Balken) erzeugen
+            ShapeFactory catShapeFactory1 = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
+            Pocket catPocket1 = catShapeFactory1.AddNewPocket(hsp_catiaProfil, Laenge);
+
+            // Block umbenennen
+            catPocket1.set_Name("Tasche");
+
+            // Part aktualisieren
+            hsp_catiaPart.Part.Update();
+
+            //Reframe
+            hsp_catiaApp.ActiveWindow.ActiveViewer.Reframe();
+
+            // Part aktualisieren
+            hsp_catiaPart.Part.Update();
+        }
+
         public void ErzeugeIProfil(Double Breite, Double Hoehe, Double Wandstaerke, Double Flanschbreite)
         {
             Double Stegbreite = Wandstaerke;
@@ -329,7 +361,180 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
+
         }
 
+        public void ErzeugeTProfil(Double Hoehe, Double Breite, Double Wandstaerke)
+        {
+            // Skizze umbenennen
+            hsp_catiaProfil.set_Name("T-Profil");
+
+            // T-Profil in Skizze einzeichnen
+            // Skizze oeffnen
+            Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
+
+            // T-Profil erzeugen
+
+            // erst die Punkte
+            Point2D catPoint2D1 = catFactory2D1.CreatePoint(0, Hoehe);
+            Point2D catPoint2D2 = catFactory2D1.CreatePoint(0, Hoehe - Wandstaerke);
+            Point2D catPoint2D3 = catFactory2D1.CreatePoint((Breite / 2) - (Wandstaerke / 2), Hoehe - Wandstaerke);
+            Point2D catPoint2D4 = catFactory2D1.CreatePoint((Breite / 2) - (Wandstaerke / 2), 0);
+            Point2D catPoint2D5 = catFactory2D1.CreatePoint((Breite / 2) + (Wandstaerke / 2), 0);
+            Point2D catPoint2D6 = catFactory2D1.CreatePoint((Breite / 2) + (Wandstaerke / 2), Hoehe - Wandstaerke);
+            Point2D catPoint2D7 = catFactory2D1.CreatePoint(Breite, Hoehe - Wandstaerke);
+            Point2D catPoint2D8 = catFactory2D1.CreatePoint(Breite, Hoehe);
+
+            // dann die Linien
+            Line2D catLine2D1 = catFactory2D1.CreateLine(0, Hoehe, 0, Hoehe - Wandstaerke);
+            catLine2D1.StartPoint = catPoint2D1;
+            catLine2D1.EndPoint = catPoint2D2;
+
+            Line2D catLine2D2 = catFactory2D1.CreateLine(0, Hoehe - Wandstaerke, (Breite / 2) - (Wandstaerke / 2), Hoehe - Wandstaerke);
+            catLine2D2.StartPoint = catPoint2D2;
+            catLine2D2.EndPoint = catPoint2D3;
+
+            Line2D catLine2D3 = catFactory2D1.CreateLine((Breite / 2) - (Wandstaerke / 2), Hoehe - Wandstaerke, (Breite / 2) - (Wandstaerke / 2), 0);
+            catLine2D3.StartPoint = catPoint2D3;
+            catLine2D3.EndPoint = catPoint2D4;
+
+            Line2D catLine2D4 = catFactory2D1.CreateLine((Breite / 2) - (Wandstaerke / 2), 0, (Breite / 2) + (Wandstaerke / 2), 0);
+            catLine2D4.StartPoint = catPoint2D4;
+            catLine2D4.EndPoint = catPoint2D5;
+
+            Line2D catLine2D5 = catFactory2D1.CreateLine((Breite / 2) + (Wandstaerke / 2), 0, (Breite / 2) + (Wandstaerke / 2), Hoehe - Wandstaerke);
+            catLine2D5.StartPoint = catPoint2D5;
+            catLine2D5.EndPoint = catPoint2D6;
+
+            Line2D catLine2D6 = catFactory2D1.CreateLine((Breite / 2) + (Wandstaerke / 2), Hoehe - Wandstaerke, Breite, Hoehe - Wandstaerke);
+            catLine2D6.StartPoint = catPoint2D6;
+            catLine2D6.EndPoint = catPoint2D7;
+
+            Line2D catLine2D7 = catFactory2D1.CreateLine(Breite, Hoehe - Wandstaerke, Breite, Hoehe);
+            catLine2D7.StartPoint = catPoint2D7;
+            catLine2D7.EndPoint = catPoint2D8;
+
+            Line2D catLine2D8 = catFactory2D1.CreateLine(Breite, Hoehe, 0, Hoehe);
+            catLine2D8.StartPoint = catPoint2D8;
+            catLine2D8.EndPoint = catPoint2D1;
+
+            // Skizzierer verlassen
+            hsp_catiaProfil.CloseEdition();
+
+            // Part aktualisieren
+            hsp_catiaPart.Part.Update();
+        }
+
+        public void ErzeugeUProfil(Double Hoehe, Double Breite, Double Wandstaerke, Double Flanschbreite)
+        {
+            // Skizze umbenennen
+            hsp_catiaProfil.set_Name("U-Profil");
+
+            // U-Profil in Skizze einzeichnen
+            // Skizze oeffnen
+            Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
+
+            // U-Profil erzeugen
+
+            // erst die Punkte
+            Point2D catPoint2D1 = catFactory2D1.CreatePoint(0, 0);
+            Point2D catPoint2D2 = catFactory2D1.CreatePoint(Breite, 0);
+            Point2D catPoint2D3 = catFactory2D1.CreatePoint(Breite, Flanschbreite);
+            Point2D catPoint2D4 = catFactory2D1.CreatePoint(Wandstaerke, Flanschbreite);
+            Point2D catPoint2D5 = catFactory2D1.CreatePoint(Wandstaerke, Hoehe - Flanschbreite);
+            Point2D catPoint2D6 = catFactory2D1.CreatePoint(Breite, Hoehe - Flanschbreite);
+            Point2D catPoint2D7 = catFactory2D1.CreatePoint(Breite, Hoehe);
+            Point2D catPoint2D8 = catFactory2D1.CreatePoint(0, Hoehe);
+
+            // dann die Linien
+            Line2D catLine2D1 = catFactory2D1.CreateLine(0, 0, Breite, 0);
+            catLine2D1.StartPoint = catPoint2D1;
+            catLine2D1.EndPoint = catPoint2D2;
+
+            Line2D catLine2D2 = catFactory2D1.CreateLine(Breite, 0, Breite, Flanschbreite);
+            catLine2D2.StartPoint = catPoint2D2;
+            catLine2D2.EndPoint = catPoint2D3;
+
+            Line2D catLine2D3 = catFactory2D1.CreateLine(Breite, Flanschbreite, Wandstaerke, Flanschbreite);
+            catLine2D3.StartPoint = catPoint2D3;
+            catLine2D3.EndPoint = catPoint2D4;
+
+            Line2D catLine2D4 = catFactory2D1.CreateLine(Wandstaerke, Flanschbreite, Wandstaerke, Hoehe - Flanschbreite);
+            catLine2D4.StartPoint = catPoint2D4;
+            catLine2D4.EndPoint = catPoint2D5;
+
+            Line2D catLine2D5 = catFactory2D1.CreateLine(Wandstaerke, Hoehe - Flanschbreite, Breite, Hoehe - Flanschbreite);
+            catLine2D5.StartPoint = catPoint2D5;
+            catLine2D5.EndPoint = catPoint2D6;
+
+            Line2D catLine2D6 = catFactory2D1.CreateLine(Breite, Hoehe - Flanschbreite, Breite, Hoehe);
+            catLine2D6.StartPoint = catPoint2D6;
+            catLine2D6.EndPoint = catPoint2D7;
+
+            Line2D catLine2D7 = catFactory2D1.CreateLine(Breite, Hoehe, 0, Hoehe);
+            catLine2D7.StartPoint = catPoint2D7;
+            catLine2D7.EndPoint = catPoint2D8;
+
+            Line2D catLine2D8 = catFactory2D1.CreateLine(0, Hoehe, 0, 0);
+            catLine2D8.StartPoint = catPoint2D8;
+            catLine2D8.EndPoint = catPoint2D1;
+
+            // Skizzierer verlassen
+            hsp_catiaProfil.CloseEdition();
+
+            // Part aktualisieren
+            hsp_catiaPart.Part.Update();
+        }
+
+        public void ErzeugeLProfil(Double Hoehe, Double Breite, Double Wandstaerke)
+        {
+            // Skizze umbenennen
+            hsp_catiaProfil.set_Name("L-Profil");
+
+            // U-Profil in Skizze einzeichnen
+            // Skizze oeffnen
+            Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
+
+            // U-Profil erzeugen
+
+            // erst die Punkte
+            Point2D catPoint2D1 = catFactory2D1.CreatePoint(0, 0);
+            Point2D catPoint2D2 = catFactory2D1.CreatePoint(Breite, 0);
+            Point2D catPoint2D3 = catFactory2D1.CreatePoint(Breite, Wandstaerke);
+            Point2D catPoint2D4 = catFactory2D1.CreatePoint(Wandstaerke, Wandstaerke);
+            Point2D catPoint2D5 = catFactory2D1.CreatePoint(Wandstaerke, Hoehe);
+            Point2D catPoint2D6 = catFactory2D1.CreatePoint(0, Hoehe);
+
+            // dann die Linien
+            Line2D catLine2D1 = catFactory2D1.CreateLine(0, 0, Breite, 0);
+            catLine2D1.StartPoint = catPoint2D1;
+            catLine2D1.EndPoint = catPoint2D2;
+
+            Line2D catLine2D2 = catFactory2D1.CreateLine(Breite, 0, Breite, Wandstaerke);
+            catLine2D2.StartPoint = catPoint2D2;
+            catLine2D2.EndPoint = catPoint2D3;
+
+            Line2D catLine2D3 = catFactory2D1.CreateLine(Breite, Wandstaerke, Wandstaerke, Wandstaerke);
+            catLine2D3.StartPoint = catPoint2D3;
+            catLine2D3.EndPoint = catPoint2D4;
+
+            Line2D catLine2D4 = catFactory2D1.CreateLine(Wandstaerke, Wandstaerke, Wandstaerke, Hoehe);
+            catLine2D4.StartPoint = catPoint2D4;
+            catLine2D4.EndPoint = catPoint2D5;
+
+            Line2D catLine2D5 = catFactory2D1.CreateLine(Wandstaerke, Hoehe, 0, Hoehe);
+            catLine2D5.StartPoint = catPoint2D5;
+            catLine2D5.EndPoint = catPoint2D6;
+
+            Line2D catLine2D6 = catFactory2D1.CreateLine(0, Hoehe, 0, 0);
+            catLine2D6.StartPoint = catPoint2D6;
+            catLine2D6.EndPoint = catPoint2D1;
+
+            // Skizzierer verlassen
+            hsp_catiaProfil.CloseEdition();
+
+            // Part aktualisieren
+            hsp_catiaPart.Part.Update();
+        }
     }
 }
