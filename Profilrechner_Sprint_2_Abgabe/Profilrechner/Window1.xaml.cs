@@ -78,7 +78,8 @@ namespace Profilrechner
         String WandIULS;
         String WandTS;
 
-
+        //tb Partname
+        String Partname;
 
         public Window1()
         {
@@ -1106,6 +1107,7 @@ namespace Profilrechner
             tb_Wandstaerke.Text = "";
             tb_Laenge.Text = "";
             tb_Flanschbreite.Text = "";
+            tb_Partname.Text = "";
             lbl_Drehwinkel.Visibility = Visibility.Hidden;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             lbl_FTM.Visibility = Visibility.Hidden;
@@ -1131,6 +1133,7 @@ namespace Profilrechner
             WandstaerkeD = 0;
             LaengeD = 0;
             FlanschbreiteD = 0;
+            
 
         }
 
@@ -1210,7 +1213,7 @@ namespace Profilrechner
 
         private void Btn_CatiaStart_Click(object sender, RoutedEventArgs e)
         {
-            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint);
+            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Partname);
         }
 
         private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
@@ -1234,6 +1237,7 @@ namespace Profilrechner
             tb_Wandstaerke.Text = "";
             tb_Laenge.Text = "";
             tb_Flanschbreite.Text = "";
+            tb_Partname.Text = "";
             lbl_Drehwinkel.Visibility = Visibility.Hidden;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             lbl_FTM.Visibility = Visibility.Hidden;
@@ -1259,8 +1263,17 @@ namespace Profilrechner
             WandstaerkeD = 0;
             LaengeD = 0;
             FlanschbreiteD = 0;
+            
 
             
+
+        }
+
+        private void tb_Partname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+
+           String Partname = tb_Partname.Text;
 
         }
     }

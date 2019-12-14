@@ -10,7 +10,7 @@ namespace Profilrechner
     public class CatiaControl
     {
         
-        public CatiaControl(Double Breite, Double Hoehe,Double Laenge,Double Wandstaerke, Double Flanschbreite, Double Durchmesser, int Profil)
+        public CatiaControl(Double Breite, Double Hoehe,Double Laenge,Double Wandstaerke, Double Flanschbreite, Double Durchmesser, int Profil, String Partname)
         {
             try
             {
@@ -25,7 +25,7 @@ namespace Profilrechner
                         //RechteckProfil
 
                         // Öffne ein neues Part
-                        cc.ErzeugePart();
+                        cc.ErzeugePart(Partname);
                        
 
                         // Erstelle eine Skizze
@@ -45,7 +45,7 @@ namespace Profilrechner
                         //Rechteck-Hohlprofil
 
                         // Öffne ein neues Part
-                        cc.ErzeugePart();
+                        cc.ErzeugePart(Partname);
 
 
                         // Erstelle eine Skizze
@@ -67,7 +67,7 @@ namespace Profilrechner
                     {
                         //KreisProfil
                         // Öffne ein neues Part
-                        cc.ErzeugePart();
+                        cc.ErzeugePart(Partname);
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
@@ -82,7 +82,7 @@ namespace Profilrechner
                     {
                         //Kreis-Hohlprofil
                         // Öffne ein neues Part
-                        cc.ErzeugePart();
+                        cc.ErzeugePart(Partname);
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
@@ -100,7 +100,7 @@ namespace Profilrechner
                     {
                         //I-Profil
                         // Öffne ein neues Part
-                        cc.ErzeugePart();
+                        cc.ErzeugePart(Partname);
 
 
                         // Erstelle eine Skizze
@@ -117,7 +117,7 @@ namespace Profilrechner
                     {
                         //T-Profil
                         // Öffne ein neues Part
-                        cc.ErzeugePart();
+                        cc.ErzeugePart(Partname);
 
 
                         // Erstelle eine Skizze
@@ -133,7 +133,7 @@ namespace Profilrechner
                     {
                         //U-Profil
                         // Öffne ein neues Part
-                        cc.ErzeugePart();
+                        cc.ErzeugePart(Partname);
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
@@ -148,7 +148,7 @@ namespace Profilrechner
                     {
                         //L-Profil
                         // Öffne ein neues Part
-                        cc.ErzeugePart();
+                        cc.ErzeugePart(Partname);
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();

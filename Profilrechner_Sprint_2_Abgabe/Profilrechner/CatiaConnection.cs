@@ -28,10 +28,10 @@ namespace Profilrechner
             }
         }
 
-        public Boolean ErzeugePart()
+        public Boolean ErzeugePart(String name)
         {
             INFITF.Documents catDocuments1 = hsp_catiaApp.Documents;
-            hsp_catiaPart = catDocuments1.Add("Part") as MECMOD.PartDocument;
+            hsp_catiaPart = catDocuments1.Add(name) as MECMOD.PartDocument;
             return true;
         }
 
