@@ -5,33 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Profilrechner"
         mc:Ignorable="d"
-        Title="Profilrechner" Height="466.199" Width="814.953">
+        Title="Profilrechner" Height="550" Width="1162">
     <Grid x:Name="grid_Main" Margin="10,10,0,0">
 
 
-        <Grid x:Name="grid_Language1" Visibility="Visible">
+        <Grid x:Name="grid_Language1" Visibility="Visible" Width="1137" HorizontalAlignment="Left">
             <Label x:Name="lbl_ChooseLanguage" Content="Choose a Language:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" Height="58" Width="330"/>
-            <Button x:Name="btn_SpracheD" Content="Deutsch" HorizontalAlignment="Left" Margin="70,180,0,0" VerticalAlignment="Top" Width="155" FontSize="36" Click="btn_SpracheD_Click" Height="52"/>
-            <Button x:Name="btn_SpracheE" Content="English" Margin="322,180,0,0" VerticalAlignment="Top" FontSize="36" Click="btn_SpracheE_Click" Height="52" HorizontalAlignment="Left" Width="156"/>
-            <Button x:Name="btn_SpracheF" Content="Français" HorizontalAlignment="Left" Margin="575,180,0,0" VerticalAlignment="Top" Width="155" Height="52" FontSize="36" Click="btn_SpracheF_Click"/>
-            <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,7,7" VerticalAlignment="Bottom" Width="75" FontSize="20"  Height="31" Click="btn_exit_Click" />
+            <Button x:Name="btn_SpracheD" Content="Deutsch" HorizontalAlignment="Left" Margin="167.75,228,0,0" VerticalAlignment="Top" Width="155" FontSize="36" Click="btn_SpracheD_Click" Height="52"/>
+            <Button x:Name="btn_SpracheE" Content="English" Margin="490.5,228,0,0" VerticalAlignment="Top" FontSize="36" Click="btn_SpracheE_Click" Height="52" HorizontalAlignment="Left" Width="156"/>
+            <Button x:Name="btn_SpracheF" Content="Français" HorizontalAlignment="Right" Margin="0,228,167.75,0" VerticalAlignment="Top" Width="155" Height="52" FontSize="36" Click="btn_SpracheF_Click"/>
+            <Button x:Name="btn_exit" Content="Exit" Margin="0,0,7,7" FontSize="20" Click="btn_exit_Click" Height="31" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" />
         </Grid>
 
-        <Grid x:Name="grid_Profilauswahlimg" Visibility="Hidden">
+        <Grid x:Name="grid_Profilauswahlimg" Visibility="Hidden" Width="1137" HorizontalAlignment="Left">
             <Label x:Name="lbl_Profilauswahlimg" Content="Bitte wählen Sie ein Profil aus:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
-            <Image x:Name="img_I_Profil" HorizontalAlignment="Left" Height="100" Margin="40,265,0,0" VerticalAlignment="Top" Width="100" Source="I-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_I_Profil_MouseLeftButtonDown" ToolTip="I-Profil"/>
-            <Image x:Name="img_Kreis" HorizontalAlignment="Left" Height="100" Margin="442.6,104,0,0" VerticalAlignment="Top" Width="100" Source="Kreis.jpg" Stretch="Fill" MouseLeftButtonDown="img_Kreis_MouseLeftButtonDown" ToolTip="Kreis-Vollprofil"/>
-            <Image x:Name="img_Kreis_Hohlprofil" Height="100" Margin="644,104,0,0" VerticalAlignment="Top" Source="Kreis-Hohlprofil.jpg" Stretch="Fill" MouseLeftButtonDown="img_Kreis_Hohlprofil_MouseLeftButtonDown" HorizontalAlignment="Left" Width="100" ToolTip="Kreis-Rohrprofil"/>
-            <Image x:Name="img_Rechteck" HorizontalAlignment="Left" Height="100" Margin="40,104,0,0" VerticalAlignment="Top" Width="100" Source="Rechteck.jpg" ToolTip="Rechteck-Vollprofil" Stretch="Fill" MouseLeftButtonDown="img_Rechteck_MouseLeftButtonDown"/>
-            <Image x:Name="img_Rechteck_Hohlprofil" HorizontalAlignment="Left" Height="100" Margin="241.3,104,0,0" VerticalAlignment="Top" Width="100" Source="Rechteck-Hohlprofil.jpg" Stretch="Fill" MouseLeftButtonDown="img_Rechteck_Hohlprofil_MouseLeftButtonDown" ToolTip="Rechteck-Rohrprofil"/>
-            <Image x:Name="img_T_Profil" HorizontalAlignment="Left" Height="100" Margin="241.3,265,0,0" VerticalAlignment="Top" Width="100" Source="T-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_T_Profil_MouseLeftButtonDown" ToolTip="T-Profil"/>
-            <Image x:Name="img_U_Profil" Height="100" Margin="442.6,265,0,0" VerticalAlignment="Top" Source="U-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_U_Profil_MouseLeftButtonDown" HorizontalAlignment="Left" Width="100" ToolTip="U-Profil"/>
-            <Image x:Name="img_L_Profil" Height="100" Margin="644,265,0,0" VerticalAlignment="Top" Source="L-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_L_Profil_MouseLeftButtonDown" HorizontalAlignment="Left" Width="100" ToolTip="L-Profil"/>
+            <Image x:Name="img_I_Profil" HorizontalAlignment="Left" Margin="131,277,0,0" Width="120" Source="I-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_I_Profil_MouseLeftButtonDown" ToolTip="I-Profil" Height="120" VerticalAlignment="Top"/>
+            <Image x:Name="img_Kreis" Height="120" Margin="634,112,0,0" VerticalAlignment="Top" Source="Kreis.jpg" Stretch="Fill" MouseLeftButtonDown="img_Kreis_MouseLeftButtonDown" ToolTip="Kreis-Vollprofil" HorizontalAlignment="Left" Width="120"/>
+            <Image x:Name="img_Kreis_Hohlprofil" Height="120" Margin="886,112,0,0" VerticalAlignment="Top" Source="Kreis-Hohlprofil.jpg" Stretch="Fill" MouseLeftButtonDown="img_Kreis_Hohlprofil_MouseLeftButtonDown" ToolTip="Kreis-Rohrprofil" HorizontalAlignment="Left" Width="120"/>
+            <Image x:Name="img_Rechteck" HorizontalAlignment="Left" Height="120" Margin="131.4,112,0,0" VerticalAlignment="Top" Width="120" Source="Rechteck.jpg" ToolTip="Rechteck-Vollprofil" Stretch="Fill" MouseLeftButtonDown="img_Rechteck_MouseLeftButtonDown"/>
+            <Image x:Name="img_Rechteck_Hohlprofil" HorizontalAlignment="Left" Height="120" Margin="382.8,112,0,0" VerticalAlignment="Top" Width="120" Source="Rechteck-Hohlprofil.jpg" Stretch="Fill" MouseLeftButtonDown="img_Rechteck_Hohlprofil_MouseLeftButtonDown" ToolTip="Rechteck-Rohrprofil"/>
+            <Image x:Name="img_T_Profil" HorizontalAlignment="Left" Height="120" Margin="382.8,277,0,0" VerticalAlignment="Top" Width="120" Source="T-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_T_Profil_MouseLeftButtonDown" ToolTip="T-Profil"/>
+            <Image x:Name="img_U_Profil" Height="120" Margin="634,277,0,0" VerticalAlignment="Top" Source="U-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_U_Profil_MouseLeftButtonDown" HorizontalAlignment="Left" Width="120" ToolTip="U-Profil"/>
+            <Image x:Name="img_L_Profil" Height="120" Margin="886,277,0,0" VerticalAlignment="Top" Source="L-Profil.jpg" Stretch="Fill" MouseLeftButtonDown="img_L_Profil_MouseLeftButtonDown" HorizontalAlignment="Left" Width="120" ToolTip="L-Profil"/>
             <Button x:Name="btn_Exit2" Content="Exit" Margin="0,0,7,7" FontSize="20" Click="btn_exit_Click" Height="31" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
             <Label x:Name="lbl_Idealisierung" Content="&quot;Bitte beachten Sie, dass die Darstellung der Profile idealisiert ist&quot;" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
         </Grid>
 
-        <Grid x:Name="grid_Profilauswahl" Visibility="Hidden">
+        <Grid x:Name="grid_Profilauswahl" Visibility="Hidden" Width="1137" HorizontalAlignment="Left">
             <Label x:Name="lbl_Hoehe" Content="Höhe" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="tb_hoehe" HorizontalAlignment="Left" Height="23" Margin="10,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tb_hoehe_TextChanged" />
             <Label x:Name="lbl_Breite" Content="Breite" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
@@ -45,8 +45,8 @@
             <Label x:Name="lbl_Dichte" Content="Dichte" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="tb_Dichte" HorizontalAlignment="Left" Height="23" Margin="10,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tb_Dichte_TextChanged" />
 
-            <Button x:Name="btn_Berechnen" Content="Berechnen" Margin="10,367,0,0" Click="btn_Berechnen_Click" HorizontalAlignment="Left" Width="75" Height="20" VerticalAlignment="Top"/>
-            <Button x:Name="btn_weiter" Content="weiter" HorizontalAlignment="Right" Margin="0,0,7,7" VerticalAlignment="Bottom" Width="100" FontSize="20"  Height="31" Click="btn_Weiter_Click"/>
+            <Button x:Name="btn_Berechnen" Content="Berechnen" Margin="10,361.5,0,0" Click="btn_Berechnen_Click" HorizontalAlignment="Left" Width="100" Height="31" VerticalAlignment="Top" FontSize="20"/>
+            <Button x:Name="btn_weiter" Content="weiter" Margin="0,0,7,7" VerticalAlignment="Bottom" FontSize="20"  Height="31" Click="btn_Weiter_Click" HorizontalAlignment="Right" Width="100"/>
 
             <TreeView x:Name="ThisIsYoustATreeView" HorizontalAlignment="Left" Height="215" Margin="140,56,0,0" VerticalAlignment="Top" Width="124">
                 <TreeViewItem x:Name="tvi_Werkstoffe" Header="Werkstoffe:" Height="32" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
@@ -59,30 +59,38 @@
                 <TreeViewItem x:Name="tvi_AlMg4" Header="AlMg4" Height="22" Width="100" MouseLeftButtonUp="Tvi_AlMg4_MouseLeftButtonUp" HorizontalAlignment="Left"/>
             </TreeView>
 
-            <Image x:Name="img_DetailAnsicht" HorizontalAlignment="Left" Height="340" Margin="451,0,0,0" VerticalAlignment="Top" Width="340"  Stretch="Fill"/>
-            <Label x:Name="lbl_Querschnitt" Content="" HorizontalAlignment="Left" Margin="280,16,0,0" VerticalAlignment="Top"/>
+            <Image x:Name="img_DetailAnsicht" HorizontalAlignment="Left" Height="340" Margin="450,0,0,0" VerticalAlignment="Top" Width="340"  Stretch="Fill"/>
+            <Image x:Name="img_Screenshot" Height="340" Margin="790,0,0,0" VerticalAlignment="Top"  Stretch="Fill"  HorizontalAlignment="Left" Width="340"/>
+            <Label x:Name="lbl_Querschnitt" Content="" HorizontalAlignment="Left" Margin="280,15,0,0" VerticalAlignment="Top"/>
             <Label x:Name="lbl_Voulumen" Content="" HorizontalAlignment="Left" Margin="280,56,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_Masse" Content="" HorizontalAlignment="Left" Margin="280,96,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_SWP" Content="" HorizontalAlignment="Left" Margin="280,140,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_Masse" Content="" HorizontalAlignment="Left" Margin="280,97,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_SWP" Content="" HorizontalAlignment="Left" Margin="280,138,0,0" VerticalAlignment="Top"/>
             <Label x:Name="lbl_SWPX" Content="" HorizontalAlignment="Left" Margin="280,165,0,0" VerticalAlignment="Top"/>
             <Label x:Name="lbl_SWPY" Content="" HorizontalAlignment="Left" Margin="410,165,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_FTM" Content="" HorizontalAlignment="Left" Margin="280,200,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_FTMX" Content="" HorizontalAlignment="Left" Margin="280,225,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_FTMY" Content="" HorizontalAlignment="Left" Margin="410,225,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_DeviationsMoment" Content="" HorizontalAlignment="Left" Margin="280,260,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_Drehwinkel" Content="" HorizontalAlignment="Left" Margin="280,295,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.435,2.769"/>
-            <Label x:Name="lbl_Grad" Content="" HorizontalAlignment="Left" Margin="280,320,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_Rad" Content="" HorizontalAlignment="Left" Margin="380,320,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_TanA" Content="" HorizontalAlignment="Left" Margin="480,320,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lbl_HTM" Content="" HorizontalAlignment="Left" Margin="280,355,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,2.423"/>
-            <Label x:Name="lbl_HTMV" Content="" HorizontalAlignment="Left" Margin="280,380,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.529,2.577"/>
-            <Label x:Name="lbl_HTMU" Content="" HorizontalAlignment="Left" Margin="410,380,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_FTM" Content="" HorizontalAlignment="Left" Margin="280,206,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_FTMX" Content="" HorizontalAlignment="Left" Margin="280,233,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_FTMY" Content="" HorizontalAlignment="Left" Margin="410,233,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_DeviationsMoment" Content="" HorizontalAlignment="Left" Margin="280,274,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_Drehwinkel" Content="" HorizontalAlignment="Left" Margin="280,315,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_Ip" Content="" HorizontalAlignment="Left" Margin="280,315,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_Grad" Content="" HorizontalAlignment="Left" Margin="280,342,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_Rad" Content="" HorizontalAlignment="Left" Margin="380,342,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_TanA" Content="" HorizontalAlignment="Left" Margin="480,342,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_HTM" Content="" HorizontalAlignment="Left" Margin="280,383,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_Wp" Content="" HorizontalAlignment="Left" Margin="280,383,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_HTMV" Content="" HorizontalAlignment="Left" Margin="280,410,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_HTMU" Content="" HorizontalAlignment="Left" Margin="410,410,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_BWM" Content="" HorizontalAlignment="Left" Margin="280,451,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_WBx" Content="" HorizontalAlignment="Left" Margin="280,478,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_WBy" Content="" HorizontalAlignment="Left" Margin="410,478,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btn_CatiaStart" Content="CatiaStart" HorizontalAlignment="Left" Margin="744,361.5,0,0" VerticalAlignment="Top" Width="100" Click="Btn_CatiaStart_Click" Height="31" FontSize="20"/>
+            <Button x:Name="btn_zurueck" Content="Zurück" HorizontalAlignment="Right" Margin="0,0,114,7" Width="100" Click="Button_zurueckProfilauswahl_Click" FontSize="20" Height="31" VerticalAlignment="Bottom"/>
 
 
         </Grid>
-        <Grid x:Name="Grid_Endcart" HorizontalAlignment="Left" Height="440" VerticalAlignment="Top" Width="790" Visibility="Hidden">
-            <Button x:Name="btn_Wiederholen" Content="Wiederholen" HorizontalAlignment="Left" Margin="125,169,0,0" VerticalAlignment="Top" Width="181" Height="104" Click="btn_Wiederholen_Click" />
-            <Button x:Name="btn_Beenden" Content="Beenden" HorizontalAlignment="Right" Margin="0,169,127,0" VerticalAlignment="Top" Width="181" Height="104" Click="btn_Beenden_Click"/>
+        <Grid x:Name="Grid_Endcart" HorizontalAlignment="Left" Height="509" VerticalAlignment="Top" Width="1137" Visibility="Hidden">
+            <Button x:Name="btn_Wiederholen" Content="Wiederholen" HorizontalAlignment="Left" Margin="258.3,202.5,0,0" VerticalAlignment="Top" Width="181" Height="104" Click="btn_Wiederholen_Click" FontSize="24" />
+            <Button x:Name="btn_Beenden" Content="Beenden" Margin="698,202,0,0" VerticalAlignment="Top" Height="104" Click="btn_Beenden_Click" HorizontalAlignment="Left" Width="181" FontSize="24"/>
         </Grid>
 
     </Grid>
