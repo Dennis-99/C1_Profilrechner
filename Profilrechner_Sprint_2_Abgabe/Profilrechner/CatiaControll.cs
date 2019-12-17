@@ -25,7 +25,7 @@ namespace Profilrechner
                         //RechteckProfil
 
                         // Öffne ein neues Part
-                        cc.ErzeugePart(Partname);
+                        cc.ErzeugePart();
                        
 
                         // Erstelle eine Skizze
@@ -37,7 +37,7 @@ namespace Profilrechner
                        
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                         
                     }
                     else if (Profil.Equals(2))
@@ -45,7 +45,7 @@ namespace Profilrechner
                         //Rechteck-Hohlprofil
 
                         // Öffne ein neues Part
-                        cc.ErzeugePart(Partname);
+                        cc.ErzeugePart();
 
 
                         // Erstelle eine Skizze
@@ -57,7 +57,7 @@ namespace Profilrechner
 
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
 
                         // Generieren der Tasche
                         cc.ErzeugeRechteckHohlprofil(Breite, Hoehe, Wandstaerke, Laenge);
@@ -67,7 +67,7 @@ namespace Profilrechner
                     {
                         //KreisProfil
                         // Öffne ein neues Part
-                        cc.ErzeugePart(Partname);
+                        cc.ErzeugePart();
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
@@ -76,13 +76,13 @@ namespace Profilrechner
                         cc.ErzeugeKreisprofil(Durchmesser);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                     else if (Profil.Equals(4))
                     {
                         //Kreis-Hohlprofil
                         // Öffne ein neues Part
-                        cc.ErzeugePart(Partname);
+                        cc.ErzeugePart();
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
@@ -91,7 +91,7 @@ namespace Profilrechner
                         cc.ErzeugeKreisprofil(Durchmesser);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
 
                         // Generieren der Tasche
                         cc.ErzeugeKreisHohlprofil(Durchmesser, Wandstaerke, Laenge);
@@ -100,7 +100,7 @@ namespace Profilrechner
                     {
                         //I-Profil
                         // Öffne ein neues Part
-                        cc.ErzeugePart(Partname);
+                        cc.ErzeugePart();
 
 
                         // Erstelle eine Skizze
@@ -111,13 +111,13 @@ namespace Profilrechner
 
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                     else if (Profil.Equals(6))
                     {
                         //T-Profil
                         // Öffne ein neues Part
-                        cc.ErzeugePart(Partname);
+                        cc.ErzeugePart();
 
 
                         // Erstelle eine Skizze
@@ -127,13 +127,13 @@ namespace Profilrechner
                         cc.ErzeugeTProfil(Hoehe, Breite, Wandstaerke);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                     else if (Profil.Equals(7))
                     {
                         //U-Profil
                         // Öffne ein neues Part
-                        cc.ErzeugePart(Partname);
+                        cc.ErzeugePart();
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
@@ -142,13 +142,13 @@ namespace Profilrechner
                         cc.ErzeugeUProfil(Hoehe, Breite, Wandstaerke, Flanschbreite);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                     else if (Profil.Equals(8))
                     {
                         //L-Profil
                         // Öffne ein neues Part
-                        cc.ErzeugePart(Partname);
+                        cc.ErzeugePart();
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
@@ -157,7 +157,7 @@ namespace Profilrechner
                         cc.ErzeugeLProfil(Hoehe, Breite, Wandstaerke);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                    
                 }

@@ -78,7 +78,6 @@ namespace Profilrechner
         String WandIULS;
         String WandTS;
 
-        //tb Partname
         String Partname;
 
         public Window1()
@@ -548,7 +547,7 @@ namespace Profilrechner
                     DurchmesserD = HoeheD;
                     Querschnitt = Math.Pow(DurchmesserD, 2) * Math.PI / 4;
                     Volumen = Querschnitt * LaengeD;
-                    Gewicht = (Volumen * DichteD) / 1000;
+                    Gewicht = (Volumen * DichteD);
                     Festigkeitx = (Math.PI * (Math.Pow(DurchmesserD, 4))) / 64;
                     Festigkeity = (Math.PI * (Math.Pow(DurchmesserD, 4))) / 64;
 
@@ -1273,7 +1272,7 @@ namespace Profilrechner
         {
             
 
-           String Partname = tb_Partname.Text;
+           Partname = tb_Partname.Text;
 
         }
     }
