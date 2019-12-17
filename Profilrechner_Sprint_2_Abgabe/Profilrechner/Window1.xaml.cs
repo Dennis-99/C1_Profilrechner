@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace Profilrechner
 {
@@ -1210,9 +1211,14 @@ namespace Profilrechner
 
         private void Btn_CatiaStart_Click(object sender, RoutedEventArgs e)
         {
-            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint);
+            Assembly assembly = typeof(Window1).Assembly;
+            string Path = assembly.Location;
+            int index = Path.LastIndexOf("\\");
+            Path = Path.Substring(0, index);
+            Path += "\\screeshots\\screen.jpg";
+            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Path);
             Screenint = 1;
-            ScreenSet();
+            ScreenSet(Path);
         }
 
         private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
@@ -1265,7 +1271,7 @@ namespace Profilrechner
             
 
         }
-        private void ScreenSet()
+        private void ScreenSet(String Path)
         {
             if (Screenint.Equals(1))
             {
@@ -1274,7 +1280,7 @@ namespace Profilrechner
                     Image Screen = new Image();
                     BitmapImage bi1 = new BitmapImage();
                     bi1.BeginInit();
-                    bi1.UriSource = new Uri("Screen.jpg", UriKind.Relative);
+                    bi1.UriSource = new Uri( Path , UriKind.Absolute);
                     bi1.EndInit();
                     Screen.Stretch = Stretch.Fill;
                     Screen.Source = bi1;

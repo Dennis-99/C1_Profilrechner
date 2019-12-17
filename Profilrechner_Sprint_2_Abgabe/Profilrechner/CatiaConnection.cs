@@ -119,7 +119,7 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeBalken(Double Laenge)
+        public void ErzeugeBalken(Double Laenge, string Path)
         {
             // Hauptkoerper in Bearbeitung definieren
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
@@ -136,13 +136,13 @@ namespace Profilrechner
 
             //Reframe
             hsp_catiaApp.ActiveWindow.ActiveViewer.Reframe();
-            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "HSP\\Profilrechner_Sprint_2_Abgabe\\Profilrechner\\Screen.jpg");
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
             // Part aktualisieren
             
             
         }
 
-        public void ErzeugeRechteckHohlprofil(Double Breite, Double Hoehe, Double Wandstaerke, Double Laenge)
+        public void ErzeugeRechteckHohlprofil(Double Breite, Double Hoehe, Double Wandstaerke, Double Laenge, String Path)
         {
             // Werte aus Variablen verarbeiten
             Double Breite2 = Breite - Wandstaerke;
@@ -204,7 +204,7 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
-            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "Screen.jpg");
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
 
 
         }
@@ -233,7 +233,7 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeKreisHohlprofil(Double Durchmesser, Double Wandstaerke, Double Laenge)
+        public void ErzeugeKreisHohlprofil(Double Durchmesser, Double Wandstaerke, Double Laenge, String Path)
         {
             // Werte aus Variablen verarbeiten
             Double Radius = Durchmesser / 2;
@@ -274,7 +274,7 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
-            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "Screen.jpg");
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
         }
 
         public void ErzeugeIProfil(Double Breite, Double Hoehe, Double Wandstaerke, Double Flanschbreite)
