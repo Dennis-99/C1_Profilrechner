@@ -1274,7 +1274,7 @@ namespace Profilrechner
                     Image Screen = new Image();
                     BitmapImage bi1 = new BitmapImage();
                     bi1.BeginInit();
-                    bi1.UriSource = new Uri("C:\\Users\\Colin\\OneDrive\\Dokumente\\HSP\\Profilrechner_Sprint_2_Abgabe\\Profilrechner\\Screenshots\\Screen.jpg", UriKind.Absolute);
+                    bi1.UriSource = new Uri("Screen.jpg", UriKind.Relative);
                     bi1.EndInit();
                     Screen.Stretch = Stretch.Fill;
                     Screen.Source = bi1;

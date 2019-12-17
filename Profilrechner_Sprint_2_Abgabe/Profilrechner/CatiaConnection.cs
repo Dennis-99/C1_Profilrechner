@@ -136,7 +136,7 @@ namespace Profilrechner
 
             //Reframe
             hsp_catiaApp.ActiveWindow.ActiveViewer.Reframe();
-            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "C:\\Users\\Colin\\OneDrive\\Dokumente\\HSP\\Profilrechner_Sprint_2_Abgabe\\Profilrechner\\Screenshots\\Screen.jpg");
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "HSP\\Profilrechner_Sprint_2_Abgabe\\Profilrechner\\Screen.jpg");
             // Part aktualisieren
             
             
@@ -204,7 +204,7 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
-            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "C:\\Users\\Colin\\OneDrive\\Dokumente\\HSP\\Profilrechner_Sprint_2_Abgabe\\Profilrechner\\Screenshots\\Screen.jpg");
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "Screen.jpg");
 
 
         }
@@ -274,7 +274,7 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
-            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "C:\\Users\\Colin\\OneDrive\\Dokumente\\HSP\\Profilrechner_Sprint_2_Abgabe\\Profilrechner\\Screenshots\\Screen.jpg");
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, "Screen.jpg");
         }
 
         public void ErzeugeIProfil(Double Breite, Double Hoehe, Double Wandstaerke, Double Flanschbreite)
