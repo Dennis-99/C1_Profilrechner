@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using CATMat;
 using INFITF;
 using MECMOD;
 using PARTITF;
@@ -31,8 +32,63 @@ namespace Profilrechner
         public Boolean ErzeugePart()
         {
             INFITF.Documents catDocuments1 = hsp_catiaApp.Documents;
+            var pd = (PartDocument)catDocuments1;
             hsp_catiaPart = catDocuments1.Add("Part") as MECMOD.PartDocument;
             return true;
+        }
+
+        // Antwort auf 1. Frage:
+        public void setPartName(String name)
+        {
+            hsp_catiaPart.Part.set_Name(name);
+            // ich bin mir nicht sicher was Sie benennen wollen: Part, Sketch oder geometrisches Set... 
+            // aber mit set_Name sind Sie richtig
+            hsp_catiaPart.Part.Update();
+        }
+
+        /*
+        2. entweder Sie nutzen für jede Übergabe iene eigene Methode, oder Sie definieren eine Klasse, 
+        welche alles beinhaltet, und übergeben eine Objekt davon.
+        */
+
+
+        // Zuweisung des Materials: Das war tricky...
+        public void setMaterial()
+        {
+            // https://ww3.cad.de/foren/ubb/Forum137/HTML/001194.shtml
+
+            // API Docu:
+            // Applying or Retrieving a Material on a Product, a Part, or a Body
+
+            // "C:\Program Files\Dassault Systemes\B28\win_b64\startup\materials\German\Catalog.CATMaterial"
+            // using CATMat; nicht vergessen
+
+            String sFilePath = @"C:\Program Files\Dassault Systemes\B28\win_b64\startup\materials\German\Catalog.CATMaterial";
+            MaterialDocument oMaterial_document = (MaterialDocument)hsp_catiaApp.Documents.Open(sFilePath);
+            MaterialFamilies cFamilies_list = oMaterial_document.Families;
+
+            foreach (MaterialFamily mf in cFamilies_list)
+            {
+                Console.WriteLine(mf.get_Name());
+            }
+
+            MaterialFamily myMf = cFamilies_list.Item("Metall");
+            foreach (Material mat in myMf.Materials)
+            {
+                Console.WriteLine(mat.get_Name());
+            }
+
+            Material myStahl = myMf.Materials.Item("Stahl");
+
+            MaterialManager partMatManager = hsp_catiaPart.Part.GetItem("CATMatManagerVBExt") as MaterialManager;
+
+            // brauchen Sie Stahl im Part?
+            short linkMode = 0;
+            partMatManager.ApplyMaterialOnPart(hsp_catiaPart.Part, myStahl, linkMode);
+
+            // brauchen Sie Stahl im Body?
+            linkMode = 1;
+            partMatManager.ApplyMaterialOnBody(hsp_catiaPart.Part.MainBody, myStahl, linkMode);
         }
 
         public void ErstelleLeereSkizze()

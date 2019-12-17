@@ -1,0 +1,15 @@
+Fragen 
+Catia connection zeile 37
+catia connection zeile 152
+
+hsLanguage="VBSCRIPT"
+
+Sub CATMain()
+
+Set partDocument1 = CATIA.ActiveDocument
+
+Set product1 = partDocument1.GetItem("Part5")
+
+product1.PartNumber = "EigenerPartName"
+
+End Sub
