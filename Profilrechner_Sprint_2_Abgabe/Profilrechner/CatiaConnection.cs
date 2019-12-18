@@ -3,7 +3,8 @@ using System.Windows;
 using INFITF;
 using MECMOD;
 using PARTITF;
-
+using CATMat;
+using System.Reflection;
 
 namespace Profilrechner
 {
@@ -12,7 +13,7 @@ namespace Profilrechner
         INFITF.Application hsp_catiaApp;
         MECMOD.PartDocument hsp_catiaPart;
         MECMOD.Sketch hsp_catiaProfil;
-
+        String JOnasMüffelt;
         public bool CATIALaeuft()
         {
             try
@@ -27,7 +28,49 @@ namespace Profilrechner
                 return false;
             }
         }
+        public void setPartName(String name)
+        {
+            hsp_catiaProfil.set_Name(name);
+           
+            hsp_catiaPart.Part.Update();
+        }
+        public void setMaterial(int Material)
+        {
+            
 
+            String sFilePath = @"C:\Program Files\Dassault Systemes\B28\win_b64\startup\materials\German\Catalog.CATMaterial";
+            MaterialDocument oMaterial_document = (MaterialDocument)hsp_catiaApp.Documents.Open(sFilePath);
+            MaterialFamilies cFamilies_list = oMaterial_document.Families;
+
+            foreach (MaterialFamily mf in cFamilies_list)
+            {
+                Console.WriteLine(mf.get_Name());
+            }
+
+            MaterialFamily myMf = cFamilies_list.Item("Metall");
+            foreach (Material mat in myMf.Materials)
+            {
+                Console.WriteLine(mat.get_Name());
+            }
+
+            Material myStahl = myMf.Materials.Item("Stahl");
+            Material myAlu = myMf.Materials.Item("Aluminium");
+            MaterialManager partMatManager = hsp_catiaPart.Part.GetItem("CATMatManagerVBExt") as MaterialManager;
+
+            // brauchen Sie Stahl im Part?
+            short linkMode = 0;
+            if (Material.Equals(2))
+            {
+                partMatManager.ApplyMaterialOnPart(hsp_catiaPart.Part, myAlu, linkMode);
+            }
+            else
+            {
+                partMatManager.ApplyMaterialOnPart(hsp_catiaPart.Part, myStahl, linkMode);
+            }
+
+
+          
+        }
         public Boolean ErzeugePart()
         {
             INFITF.Documents catDocuments1 = hsp_catiaApp.Documents;
@@ -73,7 +116,7 @@ namespace Profilrechner
             hsp_catiaProfil.SetAbsoluteAxisData(arr);
         }
 
-        public void ErzeugeProfilRechteck(Double Breite, Double Hoehe , Double Laenge)
+        public void ErzeugeProfilRechteck(Double Breite, Double Hoehe , Double Laenge, String Name)
         {
 
             // Werte aus Variblen verarbeiten
@@ -81,7 +124,7 @@ namespace Profilrechner
             Double HalbeHöhe = Hoehe / 2;
 
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("Rechteckprofil");
+            hsp_catiaProfil.set_Name(Name);
 
             // Rechteck in Skizze einzeichnen
             // Skizze oeffnen
@@ -119,7 +162,7 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeBalken(Double Laenge, String Partname)
+        public void ErzeugeBalken(Double Laenge, String Path)
         {
             // Hauptkoerper in Bearbeitung definieren
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
@@ -129,26 +172,38 @@ namespace Profilrechner
             Pad catPad1 = catShapeFactory1.AddNewPad(hsp_catiaProfil, Laenge);
 
             // Block umbenennen
-            catPad1.set_Name(Partname);
+            catPad1.set_Name("Balken");
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
+
 
             //Reframe
+
             hsp_catiaApp.ActiveWindow.ActiveViewer.Reframe();
 
-            // Part aktualisieren
+
+
+
             hsp_catiaPart.Part.Update();
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
+
+            hsp_catiaPart.Part.Update();
+            
+
+            // Part aktualisieren
+
+
         }
 
-        public void ErzeugeRechteckHohlprofil(Double Breite, Double Hoehe, Double Wandstaerke, Double Laenge)
+        public void ErzeugeRechteckHohlprofil(Double Breite, Double Hoehe, Double Wandstaerke, Double Laenge, String Path, String Name)
         {
             // Werte aus Variablen verarbeiten
             Double Breite2 = Breite - Wandstaerke;
             Double Hoehe2 = Hoehe - Wandstaerke;
 
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("Rechteck-Hohlprofil");
+            hsp_catiaProfil.set_Name(Name);
 
             // Rechteck-Hohlprofil in Skizze einzeichnen
             // Skizze oeffnen
@@ -203,15 +258,19 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
+           
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
+           
+
         }
 
-        public void ErzeugeKreisprofil(Double Durchmesser)
+        public void ErzeugeKreisprofil(Double Durchmesser, String Name)
         {
             // Werte aus Variblen verarbeiten
             Double Radius = Durchmesser / 2;
 
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("Kreisprofil");
+            hsp_catiaProfil.set_Name(Name);
 
             // Kreisprofil in Skizze einzeichnen
             // Skizze oeffnen
@@ -229,13 +288,13 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeKreisHohlprofil(Double Durchmesser, Double Wandstaerke, Double Laenge)
+        public void ErzeugeKreisHohlprofil(Double Durchmesser, Double Wandstaerke, Double Laenge, String Path, String Name)
         {
             // Werte aus Variablen verarbeiten
             Double Radius = Durchmesser / 2;
 
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("Kreis-Hohlprofil");
+            hsp_catiaProfil.set_Name(Name);
 
             // Kreis-Hohlprofil in Skizze einzeichnen
             // Skizze oeffnen
@@ -270,9 +329,11 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
+
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
         }
 
-        public void ErzeugeIProfil(Double Breite, Double Hoehe, Double Wandstaerke, Double Flanschbreite)
+        public void ErzeugeIProfil(Double Breite, Double Hoehe, Double Wandstaerke, Double Flanschbreite, String Name)
         {
             Double Stegbreite = Wandstaerke;
 
@@ -284,7 +345,7 @@ namespace Profilrechner
 
 
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("I-Profil");
+            hsp_catiaProfil.set_Name(Name);
 
             // I-Profil in Skizze einzeichnen
             // Skizze oeffnen
@@ -364,10 +425,10 @@ namespace Profilrechner
 
         }
 
-        public void ErzeugeTProfil(Double Hoehe, Double Breite, Double Wandstaerke)
+        public void ErzeugeTProfil(Double Hoehe, Double Breite, Double Wandstaerke, String Name)
         {
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("T-Profil");
+            hsp_catiaProfil.set_Name(Name);
 
             // T-Profil in Skizze einzeichnen
             // Skizze oeffnen
@@ -425,10 +486,10 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeUProfil(Double Hoehe, Double Breite, Double Wandstaerke, Double Flanschbreite)
+        public void ErzeugeUProfil(Double Hoehe, Double Breite, Double Wandstaerke, Double Flanschbreite, String Name)
         {
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("U-Profil");
+            hsp_catiaProfil.set_Name(Name);
 
             // U-Profil in Skizze einzeichnen
             // Skizze oeffnen
@@ -486,10 +547,10 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeLProfil(Double Hoehe, Double Breite, Double Wandstaerke)
+        public void ErzeugeLProfil(Double Hoehe, Double Breite, Double Wandstaerke, String Name)
         {
             // Skizze umbenennen
-            hsp_catiaProfil.set_Name("L-Profil");
+            hsp_catiaProfil.set_Name(Name);
 
             // U-Profil in Skizze einzeichnen
             // Skizze oeffnen
@@ -535,6 +596,21 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
+        }
+        public void Save(String PartName)
+        {
+            String Path;
+            Assembly assembly = typeof(Window1).Assembly;
+            string Path2 = assembly.Location;
+
+
+
+            int index = Path2.LastIndexOf("\\");
+            Path2 = Path2.Substring(0, index);
+            Path2 += "Parts\\" + PartName +".CATPart";
+            Path = Path2.Replace("\\bin\\Debug", "\\");
+            hsp_catiaApp.ActiveDocument.SaveAs(Path);
+
         }
     }
 }

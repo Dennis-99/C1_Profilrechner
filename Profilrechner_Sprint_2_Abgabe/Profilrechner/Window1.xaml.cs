@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace Profilrechner
 {
@@ -19,8 +20,12 @@ namespace Profilrechner
     /// </summary>
     public partial class Window1 : Window
     {
+        int x = 1;
+        int y;
+        int Materialint;
         int Profilint;
         
+        String PartSave;
         int Fehlercode;
         Double HoeheD;
         public Double BreiteD;
@@ -89,6 +94,8 @@ namespace Profilrechner
         String WpS;
 
         String Partname;
+
+        BitmapImage bitmap_Screenshot = new BitmapImage();
 
         public Window1()
         {
@@ -1109,6 +1116,7 @@ namespace Profilrechner
             DichteD = Convert.ToDouble(7.85);
            
             tb_Dichte.Text = "7,85";
+            Materialint = 1;
         }
 
         private void Tvi_355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -1116,6 +1124,7 @@ namespace Profilrechner
             DichteD = Convert.ToDouble(7.85);
             
             tb_Dichte.Text = "7,85";
+            Materialint = 1;
         }
 
         private void Tvi_42CrMo4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -1123,6 +1132,7 @@ namespace Profilrechner
             DichteD = Convert.ToDouble(7.85);
             
             tb_Dichte.Text = "7,85";
+            Materialint = 1;
         }
 
         private void Tvi_E295_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -1130,6 +1140,7 @@ namespace Profilrechner
             DichteD = Convert.ToDouble(7.85);
             
             tb_Dichte.Text = "7,85";
+            Materialint = 1;
         }
 
         private void Tvi_E355_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -1137,6 +1148,7 @@ namespace Profilrechner
             DichteD = Convert.ToDouble(7.85);
             
             tb_Dichte.Text = "7,85";
+            Materialint = 1;
         }
 
         private void Tvi_C45_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -1144,6 +1156,7 @@ namespace Profilrechner
             DichteD = Convert.ToDouble(7.85);
             
             tb_Dichte.Text = "7,85";
+            Materialint = 1;
         }
 
         private void Tvi_AlMg4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -1151,6 +1164,7 @@ namespace Profilrechner
             DichteD = Convert.ToDouble(2.66);
             
             tb_Dichte.Text = "2,66";
+            Materialint = 2;
         }
         #endregion
 
@@ -1176,6 +1190,7 @@ namespace Profilrechner
             Profilint = 1;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
+            
 
         }
 
@@ -1196,6 +1211,7 @@ namespace Profilrechner
             Profilint = 2;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
+          
         }
 
         private void img_Kreis_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1218,6 +1234,7 @@ namespace Profilrechner
             Profilint = 3;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
+           
         }
 
         private void img_Kreis_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1239,7 +1256,7 @@ namespace Profilrechner
             Profilint = 4;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-
+           
         }
 
         private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1259,7 +1276,7 @@ namespace Profilrechner
             IProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 5;
-
+           
         }
 
         private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1280,7 +1297,7 @@ namespace Profilrechner
             Profilint = 6;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-
+           
         }
 
         private void img_U_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1300,7 +1317,7 @@ namespace Profilrechner
             UProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 7;
-
+           
         }
 
         private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1320,6 +1337,7 @@ namespace Profilrechner
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
             lbl_Wandstaerke.Content = WandIULS;
+           
         }
         #endregion
 
@@ -1369,7 +1387,9 @@ namespace Profilrechner
             lbl_Wby.Visibility = Visibility.Hidden;
             lbl_Ip.Visibility = Visibility.Hidden;
             lbl_Wp.Visibility = Visibility.Hidden;
+            btn_Save.Visibility = Visibility.Hidden;
 
+            img_Screenshot.Source = null;
             HoeheD = 0;
             BreiteD = 0;
             DichteD = 0;
@@ -1398,14 +1418,34 @@ namespace Profilrechner
 
         private void Btn_CatiaStart_Click(object sender, RoutedEventArgs e)
         {
-            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Partname);
+            
+            String Path;
+            
+                Assembly assembly = typeof(Window1).Assembly;
+                string Path2 = assembly.Location;
+                
+
+                int index = Path2.LastIndexOf("\\");
+                Path2 = Path2.Substring(0, index);
+                Path2 += "screen"+ x + ".jpg";
+                Path = Path2.Replace("\\bin\\Debug", "\\");
+            
+            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Path, Partname, Materialint);
+            x +=1;    
+            bitmap_Screenshot = new BitmapImage((new Uri(Path, UriKind.Absolute)));
+                img_Screenshot.Source = bitmap_Screenshot;
+                img_Screenshot.Visibility = Visibility.Visible;
+
+            btn_Save.Visibility = Visibility.Visible;
+                
         }
 
-        private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
+       
+            private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
         {
             grid_Profilauswahl.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
-
+            img_Screenshot.Visibility = Visibility.Hidden;
 
 
             lbl_Hoehe.Visibility = Visibility.Visible;
@@ -1446,6 +1486,7 @@ namespace Profilrechner
             lbl_Wby.Visibility = Visibility.Hidden;
             lbl_Ip.Visibility = Visibility.Hidden;
             lbl_Wp.Visibility = Visibility.Hidden;
+            btn_Save.Visibility = Visibility.Hidden;
 
             HoeheD = 0;
             BreiteD = 0;
@@ -1458,7 +1499,14 @@ namespace Profilrechner
             
 
         }
+
+        private void btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            new CatiaSave(Partname);
+        }
+
         #endregion
+
 
     }
 }
