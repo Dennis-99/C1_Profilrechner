@@ -24,7 +24,8 @@ namespace Profilrechner
         int y;
         int Materialint;
         int Profilint;
-        int Screenint;
+        
+        String PartSave;
         int Fehlercode;
         Double HoeheD;
         public Double BreiteD;
@@ -1506,7 +1507,13 @@ namespace Profilrechner
             
 
         }
+
+
         #endregion
 
+        private void btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            new CatiaSave(Partname);
+        }
     }
 }

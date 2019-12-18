@@ -329,29 +329,3 @@ C:\Users\Colin\OneDrive\Desktop\lukas programm\Profilrechner_Sprint_2_Abgabe\Pro
 C:\Users\Colin\OneDrive\Desktop\lukas programm\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.MECMOD.dll
 C:\Users\Colin\OneDrive\Desktop\lukas programm\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.ProductStructureTypeLib.dll
 C:\Users\Colin\OneDrive\Desktop\lukas programm\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.ResolveComReference.cache
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.config
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.manifest
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.application
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.pdb
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csprojAssemblyReference.cache
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATMat.dll
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATRma.dll
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.INFITF.dll
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.KnowledgewareTypeLib.dll
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.MECMOD.dll
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.ProductStructureTypeLib.dll
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.ResolveComReference.cache
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.g.cs
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\App.g.cs
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.cache
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.lref
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.baml
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.g.resources
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.Properties.Resources.resources
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.GenerateResource.cache
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.TrustInfo.xml
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe.manifest
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.application
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe
-C:\Users\Jonas\Desktop\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.pdb
