@@ -20,6 +20,8 @@ namespace Profilrechner
     /// </summary>
     public partial class Window1 : Window
     {
+        int x = 1;
+        int y;
         int Materialint;
         int Profilint;
         int Screenint;
@@ -91,6 +93,8 @@ namespace Profilrechner
         String WpS;
 
         String Partname;
+
+        BitmapImage bitmap_Screenshot = new BitmapImage();
 
         public Window1()
         {
@@ -1185,7 +1189,7 @@ namespace Profilrechner
             Profilint = 1;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+            
 
         }
 
@@ -1206,7 +1210,7 @@ namespace Profilrechner
             Profilint = 2;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+          
         }
 
         private void img_Kreis_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1229,7 +1233,7 @@ namespace Profilrechner
             Profilint = 3;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_Kreis_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1251,7 +1255,7 @@ namespace Profilrechner
             Profilint = 4;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1271,7 +1275,7 @@ namespace Profilrechner
             IProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 5;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1292,7 +1296,7 @@ namespace Profilrechner
             Profilint = 6;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_U_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1312,7 +1316,7 @@ namespace Profilrechner
             UProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 7;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1332,7 +1336,7 @@ namespace Profilrechner
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
             lbl_Wandstaerke.Content = WandIULS;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
         #endregion
 
@@ -1411,58 +1415,40 @@ namespace Profilrechner
 
         private void Btn_CatiaStart_Click(object sender, RoutedEventArgs e)
         {
-           
-            btn_CatiaStart.Visibility = Visibility.Hidden;
-
-            Assembly assembly = typeof(Window1).Assembly;
-            string Path2 = assembly.Location;
+            
             String Path;
-          
+            
+                Assembly assembly = typeof(Window1).Assembly;
+                string Path2 = assembly.Location;
+                
 
-            int index = Path2.LastIndexOf("\\");
-            Path2 = Path2.Substring(0, index);
-            Path2 += "screen.jpg";
-            Path = Path2.Replace("\\bin\\Debug", "\\");
+
+                int index = Path2.LastIndexOf("\\");
+                Path2 = Path2.Substring(0, index);
+                Path2 += "screen"+ x + ".jpg";
+                Path = Path2.Replace("\\bin\\Debug", "\\");
+            
+            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Path, Partname, Materialint);
+            x +=1;    
+            bitmap_Screenshot = new BitmapImage((new Uri(Path, UriKind.Absolute)));
+                img_Screenshot.Source = bitmap_Screenshot;
+                img_Screenshot.Visibility = Visibility.Visible;
+                
+                
+            
+            
+
+           
          
-            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Path, Partname, Materialint);     
-            Screenint = 1;
-            ScreenSet(Path);
+                
+            
           
            
            
           
         }
 
-        private void ScreenSet( String Path)
-        {
-            if (Screenint.Equals(1))
-            {
-                try
-                {
-
-
-                        
-                       
-                        Image Screen = new Image();
-                        BitmapImage bi1 = new BitmapImage();
-                        bi1.BeginInit();
-                        bi1.UriSource = new Uri(Path, UriKind.Absolute);
-                        bi1.EndInit();
-                        Screen.Stretch = Stretch.Fill;
-                        Screen.Source = bi1;
-                        img_Screenshot.Source = new BitmapImage(new Uri (Path, UriKind.Absolute));
-                        img_Screenshot.Visibility = Visibility.Visible;
-                    
-                        
-                    
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Fehler beim laden des Screenshots");
-
-                }
-            }
-        }
+       
             private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
         {
             grid_Profilauswahl.Visibility = Visibility.Hidden;
