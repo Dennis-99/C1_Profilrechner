@@ -329,55 +329,55 @@ C:\Users\Colin\OneDrive\Desktop\lukas programm\Profilrechner_Sprint_2_Abgabe\Pro
 C:\Users\Colin\OneDrive\Desktop\lukas programm\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.MECMOD.dll
 C:\Users\Colin\OneDrive\Desktop\lukas programm\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.ProductStructureTypeLib.dll
 C:\Users\Colin\OneDrive\Desktop\lukas programm\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.ResolveComReference.cache
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.config
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.manifest
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.application
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.pdb
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csprojAssemblyReference.cache
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATMat.dll
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATRma.dll
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.INFITF.dll
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.KnowledgewareTypeLib.dll
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.MECMOD.dll
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.ProductStructureTypeLib.dll
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.ResolveComReference.cache
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.g.cs
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\App.g.cs
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.cache
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.lref
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.baml
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.g.resources
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.Properties.Resources.resources
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.GenerateResource.cache
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.TrustInfo.xml
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe.manifest
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.application
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe
-D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.pdb
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.config
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.manifest
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.application
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.pdb
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csprojAssemblyReference.cache
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATMat.dll
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATRma.dll
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.INFITF.dll
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.KnowledgewareTypeLib.dll
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.MECMOD.dll
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.ProductStructureTypeLib.dll
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.ResolveComReference.cache
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.g.cs
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\App.g.cs
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.cache
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.lref
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.baml
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.g.resources
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.Properties.Resources.resources
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.GenerateResource.cache
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.TrustInfo.xml
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe.manifest
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.application
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe
-D:\Hochschule\HSP\Neu\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.pdb
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.config
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.manifest
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.application
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.pdb
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csprojAssemblyReference.cache
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATMat.dll
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATRma.dll
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.INFITF.dll
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.MECMOD.dll
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.ResolveComReference.cache
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.g.cs
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\App.g.cs
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.cache
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.lref
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.baml
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.g.resources
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.Properties.Resources.resources
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.GenerateResource.cache
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.TrustInfo.xml
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe.manifest
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.application
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe
+C:\Users\Lukas\Desktop\C1_Profilrechner-master (7)\C1_Profilrechner-master\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.pdb
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.config
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe.manifest
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.application
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.exe
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\bin\Debug\Profilrechner.pdb
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csprojAssemblyReference.cache
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATMat.dll
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.CATRma.dll
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.INFITF.dll
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.KnowledgewareTypeLib.dll
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.MECMOD.dll
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Interop.ProductStructureTypeLib.dll
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.ResolveComReference.cache
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.g.cs
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\App.g.cs
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.cache
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner_MarkupCompile.lref
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Window1.baml
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.g.resources
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.Properties.Resources.resources
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.csproj.GenerateResource.cache
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.TrustInfo.xml
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe.manifest
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.application
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.exe
+D:\Hochschule\HSP\Github_Downloads\C1_Profilrechner-Lukas\Profilrechner_Sprint_2_Abgabe\Profilrechner\obj\Debug\Profilrechner.pdb

@@ -15,9 +15,11 @@
             <Button x:Name="btn_SpracheE" Content="English" Margin="490.5,228,0,0" VerticalAlignment="Top" FontSize="36" Click="btn_SpracheE_Click" Height="52" HorizontalAlignment="Left" Width="156" Cursor="Hand"/>
             <Button x:Name="btn_SpracheF" Content="Français" HorizontalAlignment="Right" Margin="0,228,167.75,0" VerticalAlignment="Top" Width="155" Height="52" FontSize="36" Click="btn_SpracheF_Click" Cursor="Hand"/>
             <Button x:Name="btn_exit" Content="Exit" Margin="0,0,7,7" FontSize="20" Click="btn_exit_Click" Height="31" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Cursor="Hand" />
+
+
         </Grid>
 
-        <Grid x:Name="grid_Profilauswahlimg" Visibility="Hidden" Width="1137" HorizontalAlignment="Left">
+        <Grid x:Name="grid_Profilauswahlimg" Visibility="Collapsed" Width="1137" HorizontalAlignment="Left">
             <Label x:Name="lbl_Profilauswahlimg" Content="Bitte wählen Sie ein Profil aus:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
             <Image x:Name="img_I_Profil" HorizontalAlignment="Left" Margin="131,277,0,0" Width="120" Source="I-Profil.jpg" Stretch="Fill" ToolTip="I-Profil" Height="120" VerticalAlignment="Top" Cursor="Hand" MouseLeftButtonUp="img_I_Profil_MouseLeftButtonDown"/>
             <Image x:Name="img_Kreis" Height="120" Margin="634,112,0,0" VerticalAlignment="Top" Source="Kreis.jpg" Stretch="Fill" ToolTip="Kreis-Vollprofil" HorizontalAlignment="Left" Width="120" Cursor="Hand" MouseLeftButtonUp="img_Kreis_MouseLeftButtonDown"/>
@@ -87,8 +89,7 @@
             <Button x:Name="btn_zurueck" Content="Zurück" HorizontalAlignment="Right" Margin="0,0,114,7" Width="100" Click="Button_zurueckProfilauswahl_Click" FontSize="20" Height="31" VerticalAlignment="Bottom" Cursor="Hand"/>
             <TextBox x:Name="tb_Partname" HorizontalAlignment="Left" Height="23" Margin="625,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tb_Partname_TextChanged"/>
             <Label x:Name="lbl_Partname" Content="Partname eingeben:" HorizontalAlignment="Left" Margin="625,344,0,0" VerticalAlignment="Top" Width="127"/>
-            <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="235,387,0,0" VerticalAlignment="Top" Width="75" Click="Save_Click"/>
-
+            <Button x:Name="btn_Save" Content="Speichern" HorizontalAlignment="Left" Margin="910,362,0,0" VerticalAlignment="Top" Width="100" Click="btn_Save_Click" Height="31" FontSize="20" Visibility="Hidden"/>
 
         </Grid>
         <Grid x:Name="Grid_Endcart" HorizontalAlignment="Left" Height="509" VerticalAlignment="Top" Width="1137" Visibility="Hidden">

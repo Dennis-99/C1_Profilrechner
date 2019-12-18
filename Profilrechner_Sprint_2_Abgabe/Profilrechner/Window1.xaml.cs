@@ -20,9 +20,12 @@ namespace Profilrechner
     /// </summary>
     public partial class Window1 : Window
     {
+        int x = 1;
+        int y;
         int Materialint;
         int Profilint;
-        int Screenint;
+        
+        String PartSave;
         int Fehlercode;
         Double HoeheD;
         public Double BreiteD;
@@ -50,7 +53,6 @@ namespace Profilrechner
         String VolumenS;
 
         //Neu
-        int SpeichernI;
         Double ex; //Maximaler Abstand (Randphasenabstand) von x-x Achse
         Double ey; //Maximaler Abstand (Randphasenabstand) von y-y Achse
         Double Wbx; //Biegewiederstandsmoment um die x-x Achse
@@ -93,14 +95,13 @@ namespace Profilrechner
 
         String Partname;
 
+        BitmapImage bitmap_Screenshot = new BitmapImage();
+
         public Window1()
         {
             InitializeComponent();
             //Hier Breite und weite
         }
-
-        CatiaConnection CC2 = new CatiaConnection();
-
 
         #region Sprache
         private void btn_SpracheD_Click(object sender, RoutedEventArgs e)
@@ -158,17 +159,17 @@ namespace Profilrechner
             lbl_Drehwinkel.Content = "Drehwinkel:";
             lbl_HTM.Content = "Hauptträgheitsmomente:";
             lbl_Wbs.Content = "Biegewiederstandsmoment:";
+            lbl_Partname.Content = "Partname eingeben";
 
             tvi_Werkstoffe.Header = "Werkstoffe:";
 
             btn_weiter.Content = "Weiter";
             btn_Berechnen.Content = "Berechnen";
+            btn_Save.Content = "Speichern";
             btn_Wiederholen.Content = "Wiederholen";
             btn_Beenden.Content = "Beenden";
             btn_zurueck.Content = "Zurück";
 
-            SpeichernI = 0;
-            
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
             
@@ -253,16 +254,18 @@ namespace Profilrechner
             lbl_FTM.Content = "Geometrical moment of inertia";
             lbl_Drehwinkel.Content = "Angle of rotation:";
             lbl_HTM.Content = "Principal moment of inertia:";
+            lbl_Wbs.Content = "Resistance moment against bending:";       //
+            lbl_Partname.Content = "Enter Partname";
+
 
             tvi_Werkstoffe.Header = "Materials:";
 
             btn_weiter.Content = "Continue";
             btn_Berechnen.Content = "Calculate";
+            btn_Save.Content = "Save";
             btn_Wiederholen.Content = "Repeat";
             btn_Beenden.Content = "Exit";
             btn_zurueck.Content = "Return";
-
-            SpeichernI = 0;
 
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
@@ -346,16 +349,18 @@ namespace Profilrechner
             lbl_FTM.Content = "Moment quadratique";
             lbl_Drehwinkel.Content = "Angle de rotation:";
             lbl_HTM.Content = "Moment d'inerte principal:";
+            lbl_Wbs.Content = "Moment résistant contre virage:";       //
+            lbl_Partname.Content = "Veuillez entrer le nom de la part ";
+
 
             tvi_Werkstoffe.Header = "Matériaux:";
 
             btn_weiter.Content = "Continuer";
             btn_Berechnen.Content = "Calculer";
+            btn_Save.Content = "Sauvegarder";
             btn_Wiederholen.Content = "Répéter";
             btn_Beenden.Content = "Terminer";
             btn_zurueck.Content = "Retourer";
-
-            SpeichernI = 0;
 
             grid_Language1.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
@@ -1195,7 +1200,7 @@ namespace Profilrechner
             Profilint = 1;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+            
 
         }
 
@@ -1216,7 +1221,7 @@ namespace Profilrechner
             Profilint = 2;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+          
         }
 
         private void img_Kreis_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1239,7 +1244,7 @@ namespace Profilrechner
             Profilint = 3;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_Kreis_Hohlprofil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1261,7 +1266,7 @@ namespace Profilrechner
             Profilint = 4;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_I_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1281,7 +1286,7 @@ namespace Profilrechner
             IProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 5;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_T_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1302,7 +1307,7 @@ namespace Profilrechner
             Profilint = 6;
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_U_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1322,7 +1327,7 @@ namespace Profilrechner
             UProfilDetail.Source = bi1;
             img_DetailAnsicht.Source = bi1;
             Profilint = 7;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
 
         private void img_L_Profil_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1342,7 +1347,7 @@ namespace Profilrechner
             lbl_Flanschbreite.Visibility = Visibility.Hidden;
             tb_Flanschbreite.Visibility = Visibility.Hidden;
             lbl_Wandstaerke.Content = WandIULS;
-            btn_CatiaStart.Visibility = Visibility.Visible;
+           
         }
         #endregion
 
@@ -1392,6 +1397,8 @@ namespace Profilrechner
             lbl_Wby.Visibility = Visibility.Hidden;
             lbl_Ip.Visibility = Visibility.Hidden;
             lbl_Wp.Visibility = Visibility.Hidden;
+            btn_Save.Visibility = Visibility.Hidden;
+
             img_Screenshot.Source = null;
             HoeheD = 0;
             BreiteD = 0;
@@ -1399,7 +1406,6 @@ namespace Profilrechner
             WandstaerkeD = 0;
             LaengeD = 0;
             FlanschbreiteD = 0;
-            SpeichernI = 0;
             
 
         }
@@ -1422,59 +1428,30 @@ namespace Profilrechner
 
         private void Btn_CatiaStart_Click(object sender, RoutedEventArgs e)
         {
-           
-            btn_CatiaStart.Visibility = Visibility.Hidden;
-
-            Assembly assembly = typeof(Window1).Assembly;
-            string Path2 = assembly.Location;
+            
             String Path;
-          
+            
+                Assembly assembly = typeof(Window1).Assembly;
+                string Path2 = assembly.Location;
+                
 
-            int index = Path2.LastIndexOf("\\");
-            Path2 = Path2.Substring(0, index);
-            Path2 += "screen.jpg";
-            Path = Path2.Replace("\\bin\\Debug", "\\");
-         
-            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Path, Partname, Materialint, SpeichernI);     
-            Screenint = 1;
-            ScreenSet(Path);
-          
-           
-           
-          
+                int index = Path2.LastIndexOf("\\");
+                Path2 = Path2.Substring(0, index);
+                Path2 += "screen"+ x + ".jpg";
+                Path = Path2.Replace("\\bin\\Debug", "\\");
+            
+            new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Path, Partname, Materialint);
+            x +=1;    
+            bitmap_Screenshot = new BitmapImage((new Uri(Path, UriKind.Absolute)));
+                img_Screenshot.Source = bitmap_Screenshot;
+                img_Screenshot.Visibility = Visibility.Visible;
+
+            btn_Save.Visibility = Visibility.Visible;
+                
         }
 
-        private void ScreenSet( String Path)
-        {
-            if (Screenint.Equals(1))
-            {
-                try
-                {
-
-
-                        
-                       
-                        Image Screen = new Image();
-                        BitmapImage bi1 = new BitmapImage();
-                        bi1.BeginInit();
-                        bi1.UriSource = new Uri(Path, UriKind.Absolute);
-                        bi1.EndInit();
-                        Screen.Stretch = Stretch.Fill;
-                        Screen.Source = bi1;
-                        img_Screenshot.Source = new BitmapImage(new Uri (Path, UriKind.Absolute));
-                        img_Screenshot.Visibility = Visibility.Visible;
-                    
-                        
-                    
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Fehler beim laden des Screenshots");
-
-                }
-            }
-        }
-        private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
+       
+            private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
         {
             grid_Profilauswahl.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
@@ -1519,6 +1496,7 @@ namespace Profilrechner
             lbl_Wby.Visibility = Visibility.Hidden;
             lbl_Ip.Visibility = Visibility.Hidden;
             lbl_Wp.Visibility = Visibility.Hidden;
+            btn_Save.Visibility = Visibility.Hidden;
 
             HoeheD = 0;
             BreiteD = 0;
@@ -1526,21 +1504,19 @@ namespace Profilrechner
             WandstaerkeD = 0;
             LaengeD = 0;
             FlanschbreiteD = 0;
-            SpeichernI = 0;
+            
 
-
-
+            
 
         }
+
+        private void btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            new CatiaSave(Partname);
+        }
+
         #endregion
 
 
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
-            SpeichernI = 1;
-            new CatiaSpeichern(SpeichernI);
-            
-            //new CatiaSpeichern(SpeichernI);
-        }
     }
 }
