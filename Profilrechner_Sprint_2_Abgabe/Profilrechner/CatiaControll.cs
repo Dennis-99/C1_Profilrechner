@@ -7,9 +7,10 @@ using System.Windows;
 
 namespace Profilrechner
 {
-    class CatiaControl
+    public class CatiaControl
     {
-        CatiaControl()
+
+        public CatiaControl(Double Breite, Double Hoehe, Double Laenge, Double Wandstaerke, Double Flanschbreite, Double Durchmesser, int Profil, String Path, String name, int Material)
         {
             try
             {
@@ -19,42 +20,162 @@ namespace Profilrechner
                 // Finde Catia Prozess
                 if (cc.CATIALaeuft())
                 {
-                    Console.WriteLine("0");
+                    if (Profil.Equals(1))
+                    {
+                        //RechteckProfil
 
-                    // Öffne ein neues Part
-                    cc.ErzeugePart();
-                    Console.WriteLine("1");
+                        // Öffne ein neues Part
+                        cc.ErzeugePart();
+                        
 
-                    // Erstelle eine Skizze
-                    cc.ErstelleLeereSkizze();
-                    Console.WriteLine("2");
+                        // Erstelle eine Skizze
+                        cc.ErstelleLeereSkizze();
 
-                    // Generiere ein Profil
-                    cc.ErzeugeProfil(20, 10);
-                    Console.WriteLine("3");
 
-                    // Extrudiere Balken
-                    cc.ErzeugeBalken(300);
-                    Console.WriteLine("4");
+                        // Generiere ein Profil
+                        cc.ErzeugeProfilRechteck(Breite, Hoehe, Laenge);
+
+
+                        // Extrudiere Balken
+                        cc.ErzeugeBalken(Laenge, Path);
+                        cc.setMaterial(Material);
+                    }
+                    else if (Profil.Equals(2))
+                    {
+                        //Rechteck-Hohlprofil
+
+                        // Öffne ein neues Part
+                        cc.ErzeugePart();
+                        
+
+                        // Erstelle eine Skizze
+                        cc.ErstelleLeereSkizze();
+
+
+                        // Generiere ein Profil
+                        cc.ErzeugeProfilRechteck(Breite, Hoehe, Laenge);
+
+
+                        // Extrudiere Balken
+                        cc.ErzeugeBalken(Laenge, Path);
+
+                        // Generieren der Tasche
+                        cc.ErzeugeRechteckHohlprofil(Breite, Hoehe, Wandstaerke, Laenge, Path);
+
+                    }
+                    else if (Profil.Equals(3))
+                    {
+                        //KreisProfil
+                        // Öffne ein neues Part
+                        cc.ErzeugePart();
+                        
+                        // Erstelle eine Skizze
+                        cc.ErstelleLeereSkizze();
+
+                        // Generiere ein Profil
+                        cc.ErzeugeKreisprofil(Durchmesser);
+
+                        // Extrudiere Balken
+                        cc.ErzeugeBalken(Laenge, Path);
+                    }
+                    else if (Profil.Equals(4))
+                    {
+                        //Kreis-Hohlprofil
+                        // Öffne ein neues Part
+                        cc.ErzeugePart();
+                        
+                        // Erstelle eine Skizze
+                        cc.ErstelleLeereSkizze();
+
+                        // Generiere ein Profil
+                        cc.ErzeugeKreisprofil(Durchmesser);
+
+                        // Extrudiere Balken
+                        cc.ErzeugeBalken(Laenge, Path);
+
+                        // Generieren der Tasche
+                        cc.ErzeugeKreisHohlprofil(Durchmesser, Wandstaerke, Laenge, Path);
+                    }
+                    else if (Profil.Equals(5))
+                    {
+                        //I-Profil
+                        // Öffne ein neues Part
+                        cc.ErzeugePart();
+                        
+
+                        // Erstelle eine Skizze
+                        cc.ErstelleLeereSkizze();
+
+                        // Generiere ein Profil
+                        cc.ErzeugeIProfil(Breite, Hoehe, Wandstaerke, Flanschbreite);
+
+
+                        // Extrudiere Balken
+                        cc.ErzeugeBalken(Laenge, Path);
+                    }
+                    else if (Profil.Equals(6))
+                    {
+                        //T-Profil
+                        // Öffne ein neues Part
+                        cc.ErzeugePart();
+                        
+
+                        // Erstelle eine Skizze
+                        cc.ErstelleLeereSkizze();
+
+                        // Generiere ein Profil
+                        cc.ErzeugeTProfil(Hoehe, Breite, Wandstaerke);
+
+                        // Extrudiere Balken
+                        cc.ErzeugeBalken(Laenge, Path);
+                    }
+                    else if (Profil.Equals(7))
+                    {
+                        //U-Profil
+                        // Öffne ein neues Part
+                        cc.ErzeugePart();
+                        
+                        // Erstelle eine Skizze
+                        cc.ErstelleLeereSkizze();
+
+                        // Generiere ein Profil
+                        cc.ErzeugeUProfil(Hoehe, Breite, Wandstaerke, Flanschbreite);
+
+                        // Extrudiere Balken
+                        cc.ErzeugeBalken(Laenge, Path);
+                    }
+                    else if (Profil.Equals(8))
+                    {
+                        //L-Profil
+                        // Öffne ein neues Part
+                        cc.ErzeugePart();
+                        
+                        // Erstelle eine Skizze
+                        cc.ErstelleLeereSkizze();
+
+                        // Generiere ein Profil
+                        cc.ErzeugeLProfil(Hoehe, Breite, Wandstaerke);
+
+                        // Extrudiere Balken
+                        cc.ErzeugeBalken(Laenge, Path);
+                        
+                    }
+
                 }
                 else
                 {
-                    Console.WriteLine("Laufende Catia Application nicht gefunden");
+                    MessageBox.Show("Catia läuft nicht!");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Exception aufgetreten");
             }
-            Console.WriteLine("Fertig - Taste drücken.");
-            Console.ReadKey();
+
 
         }
 
-        static void Main(string[] args)
-        {
-            new CatiaControl();
-        }
+
     }
 }
 
