@@ -159,11 +159,13 @@ namespace Profilrechner
             lbl_Drehwinkel.Content = "Drehwinkel:";
             lbl_HTM.Content = "Hauptträgheitsmomente:";
             lbl_Wbs.Content = "Biegewiederstandsmoment:";
+            lbl_Partname.Content = "Partname eingeben";
 
             tvi_Werkstoffe.Header = "Werkstoffe:";
 
             btn_weiter.Content = "Weiter";
             btn_Berechnen.Content = "Berechnen";
+            btn_Save.Content = "Speichern";
             btn_Wiederholen.Content = "Wiederholen";
             btn_Beenden.Content = "Beenden";
             btn_zurueck.Content = "Zurück";
@@ -252,11 +254,15 @@ namespace Profilrechner
             lbl_FTM.Content = "Geometrical moment of inertia";
             lbl_Drehwinkel.Content = "Angle of rotation:";
             lbl_HTM.Content = "Principal moment of inertia:";
+            lbl_Wbs.Content = "Resistance moment against bending:";       //
+            lbl_Partname.Content = "Enter Partname";
+
 
             tvi_Werkstoffe.Header = "Materials:";
 
             btn_weiter.Content = "Continue";
             btn_Berechnen.Content = "Calculate";
+            btn_Save.Content = "Save";
             btn_Wiederholen.Content = "Repeat";
             btn_Beenden.Content = "Exit";
             btn_zurueck.Content = "Return";
@@ -343,11 +349,15 @@ namespace Profilrechner
             lbl_FTM.Content = "Moment quadratique";
             lbl_Drehwinkel.Content = "Angle de rotation:";
             lbl_HTM.Content = "Moment d'inerte principal:";
+            lbl_Wbs.Content = "Moment résistant contre virage:";       //
+            lbl_Partname.Content = "Veuillez entrer le nom de la part ";
+
 
             tvi_Werkstoffe.Header = "Matériaux:";
 
             btn_weiter.Content = "Continuer";
             btn_Berechnen.Content = "Calculer";
+            btn_Save.Content = "Sauvegarder";
             btn_Wiederholen.Content = "Répéter";
             btn_Beenden.Content = "Terminer";
             btn_zurueck.Content = "Retourer";
@@ -1387,6 +1397,8 @@ namespace Profilrechner
             lbl_Wby.Visibility = Visibility.Hidden;
             lbl_Ip.Visibility = Visibility.Hidden;
             lbl_Wp.Visibility = Visibility.Hidden;
+            btn_Save.Visibility = Visibility.Hidden;
+
             img_Screenshot.Source = null;
             HoeheD = 0;
             BreiteD = 0;
@@ -1423,7 +1435,6 @@ namespace Profilrechner
                 string Path2 = assembly.Location;
                 
 
-
                 int index = Path2.LastIndexOf("\\");
                 Path2 = Path2.Substring(0, index);
                 Path2 += "screen"+ x + ".jpg";
@@ -1434,19 +1445,9 @@ namespace Profilrechner
             bitmap_Screenshot = new BitmapImage((new Uri(Path, UriKind.Absolute)));
                 img_Screenshot.Source = bitmap_Screenshot;
                 img_Screenshot.Visibility = Visibility.Visible;
-                
-                
-            
-            
 
-           
-         
+            btn_Save.Visibility = Visibility.Visible;
                 
-            
-          
-           
-           
-          
         }
 
        
@@ -1495,6 +1496,7 @@ namespace Profilrechner
             lbl_Wby.Visibility = Visibility.Hidden;
             lbl_Ip.Visibility = Visibility.Hidden;
             lbl_Wp.Visibility = Visibility.Hidden;
+            btn_Save.Visibility = Visibility.Hidden;
 
             HoeheD = 0;
             BreiteD = 0;
@@ -1508,12 +1510,13 @@ namespace Profilrechner
 
         }
 
-
-        #endregion
-
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
             new CatiaSave(Partname);
         }
+
+        #endregion
+
+
     }
 }
