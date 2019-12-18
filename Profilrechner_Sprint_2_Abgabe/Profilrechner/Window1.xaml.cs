@@ -1212,11 +1212,18 @@ namespace Profilrechner
         private void Btn_CatiaStart_Click(object sender, RoutedEventArgs e)
         {
             Assembly assembly = typeof(Window1).Assembly;
-            string Path = assembly.Location;
-            int index = Path.LastIndexOf("\\");
-            Path = Path.Substring(0, index);
-            Path += "\\screeshots\\screen.jpg";
+            string Path2 = assembly.Location;
+            String Path;
+            
+            
+            int index = Path2.LastIndexOf("\\");
+            Path2 = Path2.Substring(0, index);
+            Path2 += "screen.jpg";
+            Path = Path2.Replace("\\bin\\Debug", "\\");
+            
+           
             new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Path);
+            
             Screenint = 1;
             ScreenSet(Path);
         }
@@ -1277,6 +1284,8 @@ namespace Profilrechner
             {
                 try
                 {
+                    
+
                     Image Screen = new Image();
                     BitmapImage bi1 = new BitmapImage();
                     bi1.BeginInit();
@@ -1290,7 +1299,7 @@ namespace Profilrechner
                 catch (Exception)
                 {
                     MessageBox.Show("Fehler beim laden des Screenshots");
-                    throw;
+                   
                 }
             }
 

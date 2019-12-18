@@ -10,7 +10,7 @@ namespace Profilrechner
     public class CatiaControl
     {
         
-        public CatiaControl(Double Breite, Double Hoehe,Double Laenge,Double Wandstaerke, Double Flanschbreite, Double Durchmesser, int Profil, string Path)
+        public CatiaControl(Double Breite, Double Hoehe,Double Laenge,Double Wandstaerke, Double Flanschbreite, Double Durchmesser, int Profil, String Path)
         {
             try
             {

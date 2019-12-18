@@ -119,7 +119,7 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeBalken(Double Laenge, string Path)
+        public void ErzeugeBalken(Double Laenge, String Path)
         {
             // Hauptkoerper in Bearbeitung definieren
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
@@ -135,11 +135,20 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
 
             //Reframe
+            
             hsp_catiaApp.ActiveWindow.ActiveViewer.Reframe();
-            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
+            
+            
+
+            
+            hsp_catiaPart.Part.Update();
+            hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path );
+           
+            hsp_catiaPart.Part.Update();
+
             // Part aktualisieren
-            
-            
+
+
         }
 
         public void ErzeugeRechteckHohlprofil(Double Breite, Double Hoehe, Double Wandstaerke, Double Laenge, String Path)
@@ -204,6 +213,7 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
+            
             hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
 
 
@@ -274,6 +284,7 @@ namespace Profilrechner
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();
+            
             hsp_catiaApp.ActiveWindow.ActiveViewer.CaptureToFile(CatCaptureFormat.catCaptureFormatJPEG, Path);
         }
 
