@@ -119,7 +119,7 @@ namespace Profilrechner
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeBalken(Double Laenge)
+        public void ErzeugeBalken(Double Laenge, String Partname)
         {
             // Hauptkoerper in Bearbeitung definieren
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
@@ -129,7 +129,7 @@ namespace Profilrechner
             Pad catPad1 = catShapeFactory1.AddNewPad(hsp_catiaProfil, Laenge);
 
             // Block umbenennen
-            catPad1.set_Name("Balken");
+            catPad1.set_Name(Partname);
 
             // Part aktualisieren
             hsp_catiaPart.Part.Update();

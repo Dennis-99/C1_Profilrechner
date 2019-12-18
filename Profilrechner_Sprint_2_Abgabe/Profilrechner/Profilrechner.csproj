@@ -78,6 +78,7 @@
     </ApplicationDefinition>
     <Compile Include="CatiaControll.cs" />
     <Compile Include="CatiaConnection.cs" />
+    <Compile Include="Partname.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -138,6 +139,9 @@
     <Resource Include="Rechteck-HohlprofilDetail.jpg" />
     <Resource Include="T-ProfilDetail.jpg" />
     <Resource Include="U-ProfilDetail.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bsp bild.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

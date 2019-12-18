@@ -10,7 +10,7 @@ namespace Profilrechner
     public class CatiaControl
     {
         
-        public CatiaControl(Double Breite, Double Hoehe,Double Laenge,Double Wandstaerke, Double Flanschbreite, Double Durchmesser, int Profil)
+        public CatiaControl(Double Breite, Double Hoehe,Double Laenge,Double Wandstaerke, Double Flanschbreite, Double Durchmesser, int Profil, String Partname)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Profilrechner
                        
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                         
                     }
                     else if (Profil.Equals(2))
@@ -57,7 +57,7 @@ namespace Profilrechner
 
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
 
                         // Generieren der Tasche
                         cc.ErzeugeRechteckHohlprofil(Breite, Hoehe, Wandstaerke, Laenge);
@@ -76,7 +76,7 @@ namespace Profilrechner
                         cc.ErzeugeKreisprofil(Durchmesser);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                     else if (Profil.Equals(4))
                     {
@@ -91,7 +91,7 @@ namespace Profilrechner
                         cc.ErzeugeKreisprofil(Durchmesser);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
 
                         // Generieren der Tasche
                         cc.ErzeugeKreisHohlprofil(Durchmesser, Wandstaerke, Laenge);
@@ -111,7 +111,7 @@ namespace Profilrechner
 
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                     else if (Profil.Equals(6))
                     {
@@ -127,7 +127,7 @@ namespace Profilrechner
                         cc.ErzeugeTProfil(Hoehe, Breite, Wandstaerke);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                     else if (Profil.Equals(7))
                     {
@@ -142,7 +142,7 @@ namespace Profilrechner
                         cc.ErzeugeUProfil(Hoehe, Breite, Wandstaerke, Flanschbreite);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                     else if (Profil.Equals(8))
                     {
@@ -157,7 +157,7 @@ namespace Profilrechner
                         cc.ErzeugeLProfil(Hoehe, Breite, Wandstaerke);
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(Laenge);
+                        cc.ErzeugeBalken(Laenge, Partname);
                     }
                    
                 }
