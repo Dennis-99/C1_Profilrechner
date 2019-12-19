@@ -24,7 +24,7 @@ namespace Profilrechner
         int y;
         int Materialint;
         int Profilint;
-        
+        public int CatFail;
         String PartSave;
         int Fehlercode;
         Double HoeheD;
@@ -1431,27 +1431,40 @@ namespace Profilrechner
             
             String Path;
             
-                Assembly assembly = typeof(Window1).Assembly;
-                string Path2 = assembly.Location;
+            Assembly assembly = typeof(Window1).Assembly;
+            string Path2 = assembly.Location;
                 
 
-                int index = Path2.LastIndexOf("\\");
-                Path2 = Path2.Substring(0, index);
-                Path2 += "screen"+ x + ".jpg";
-                Path = Path2.Replace("\\bin\\Debug", "\\");
+            int index = Path2.LastIndexOf("\\");
+            Path2 = Path2.Substring(0, index);
+            Path2 += "screen"+ x + ".jpg";
+            Path = Path2.Replace("\\bin\\Debug", "\\");
             
             new CatiaControl(BreiteD, HoeheD, LaengeD, WandstaerkeD, FlanschbreiteD, DurchmesserD, Profilint, Path, Partname, Materialint);
-            x +=1;    
-            bitmap_Screenshot = new BitmapImage((new Uri(Path, UriKind.Absolute)));
+            x +=1;
+            CatiaConnection c = new CatiaConnection();
+            if (c.CATIALaeuft())
+            {
+            
+                bitmap_Screenshot = new BitmapImage((new Uri(Path, UriKind.Absolute)));
                 img_Screenshot.Source = bitmap_Screenshot;
                 img_Screenshot.Visibility = Visibility.Visible;
 
-            btn_Save.Visibility = Visibility.Visible;
+                btn_Save.Visibility = Visibility.Visible;
+
+            }
+            else
+            {
+                    
+            }
+
+             
+           
                 
         }
 
-       
-            private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
+      
+        private void Button_zurueckProfilauswahl_Click(object sender, RoutedEventArgs e)
         {
             grid_Profilauswahl.Visibility = Visibility.Hidden;
             grid_Profilauswahlimg.Visibility = Visibility.Visible;
@@ -1512,7 +1525,16 @@ namespace Profilrechner
 
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            new CatiaSave(Partname);
+            if (Partname.Equals(""))
+            {
+                MessageBox.Show("Keinen Namen eingegeben");
+            }
+            else
+            {
+                new CatiaSave(Partname);
+
+            }
+            
         }
 
         #endregion

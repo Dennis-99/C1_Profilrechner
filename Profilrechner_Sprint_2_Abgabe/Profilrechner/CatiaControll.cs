@@ -9,9 +9,10 @@ namespace Profilrechner
 {
     public class CatiaControl
     {
-
+         public int CatFail;
         public CatiaControl(Double Breite, Double Hoehe, Double Laenge, Double Wandstaerke, Double Flanschbreite, Double Durchmesser, int Profil, String Path, String name, int Material)
         {
+            
             try
             {
 
@@ -164,7 +165,9 @@ namespace Profilrechner
                 }
                 else
                 {
+                    
                     MessageBox.Show("Catia läuft nicht!");
+                    
                 }
             }
             catch (Exception ex)
